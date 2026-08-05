@@ -37,9 +37,10 @@ collections:
     delete: true
     extension: "md"
     format: "yaml-frontmatter"
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}"
     summary: "{{title}} — {{pubDate}}"
     fields:
+      - { label: "URL别名(英文,用横线连接)", name: "slug", widget: "string", hint: "文章的网址,必须用英文,例如 osaka-3-day-hidden-gems。这会变成 /blog/你的slug/" }
       - { label: "标题", name: "title", widget: "string" }
       - { label: "摘要(description,给SEO用)", name: "description", widget: "text" }
       - { label: "发布日期", name: "pubDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
