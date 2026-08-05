@@ -2,11 +2,15 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft))
+// Filter to English-only articles (hide Chinese content from international visitors)
+const isEnglish = (s: string) => /^[\x00-\x7F]*$/.test(s);
+
+const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .filter(p => isEnglish(p.data.title))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const featured = posts.find(p => p.data.featured) || posts[0];
-const rest = posts.filter(p => p !== featured);
+const featured = allPosts.find(p => p.data.featured) || allPosts[0];
+const rest = allPosts.filter(p => p !== featured);
 ---
 
 <Layout
@@ -22,7 +26,7 @@ const rest = posts.filter(p => p !== featured);
 
   <section class="blog-list">
     <div class="container">
-      {posts.length === 0 ? (
+      {allPosts.length === 0 ? (
         <div class="empty-state">
           <p>Articles coming soon. Check back shortly!</p>
         </div>

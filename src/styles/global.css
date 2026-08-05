@@ -210,3 +210,30 @@ p {
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   background: var(--c-surface-light);
 }
+
+/* Mobile touch target & spacing optimization */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-sm {
+    padding: 2.5rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2.5rem 0;
+  }
+}

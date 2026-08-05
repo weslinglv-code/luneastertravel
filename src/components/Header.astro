@@ -158,6 +158,25 @@ const { menu, shopButton } = navigation;
   @media (max-width: 900px) {
     .nav-desktop { display: none; }
     .nav-toggle { display: flex; }
+    .header-inner { padding: 0.5rem 1rem; }
+    .btn-shop {
+      padding: 0.7rem 1.1rem;
+      font-size: 0.82rem;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .btn-shop {
+      padding: 0.65rem 0.9rem;
+      font-size: 0.78rem;
+    }
+    .header-logo :global(svg) {
+      width: 32px !important;
+      height: 32px !important;
+    }
   }
 </style>
 

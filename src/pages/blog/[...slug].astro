@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { products } from '../../data/products';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -26,6 +27,12 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
 
 const siteUrl = 'https://luneastertravel.com';
 const articleUrl = `${siteUrl}/blog/${post.slug}`;
+
+// Get the featured sidebar product (lowest price item for impulse purchase)
+const sidebarProduct = products.find(p => p.slug === 'kyoto-takao-three-temples') || products[0];
+
+// Get a seasonal recommendation (prefer Bestseller, fallback to first)
+const endRecommendation = products.find(p => p.badge === 'Bestseller') || products[0];
 
 // JSON-LD structured data for SEO
 const jsonLd = {
@@ -55,48 +62,100 @@ const jsonLd = {
 
 <Layout title={title} description={description} ogImage={coverImage}>
   <article class="article">
-    <div class="article-container">
-      <a href="/blog" class="back-link">← All Articles</a>
+    <div class="article-layout">
+      <!-- Main article column -->
+      <div class="article-main">
+        <a href="/blog" class="back-link">&larr; All Articles</a>
 
-      <header class="article-header">
-        {tags && tags.length > 0 && (
-          <div class="article-tags">
-            {tags.map(tag => <span class="tag">{tag}</span>)}
+        <header class="article-header">
+          {tags && tags.length > 0 && (
+            <div class="article-tags">
+              {tags.map(tag => <span class="tag">{tag}</span>)}
+            </div>
+          )}
+          <h1>{title}</h1>
+          <div class="article-meta">
+            <span class="meta-author">{author}</span>
+            <span class="meta-sep">&middot;</span>
+            <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+            {readingTime && (
+              <>
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-reading">{readingTime}</span>
+              </>
+            )}
+          </div>
+        </header>
+
+        {coverImage && (
+          <div class="article-cover">
+            <img src={coverImage} alt={coverAlt || title} loading="eager" />
           </div>
         )}
-        <h1>{title}</h1>
-        <div class="article-meta">
-          <span class="meta-author">{author}</span>
-          <span class="meta-sep">·</span>
-          <time datetime={pubDate.toISOString()}>{formattedDate}</time>
-          {readingTime && (
-            <>
-              <span class="meta-sep">·</span>
-              <span class="meta-reading">{readingTime}</span>
-            </>
-          )}
+
+        <!-- Affiliate disclosure banner (right after cover, before article body) -->
+        <div class="affiliate-banner">
+          <strong>Quick note:</strong> This article contains hand-picked affiliate links for hotels, transport passes, and tours. If you book through them, we earn a small commission at no extra cost to you &mdash; it keeps these guides free.
         </div>
-      </header>
 
-      {coverImage && (
-        <div class="article-cover">
-          <img src={coverImage} alt={coverAlt || title} loading="eager" />
+        <div class="article-body">
+          <Content />
         </div>
-      )}
 
-      <div class="article-body">
-        <Content />
+        <!-- End-of-article conversion block with direct Gumroad link -->
+        <div class="article-end-cta">
+          <div class="end-cta-label">Recommended PDF Guide</div>
+          <div class="end-cta-product">
+            <div class="end-cta-info">
+              <h3>{endRecommendation.title}</h3>
+              <p>{endRecommendation.subtitle}</p>
+              <div class="end-cta-meta">
+                <span class="end-cta-price">{endRecommendation.priceLabel}</span>
+                <span class="end-cta-pages">{endRecommendation.pages} pages</span>
+                {endRecommendation.badge && <span class="end-cta-badge">{endRecommendation.badge}</span>}
+              </div>
+            </div>
+            <a href={endRecommendation.gumroadUrl} class="end-cta-btn" target="_blank" rel="noopener">
+              Get the PDF &rarr;
+            </a>
+          </div>
+          <a href="/#premium" class="end-cta-secondary">Browse all guides &rarr;</a>
+        </div>
+
+        <div class="article-disclosure">
+          Some links in this article are affiliate links. If you book through them, we earn a small commission at no extra cost to you. This helps us keep creating free travel content.
+        </div>
       </div>
 
-      <div class="article-cta">
-        <h3>Want the full itinerary?</h3>
-        <p>Download our complete Japan travel guides with day-by-day routes, budget breakdowns, and local tips.</p>
-        <a href="/#products" class="cta-btn">Browse All Guides →</a>
-      </div>
+      <!-- Sticky sidebar with persistent product card (desktop only) -->
+      <aside class="article-sidebar">
+        <div class="sidebar-sticky">
+          <div class="sidebar-product-card">
+            <div class="sidebar-card-label">Reader's Pick</div>
+            <h4>{sidebarProduct.title}</h4>
+            <p class="sidebar-card-sub">{sidebarProduct.subtitle}</p>
+            <div class="sidebar-card-price">
+              <span class="price">{sidebarProduct.priceLabel}</span>
+              {sidebarProduct.badge && <span class="sidebar-badge">{sidebarProduct.badge}</span>}
+            </div>
+            <ul class="sidebar-features">
+              {sidebarProduct.features.slice(0, 3).map(f => <li>{f}</li>)}
+            </ul>
+            <a href={sidebarProduct.gumroadUrl} class="sidebar-cta" target="_blank" rel="noopener">
+              Get This Guide &rarr;
+            </a>
+            <div class="sidebar-trust">Instant download &middot; PDF &middot; No ads</div>
+          </div>
 
-      <div class="article-disclosure">
-        Some links in this article are affiliate links. If you book through them, we earn a small commission at no extra cost to you. This helps us keep creating free travel content.
-      </div>
+          <div class="sidebar-newsletter">
+            <h4>Free Japan Travel Tips</h4>
+            <p>Follow on TikTok for daily Japan travel inspiration.</p>
+            <a href="https://www.tiktok.com/@lune.aster" target="_blank" rel="noopener" class="sidebar-tiktok">
+              @lune.aster on TikTok &rarr;
+            </a>
+          </div>
+        </div>
+      </aside>
     </div>
   </article>
 
@@ -105,12 +164,21 @@ const jsonLd = {
 
 <style>
   .article {
-    padding: 2rem 1.5rem 4rem;
+    padding: 1.5rem 1.5rem 4rem;
   }
 
-  .article-container {
-    max-width: 760px;
+  .article-layout {
+    max-width: 1100px;
     margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .article-main {
+    flex: 1;
+    min-width: 0;
+    max-width: 760px;
   }
 
   .back-link {
@@ -118,7 +186,7 @@ const jsonLd = {
     color: var(--c-text-muted);
     font-size: 0.875rem;
     font-weight: 500;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     transition: color var(--t-fast);
   }
 
@@ -127,7 +195,7 @@ const jsonLd = {
   }
 
   .article-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .article-tags {
@@ -162,6 +230,7 @@ const jsonLd = {
     gap: 0.5rem;
     color: var(--c-text-muted);
     font-size: 0.875rem;
+    flex-wrap: wrap;
   }
 
   .meta-sep {
@@ -169,7 +238,7 @@ const jsonLd = {
   }
 
   .article-cover {
-    margin: 0 -1rem 2.5rem;
+    margin: 0 -1rem 1.5rem;
     border-radius: 12px;
     overflow: hidden;
   }
@@ -180,6 +249,23 @@ const jsonLd = {
     display: block;
     aspect-ratio: 16/9;
     object-fit: cover;
+  }
+
+  /* Affiliate disclosure banner */
+  .affiliate-banner {
+    background: var(--c-accent-bg);
+    border-left: 3px solid var(--c-accent);
+    padding: 0.875rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--c-text-muted);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .affiliate-banner strong {
+    color: var(--c-accent);
+    font-weight: 700;
   }
 
   .article-body {
@@ -246,41 +332,104 @@ const jsonLd = {
     text-decoration-color: var(--c-accent);
   }
 
-  .article-cta {
-    margin: 3rem 0 2rem;
-    padding: 2rem;
-    background: var(--c-accent-bg);
-    border-radius: 12px;
-    text-align: center;
+  /* End-of-article conversion block */
+  .article-end-cta {
+    margin: 3rem 0 1.5rem;
+    padding: 1.75rem;
+    background: linear-gradient(135deg, var(--c-accent-bg) 0%, rgba(255,255,255,0.5) 100%);
+    border: 1px solid var(--c-border);
+    border-radius: 16px;
   }
 
-  .article-cta h3 {
+  .end-cta-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--c-accent);
+    margin-bottom: 1rem;
+  }
+
+  .end-cta-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .end-cta-info h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
     color: var(--c-text);
+    margin-bottom: 0.25rem;
   }
 
-  .article-cta p {
+  .end-cta-info p {
     color: var(--c-text-muted);
-    margin-bottom: 1.25rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
 
-  .cta-btn {
-    display: inline-block;
+  .end-cta-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .end-cta-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--c-accent);
+  }
+
+  .end-cta-pages {
+    font-size: 0.8rem;
+    color: var(--c-text-muted);
+  }
+
+  .end-cta-badge {
+    background: var(--c-accent);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 99px;
+    text-transform: uppercase;
+  }
+
+  .end-cta-btn {
+    display: inline-flex;
+    align-items: center;
     background: var(--c-accent);
     color: white !important;
-    padding: 0.75rem 1.75rem;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: transform var(--t-fast), box-shadow var(--t-fast);
+    padding: 0.875rem 1.75rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: all var(--t-fast);
+    min-height: 48px;
   }
 
-  .cta-btn:hover {
+  .end-cta-btn:hover {
+    background: var(--c-accent-light);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 16px rgba(217, 74, 56, 0.35);
+  }
+
+  .end-cta-secondary {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--c-text-muted);
+    font-weight: 500;
+    transition: color var(--t-fast);
+  }
+
+  .end-cta-secondary:hover {
+    color: var(--c-accent);
   }
 
   .article-disclosure {
@@ -291,9 +440,193 @@ const jsonLd = {
     border-top: 1px solid var(--c-border);
   }
 
+  /* Sidebar */
+  .article-sidebar {
+    display: none;
+    width: 300px;
+    flex-shrink: 0;
+  }
+
+  .sidebar-sticky {
+    position: sticky;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sidebar-product-card {
+    background: white;
+    border: 1px solid var(--c-border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .sidebar-card-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--c-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar-product-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--c-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .sidebar-card-sub {
+    font-size: 0.85rem;
+    color: var(--c-text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar-card-price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-card-price .price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--c-accent);
+  }
+
+  .sidebar-badge {
+    background: var(--c-accent);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 99px;
+    text-transform: uppercase;
+  }
+
+  .sidebar-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem 0;
+    font-size: 0.82rem;
+    color: var(--c-text-muted);
+    line-height: 1.5;
+  }
+
+  .sidebar-features li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+  }
+
+  .sidebar-features li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--c-accent);
+    font-weight: 700;
+  }
+
+  .sidebar-cta {
+    display: block;
+    text-align: center;
+    background: var(--c-accent);
+    color: white !important;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all var(--t-fast);
+    min-height: 48px;
+    line-height: 32px;
+  }
+
+  .sidebar-cta:hover {
+    background: var(--c-accent-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(217, 74, 56, 0.3);
+  }
+
+  .sidebar-trust {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--c-text-muted);
+    margin-top: 0.75rem;
+  }
+
+  .sidebar-newsletter {
+    background: var(--c-accent-bg);
+    border-radius: 14px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .sidebar-newsletter h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--c-text);
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar-newsletter p {
+    font-size: 0.8rem;
+    color: var(--c-text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar-tiktok {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--c-accent);
+    text-decoration: none;
+  }
+
+  .sidebar-tiktok:hover {
+    text-decoration: underline;
+  }
+
+  /* Desktop: show sidebar */
+  @media (min-width: 1024px) {
+    .article-sidebar {
+      display: block;
+    }
+  }
+
+  /* Tablet: cover without negative margin */
   @media (min-width: 768px) {
     .article-cover {
-      margin: 0 0 2.5rem;
+      margin: 0 0 2rem;
+    }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .article {
+      padding: 1rem 1rem 3rem;
+    }
+
+    .article-end-cta {
+      padding: 1.25rem;
+    }
+
+    .end-cta-product {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .end-cta-btn {
+      text-align: center;
+      justify-content: center;
+    }
+
+    .affiliate-banner {
+      font-size: 0.8rem;
+      padding: 0.75rem 1rem;
     }
   }
 </style>
