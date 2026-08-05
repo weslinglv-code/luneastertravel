@@ -1,0 +1,22 @@
+{
+  "order": 3,
+  "slug": "kyoto-3-day-autumn",
+  "title": "Kyoto 3-Day Autumn Foliage Guide",
+  "subtitle": "The perfect first-timer itinerary",
+  "price": 5.99,
+  "priceLabel": "$5.99",
+  "pages": 14,
+  "description": "A complete 3-day Kyoto autumn itinerary for first-time visitors. Covers the best temple gardens, maple-lined paths, and hidden spots that locals love — with exact timing for peak fall colors.",
+  "features": [
+    "14-page PDF with day-by-day autumn foliage routes",
+    "Day 1: Eastern Kyoto temples (Kiyomizu-dera, Eikan-do, Tofuku-ji)",
+    "Day 2: Arashiyama bamboo grove + hidden maple gardens",
+    "Day 3: Northern Kyoto + Takao day trip option",
+    "Best viewing weeks and real-time leaf tracker links",
+    "Restaurant and cafe picks near each temple area"
+  ],
+  "gumroadUrl": "https://luneaster.gumroad.com/l/kyoto-autumn-guide",
+  "coverImage": "/images/kyoto-autumn-cover.jpg",
+  "badge": "New",
+  "accentColor": "#c0392b"
+}
