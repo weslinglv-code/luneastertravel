@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="About"
+  description="About LuneAster Travel — a travel designer creating Japan travel guides for independent travelers."
+>
+  <Header />
+
+  <section class="page-hero">
+    <div class="container-narrow">
+      <span class="hero-tag">☽ About</span>
+      <h1>Hi, I'm behind LuneAster.</h1>
+      <p class="lead">
+        I work as a travel product designer by day. By night, I build the kind of Japan guides
+        I wish existed when I first planned my own trips.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-narrow">
+      <h2>Why these guides exist</h2>
+      <p>
+        Most Japan travel content falls into two buckets: influencer vlogs that look beautiful but
+        tell you nothing useful, and dense forum threads where the answer is buried on page 47.
+      </p>
+      <p>
+        LuneAster is the middle ground — structured PDFs with exact routes, real prices in yen,
+        and practical advice that comes from actually being there.
+      </p>
+
+      <h2>My approach</h2>
+      <ul class="approach-list">
+        <li>
+          <strong>I go there.</strong> Every guide is based on first-hand experience, not Reddit scraping.
+        </li>
+        <li>
+          <strong>I optimize for geography.</strong> Routes minimize backtracking. Hotels are picked
+          for walking distance to transit, not for Instagram aesthetics.
+        </li>
+        <li>
+          <strong>I price everything.</strong> You should know your total trip cost before you book a flight.
+        </li>
+        <li>
+          <strong>No fluff, no ads.</strong> The PDFs are ad-free. I make money from guide sales and
+          a few affiliate links — transparently disclosed.
+        </li>
+      </ul>
+
+      <h2>Where to find me</h2>
+      <div class="links-list">
+        <a href="https://www.tiktok.com/@lune.aster" target="_blank" rel="noopener">TikTok @lune.aster</a>
+        <a href="https://luneaster.gumroad.com" target="_blank" rel="noopener">Gumroad Store</a>
+        <a href="https://linktr.ee/LuneAster" target="_blank" rel="noopener">Linktree</a>
+      </div>
+
+      <div class="contact-box">
+        <h3>Questions?</h3>
+        <p>DM me on TikTok or reach out through Gumroad. I read everything.</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 5rem 0 2rem;
+    text-align: center;
+  }
+
+  .hero-tag {
+    display: block;
+    color: var(--c-accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    color: var(--c-text);
+  }
+
+  .approach-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .approach-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--c-border);
+    color: var(--c-text-muted);
+  }
+
+  .approach-list li strong {
+    color: var(--c-text);
+  }
+
+  .links-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .links-list a {
+    padding: 0.6rem 1.2rem;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-sm);
+    color: var(--c-text);
+    transition: all var(--t-fast);
+  }
+
+  .links-list a:hover {
+    border-color: var(--c-accent);
+    color: var(--c-accent-light);
+  }
+
+  .contact-box {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--c-surface);
+    border-radius: var(--radius-md);
+    text-align: center;
+  }
+
+  .contact-box h3 {
+    margin-bottom: 0.5rem;
+  }
+</style>

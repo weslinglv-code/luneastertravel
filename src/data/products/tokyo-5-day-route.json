@@ -1,0 +1,20 @@
+{
+  "order": 2,
+  "slug": "tokyo-5-day-route",
+  "title": "Tokyo 5-Day Route",
+  "subtitle": "Deep dive into the capital",
+  "price": 10,
+  "priceLabel": "$10",
+  "pages": 15,
+  "description": "A comprehensive 5-day Tokyo itinerary covering all major districts. From Shibuya to Asakusa, Shinjuku to Akihabara — every day is optimized for geography and efficiency.",
+  "features": [
+    "15-page detailed PDF guide",
+    "5 optimized daily routes by area",
+    "Restaurant recommendations with price ranges",
+    "Subway route planning tips",
+    "Day trip options (Hakone, Kamakura, Nikko)"
+  ],
+  "gumroadUrl": "https://luneaster.gumroad.com/l/tokyo-5-day-route",
+  "coverImage": "/images/tokyo-cover.jpg",
+  "accentColor": "#5b8def"
+}

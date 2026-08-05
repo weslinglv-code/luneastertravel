@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import AffiliateLink from '../components/AffiliateLink.astro';
+import { links, linkCategories } from '../data/affiliate';
+
+// Group links by category
+const groupedLinks = linkCategories.map(cat => ({
+  ...cat,
+  items: Object.values(links).filter(l => l.type === cat.key),
+}));
+---
+
+<Layout
+  title="Travel Resources"
+  description="Recommended tools and services for your Japan trip — transport passes, hotels, WiFi, tickets, and more."
+>
+  <Header />
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Travel Resources</h1>
+      <p>Everything I recommend for a Japan trip. I only list services I've personally used or thoroughly researched.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {groupedLinks.map(group => group.items.length > 0 && (
+        <div class="resource-group">
+          <h2>{group.label}</h2>
+          <div class="resource-grid">
+            {group.items.map(item => (
+              <div class="resource-card">
+                <div class="resource-icon">
+                  {item.icon === 'train' && '🚄'}
+                  {item.icon === 'bed' && '🏨'}
+                  {item.icon === 'ticket' && '🎟️'}
+                  {item.icon === 'tour' && '🗻'}
+                  {item.icon === 'wifi' && '📶'}
+                  {item.icon === 'plane' && '✈️'}
+                  {item.icon === 'plug' && '🔌'}
+                  {item.icon === 'mountain' && '🏔️'}
+                </div>
+                <div class="resource-body">
+                  <h3>{item.label}</h3>
+                  <p>{item.description}</p>
+                  <div class="resource-meta">
+                    <span class="brand-tag">{item.brand}</span>
+                    <AffiliateLink linkKey={item.key} text="View →" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <div class="affiliate-disclosure">
+        ⚠️ This page contains affiliate links. If you book through these links, I may earn a small commission
+        at no extra cost to you. This helps me create more guides. I only recommend services I trust.
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 5rem 0 2rem;
+    text-align: center;
+  }
+
+  .page-hero p {
+    max-width: 500px;
+    margin: 1rem auto 0;
+  }
+
+  .resource-group {
+    margin-bottom: 3rem;
+  }
+
+  .resource-group h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .resource-card {
+    display: flex;
+    gap: 1rem;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    transition: border-color var(--t-fast);
+  }
+
+  .resource-card:hover {
+    border-color: var(--c-accent);
+  }
+
+  .resource-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .resource-body {
+    flex: 1;
+  }
+
+  .resource-body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .resource-body p {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .resource-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand-tag {
+    font-size: 0.75rem;
+    color: var(--c-text-muted);
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--c-border);
+    border-radius: 100px;
+  }
+</style>

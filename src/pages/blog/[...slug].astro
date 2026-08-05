@@ -1,0 +1,299 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { title, description, pubDate, updatedDate, coverImage, coverAlt, tags, author, readingTime } = post.data;
+
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const siteUrl = 'https://luneastertravel.com';
+const articleUrl = `${siteUrl}/blog/${post.slug}`;
+
+// JSON-LD structured data for SEO
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description: description,
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate || pubDate).toISOString(),
+  author: {
+    '@type': 'Organization',
+    name: author,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'LuneAster Travel',
+    url: siteUrl,
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': articleUrl,
+  },
+  url: articleUrl,
+  keywords: tags.join(', '),
+};
+---
+
+<Layout title={title} description={description} ogImage={coverImage}>
+  <article class="article">
+    <div class="article-container">
+      <a href="/blog" class="back-link">← All Articles</a>
+
+      <header class="article-header">
+        {tags && tags.length > 0 && (
+          <div class="article-tags">
+            {tags.map(tag => <span class="tag">{tag}</span>)}
+          </div>
+        )}
+        <h1>{title}</h1>
+        <div class="article-meta">
+          <span class="meta-author">{author}</span>
+          <span class="meta-sep">·</span>
+          <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+          {readingTime && (
+            <>
+              <span class="meta-sep">·</span>
+              <span class="meta-reading">{readingTime}</span>
+            </>
+          )}
+        </div>
+      </header>
+
+      {coverImage && (
+        <div class="article-cover">
+          <img src={coverImage} alt={coverAlt || title} loading="eager" />
+        </div>
+      )}
+
+      <div class="article-body">
+        <Content />
+      </div>
+
+      <div class="article-cta">
+        <h3>Want the full itinerary?</h3>
+        <p>Download our complete Japan travel guides with day-by-day routes, budget breakdowns, and local tips.</p>
+        <a href="/#products" class="cta-btn">Browse All Guides →</a>
+      </div>
+
+      <div class="article-disclosure">
+        Some links in this article are affiliate links. If you book through them, we earn a small commission at no extra cost to you. This helps us keep creating free travel content.
+      </div>
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</Layout>
+
+<style>
+  .article {
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .article-container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: var(--c-text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    transition: color var(--t-fast);
+  }
+
+  .back-link:hover {
+    color: var(--c-accent);
+  }
+
+  .article-header {
+    margin-bottom: 2rem;
+  }
+
+  .article-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .tag {
+    background: var(--c-accent-bg);
+    color: var(--c-accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .article-header h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--c-text);
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--c-text-muted);
+    font-size: 0.875rem;
+  }
+
+  .meta-sep {
+    opacity: 0.5;
+  }
+
+  .article-cover {
+    margin: 0 -1rem 2.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .article-cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+
+  .article-body {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--c-text);
+  }
+
+  .article-body :global(h2) {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2.5rem 0 1rem;
+    color: var(--c-text);
+  }
+
+  .article-body :global(h3) {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+    color: var(--c-text);
+  }
+
+  .article-body :global(p) {
+    margin-bottom: 1.25rem;
+  }
+
+  .article-body :global(ul),
+  .article-body :global(ol) {
+    margin: 0 0 1.25rem 1.5rem;
+  }
+
+  .article-body :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .article-body :global(blockquote) {
+    border-left: 3px solid var(--c-accent);
+    padding: 0.5rem 0 0.5rem 1.25rem;
+    margin: 1.5rem 0;
+    color: var(--c-text-muted);
+    font-style: italic;
+  }
+
+  .article-body :global(strong) {
+    font-weight: 700;
+    color: var(--c-text);
+  }
+
+  .article-body :global(img) {
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .article-body :global(a) {
+    color: var(--c-accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(232, 93, 74, 0.3);
+    text-underline-offset: 3px;
+  }
+
+  .article-body :global(a:hover) {
+    text-decoration-color: var(--c-accent);
+  }
+
+  .article-cta {
+    margin: 3rem 0 2rem;
+    padding: 2rem;
+    background: var(--c-accent-bg);
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .article-cta h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--c-text);
+  }
+
+  .article-cta p {
+    color: var(--c-text-muted);
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--c-accent);
+    color: white !important;
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform var(--t-fast), box-shadow var(--t-fast);
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .article-disclosure {
+    font-size: 0.8rem;
+    color: var(--c-text-muted);
+    line-height: 1.5;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--c-border);
+  }
+
+  @media (min-width: 768px) {
+    .article-cover {
+      margin: 0 0 2.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Affiliate links are marked with rel="sponsored nofollow"
+
+Sitemap: https://luneastertravel.com/sitemap.xml

@@ -1,0 +1,42 @@
+---
+import { links } from '../data/affiliate';
+
+interface Props {
+  linkKey: string;
+  text?: string;
+}
+
+const { linkKey, text } = Astro.props;
+const link = links[linkKey];
+
+if (!link) {
+  console.warn(`Affiliate link "${linkKey}" not found in affiliate.ts`);
+}
+---
+
+{link && (
+  <a
+    href={link.url}
+    target="_blank"
+    rel="nofollow sponsored noopener"
+    class="affiliate-link"
+  >
+    {text || link.label}
+  </a>
+)}
+
+<style>
+  .affiliate-link {
+    color: var(--c-accent-light);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: rgba(232, 93, 74, 0.3);
+    text-underline-offset: 3px;
+    transition: all var(--t-fast);
+  }
+
+  .affiliate-link:hover {
+    color: var(--c-accent);
+    text-decoration-color: var(--c-accent);
+  }
+</style>

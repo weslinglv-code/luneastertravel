@@ -1,0 +1,80 @@
+# =====================================================
+# Sveltia CMS 配置 (兼容 Decap CMS 格式)
+# =====================================================
+# 本地编辑: 用 Chrome/Edge 打开 http://localhost:4321/admin/index.html
+#   → 点 "Work with Local Repository" → 选项目根目录 → 直接改本地文件
+# 线上编辑: 部署后访问 https://luneastertravel.com/admin/
+#   → 用 GitHub Personal Access Token 登录 → 改动提交到仓库 → Cloudflare 自动重建
+# =====================================================
+
+backend:
+  name: github
+  repo: weslinglv-code/luneastertravel
+  branch: main
+
+site_url: https://luneastertravel.com
+display_url: https://luneastertravel.com
+
+# 图片统一存这里,文章/产品里都能引用
+media_folder: "public/images"
+public_folder: "/images"
+
+# 自动生成中文友好的提交信息
+commit_messages:
+  create: "CMS: 新建 {{collection}} 「{{slug}}」"
+  update: "CMS: 更新 {{collection}} 「{{slug}}」"
+  delete: "CMS: 删除 {{collection}} 「{{slug}}」"
+  uploadMedia: "CMS: 上传图片 {{path}}"
+  deleteMedia: "CMS: 删除图片 {{path}}"
+
+collections:
+  # ========== 攻略文章 ==========
+  - name: "blog"
+    label: "📖 攻略文章"
+    label_singular: "文章"
+    folder: "src/content/blog"
+    create: true
+    delete: true
+    extension: "md"
+    format: "yaml-frontmatter"
+    slug: "{{slug}}"
+    summary: "{{title}} — {{pubDate}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "摘要(description,给SEO用)", name: "description", widget: "text" }
+      - { label: "发布日期", name: "pubDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "更新日期(可选)", name: "updatedDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: "封面图", name: "coverImage", widget: "image", required: false }
+      - { label: "封面图说明(alt)", name: "coverAlt", widget: "string", required: false }
+      - { label: "标签", name: "tags", widget: "list", default: ["Japan"] }
+      - { label: "作者", name: "author", widget: "string", default: "LuneAster" }
+      - { label: "阅读时长", name: "readingTime", widget: "string", required: false, hint: "例如: 8 min read" }
+      - { label: "首页精选", name: "featured", widget: "boolean", default: false }
+      - { label: "草稿(不发布)", name: "draft", widget: "boolean", default: false }
+      - { label: "正文", name: "body", widget: "markdown", hint: "联盟链接写法: [显示文字](#aff:链接key),例如 [7-Day JR Pass](#aff:klook_jrpass)。可用 key: klook_jrpass / klook_pocket_wifi / klook_tokyo_disney / klook_mt_fuji / booking_tokyo_shinjuku / booking_kyoto / booking_osaka / tp_flights / amazon_travel_adapter" }
+
+  # ========== 付费产品 ==========
+  - name: "products"
+    label: "💳 付费产品"
+    label_singular: "产品"
+    folder: "src/data/products"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    summary: "{{title}} — {{priceLabel}}"
+    fields:
+      - { label: "排序(数字越小越靠前)", name: "order", widget: "number", default: 99, value_type: "int" }
+      - { label: "URL别名(slug)", name: "slug", widget: "string", hint: "必须和文件名一致(不含.json),例如 japan-blueprint-7-day" }
+      - { label: "产品名", name: "title", widget: "string" }
+      - { label: "副标题", name: "subtitle", widget: "string" }
+      - { label: "价格(数字)", name: "price", widget: "number", value_type: "float", default: 4.99 }
+      - { label: "价格(显示)", name: "priceLabel", widget: "string", default: "$4.99" }
+      - { label: "页数", name: "pages", widget: "number", value_type: "int", default: 10 }
+      - { label: "描述", name: "description", widget: "text" }
+      - { label: "卖点(features)", name: "features", widget: "list", default: [] }
+      - { label: "Gumroad链接", name: "gumroadUrl", widget: "string" }
+      - { label: "封面图(可选)", name: "coverImage", widget: "image", required: false }
+      - { label: "角标(可选,如 New/Bestseller)", name: "badge", widget: "string", required: false }
+      - { label: "主题色(十六进制)", name: "accentColor", widget: "string", default: "#e85d4a", hint: "例如 #e85d4a 红色 / #5b8def 蓝色 / #f5a623 橙色 / #d97706 深橙" }

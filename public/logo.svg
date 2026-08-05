@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <!-- 月牙：外圆心(85,100) r=78，内圆心(115,100) r=58，开口朝左 -->
+    <path id="crescent" fill-rule="evenodd" d="
+      M 85 22
+      A 78 78 0 1 1 85 178
+      A 78 78 0 1 1 85 22 Z
+      M 115 42
+      A 58 58 0 1 0 115 158
+      A 58 58 0 1 0 115 42 Z
+    "/>
+    <!-- 4 段剪裁（横向） -->
+    <clipPath id="seg1"><rect x="0" y="0"  width="200" height="55"/></clipPath>
+    <clipPath id="seg2"><rect x="0" y="55" width="200" height="45"/></clipPath>
+    <clipPath id="seg3"><rect x="0" y="100" width="200" height="45"/></clipPath>
+    <clipPath id="seg4"><rect x="0" y="145" width="200" height="55"/></clipPath>
+  </defs>
+
+  <!-- 4 段月牙：从顶到底 粉→紫→蓝紫→蓝 -->
+  <use href="#crescent" fill="#e8a8b8" stroke="#7a4555" stroke-width="2.5" stroke-linejoin="round" clip-path="url(#seg1)"/>
+  <use href="#crescent" fill="#c8a8d0" stroke="#6a4870" stroke-width="2.5" stroke-linejoin="round" clip-path="url(#seg2)"/>
+  <use href="#crescent" fill="#a8a8c8" stroke="#505078" stroke-width="2.5" stroke-linejoin="round" clip-path="url(#seg3)"/>
+  <use href="#crescent" fill="#8ab0d0" stroke="#406888" stroke-width="2.5" stroke-linejoin="round" clip-path="url(#seg4)"/>
+
+  <!-- 3 颗装饰星 -->
+  <!-- 右上 cream 星 -->
+  <path d="M 165 35 L 169 45 L 180 47 L 172 54 L 174 65 L 165 59 L 156 65 L 158 54 L 150 47 L 161 45 Z"
+        fill="#f0d8a0" stroke="#9a8855" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- 左下 cream 星 -->
+  <path d="M 30 155 L 33 162 L 41 163 L 35 168 L 36 175 L 30 171 L 24 175 L 25 168 L 19 163 L 27 162 Z"
+        fill="#f0d8a0" stroke="#9a8855" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- 右下 粉色 星 -->
+  <path d="M 175 145 L 177 150 L 183 151 L 178 155 L 179 161 L 175 158 L 171 161 L 172 155 L 167 151 L 173 150 Z"
+        fill="#e8a8b8" stroke="#7a4555" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>

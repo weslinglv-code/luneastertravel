@@ -1,0 +1,375 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AffiliateLink from '../../components/AffiliateLink.astro';
+import { products } from '../../data/products';
+
+export function getStaticPaths() {
+  return products.map(product => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+const otherProducts = products.filter(p => p.slug !== product.slug);
+---
+
+<Layout
+  title={product.title}
+  description={product.description}
+>
+  <Header />
+
+  <!-- Product Hero -->
+  <section class="product-hero" style={`--accent: ${product.accentColor}`}>
+    <div class="hero-bg" style={`background: linear-gradient(135deg, ${product.accentColor}22, transparent 60%)`}></div>
+    <div class="container product-hero-inner">
+      <div class="hero-info">
+        {product.badge && <span class={`badge ${product.badge === 'Bestseller' ? 'badge-accent' : 'badge-new'}`}>{product.badge}</span>}
+        <h1>{product.title}</h1>
+        <p class="subtitle">{product.subtitle}</p>
+        <p class="description">{product.description}</p>
+
+        <div class="price-row">
+          <span class="price">{product.priceLabel}</span>
+          <span class="price-note">one-time payment · PDF download</span>
+        </div>
+
+        <div class="cta-row">
+          <a href={product.gumroadUrl} target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            Get it now →
+          </a>
+          <span class="trust">Instant download · No signup needed</span>
+        </div>
+      </div>
+
+      <div class="hero-preview" style={`background: linear-gradient(160deg, ${product.accentColor}33, ${product.accentColor}08); border-color: ${product.accentColor}33`}>
+        <div class="preview-pages">
+          <span class="page-count">{product.pages}</span>
+          <span class="page-label">pages</span>
+        </div>
+        <div class="preview-format">PDF Format</div>
+        <div class="preview-check">
+          <p>✓ Mobile-friendly</p>
+          <p>✓ Printable</p>
+          <p>✓ Offline access</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section">
+    <div class="container">
+      <h2>What's inside</h2>
+      <div class="features-grid">
+        {product.features.map((feature, i) => (
+          <div class="feature-item">
+            <span class="feature-num">{String(i + 1).padStart(2, '0')}</span>
+            <p>{feature}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Affiliate Recommendations -->
+  <section class="section affiliate-section">
+    <div class="container">
+      <h2>Recommended for this guide</h2>
+      <p>Things you'll want to book before or during your trip:</p>
+
+      <div class="affiliate-grid">
+        {product.slug === 'japan-blueprint-7-day' && (
+          <>
+            <div class="affiliate-card">
+              <h4>🚄 JR Pass (7-day)</h4>
+              <p>Unlimited Shinkansen for your entire trip.</p>
+              <AffiliateLink linkKey="klook_jrpass" text="Check prices →" />
+            </div>
+            <div class="affiliate-card">
+              <h4>📶 Pocket WiFi</h4>
+              <p>Unlimited 4G — pick up at airport.</p>
+              <AffiliateLink linkKey="klook_pocket_wifi" text="Reserve →" />
+            </div>
+            <div class="affiliate-card">
+              <h4>🏨 Hotels</h4>
+              <p>Find the right area for each city.</p>
+              <AffiliateLink linkKey="booking_tokyo_shinjuku" text="Browse →" />
+            </div>
+          </>
+        )}
+
+        {product.slug === 'tokyo-5-day-route' && (
+          <>
+            <div class="affiliate-card">
+              <h4>🗼 Tokyo DisneySea</h4>
+              <p>Skip the ticket line.</p>
+              <AffiliateLink linkKey="klook_tokyo_disney" text="Get tickets →" />
+            </div>
+            <div class="affiliate-card">
+              <h4>🏨 Shinjuku Hotels</h4>
+              <p>Best base for 5 days in Tokyo.</p>
+              <AffiliateLink linkKey="booking_tokyo_shinjuku" text="Browse →" />
+            </div>
+            <div class="affiliate-card">
+              <h4>📶 Pocket WiFi</h4>
+              <p>Navigation is everything in Tokyo.</p>
+              <AffiliateLink linkKey="klook_pocket_wifi" text="Reserve →" />
+            </div>
+          </>
+        )}
+
+        {product.slug === 'tokyo-48hr-solo' && (
+          <>
+            <div class="affiliate-card">
+              <h4>📶 Pocket WiFi</h4>
+              <p>Solo = you need maps 24/7.</p>
+              <AffiliateLink linkKey="klook_pocket_wifi" text="Reserve →" />
+            </div>
+            <div class="affiliate-card">
+              <h4>🏨 Shinjuku Hotels</h4>
+              <p>Central to both Day 1 and Day 2 routes.</p>
+              <AffiliateLink linkKey="booking_tokyo_shinjuku" text="Browse →" />
+            </div>
+            <div class="affiliate-card">
+              <h4>✈️ Flights to Tokyo</h4>
+              <p>Compare prices and set alerts.</p>
+              <AffiliateLink linkKey="tp_flights" text="Search →" />
+            </div>
+          </>
+        )}
+      </div>
+
+      <div class="affiliate-disclosure">
+        ⚠️ These are affiliate links. I may earn a small commission at no extra cost to you.
+        I only recommend services I've personally used.
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Guides -->
+  <section class="section">
+    <div class="container">
+      <h2>You might also like</h2>
+      <div class="other-guides">
+        {otherProducts.map(p => (
+          <a href={`/products/${p.slug}`} class="other-card">
+            <span class="other-badge" style={`color: ${p.accentColor}`}>{p.priceLabel}</span>
+            <h4>{p.title}</h4>
+            <p>{p.subtitle}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .product-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .product-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-info .badge {
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .price-note {
+    font-size: 0.85rem;
+    color: var(--c-text-muted);
+  }
+
+  .cta-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  .trust {
+    font-size: 0.8rem;
+    color: var(--c-text-muted);
+  }
+
+  .hero-preview {
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .preview-pages {
+    margin-bottom: 1rem;
+  }
+
+  .page-count {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .page-label {
+    font-size: 0.85rem;
+    color: var(--c-text-muted);
+  }
+
+  .preview-format {
+    font-size: 0.85rem;
+    color: var(--c-text);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .preview-check p {
+    font-size: 0.85rem;
+    color: var(--c-text-muted);
+    margin-bottom: 0.3rem;
+  }
+
+  /* Features */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .feature-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--c-accent);
+    opacity: 0.5;
+    min-width: 40px;
+  }
+
+  .feature-item p {
+    margin: 0;
+    color: var(--c-text);
+  }
+
+  /* Affiliate */
+  .affiliate-section {
+    background: var(--c-surface);
+  border-radius: var(--radius-lg);
+    margin: 0 1rem;
+  }
+
+  .affiliate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .affiliate-card {
+    background: var(--c-surface-light);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+  }
+
+  .affiliate-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .affiliate-card p {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Other Guides */
+  .other-guides {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .other-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    transition: border-color var(--t-fast);
+    color: var(--c-text);
+  }
+
+  .other-card:hover {
+    border-color: var(--c-accent);
+  }
+
+  .other-badge {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  .other-card h4 {
+    margin: 0.5rem 0 0.25rem;
+  }
+
+  .other-card p {
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .product-hero-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

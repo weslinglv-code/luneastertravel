@@ -1,0 +1,45 @@
+---
+interface Props {
+  size?: number;
+  variant?: 'full' | 'mark';
+}
+const { size = 44, variant = 'full' } = Astro.props;
+---
+
+{variant === 'full' ? (
+  <a href="/" class="logo logo-full" aria-label="LuneAster home">
+    <img src="/logo.png" alt="LuneAster" class="logo-img" />
+  </a>
+) : (
+  <a href="/" class="logo logo-mark" aria-label="LuneAster home">
+    <img src="/logo.png" alt="LuneAster" class="logo-img logo-img-mark" />
+  </a>
+)}
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity var(--t-fast);
+  }
+
+  .logo:hover {
+    opacity: 0.85;
+  }
+
+  .logo-img {
+    display: block;
+    /* 原图比例 月牙+文字 横向，full 模式显示完整 */
+    height: 44px;
+    width: auto;
+  }
+
+  .logo-img-mark {
+    /* mark 模式只显示月牙部分（原图左侧约 40% 宽度）*/
+    height: 44px;
+    width: 44px;
+    object-fit: cover;
+    object-position: left center;
+  }
+</style>

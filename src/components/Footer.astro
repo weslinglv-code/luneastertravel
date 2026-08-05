@@ -1,0 +1,121 @@
+---
+import Logo from './Logo.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <Logo size={40} />
+        <p>Japan travel guides crafted by a travel designer who actually goes there.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <a href="/products/japan-blueprint-7-day">7-Day Japan Blueprint</a>
+          <a href="/products/tokyo-5-day-route">Tokyo 5-Day Route</a>
+          <a href="/products/tokyo-48hr-solo">Tokyo 48hr Solo</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/resources">Travel Resources</a>
+          <a href="/about">About</a>
+          <a href="https://luneaster.gumroad.com">Gumroad Store</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-disclosure">
+        This site contains affiliate links. I may earn a commission at no extra cost to you.
+        Recommendations are based on personal experience and research.
+      </p>
+      <p class="copyright">© {year} LuneAster Travel. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--c-surface-light);
+    border-top: 1px solid var(--c-border);
+    margin-top: var(--space-2xl);
+  }
+
+  .footer-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: var(--space-xl) 1.5rem var(--space-md);
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .footer-brand {
+    max-width: 280px;
+  }
+
+  .footer-brand :global(.logo) {
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .footer-col h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--c-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-col a {
+    display: block;
+    color: var(--c-text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    transition: color var(--t-fast);
+  }
+
+  .footer-col a:hover {
+    color: var(--c-accent-light);
+  }
+
+  .footer-bottom {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--c-border);
+  }
+
+  .copyright {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--c-text-muted);
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .footer-top {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .footer-links {
+      gap: 2rem;
+    }
+  }
+</style>
