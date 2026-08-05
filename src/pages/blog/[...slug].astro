@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { products } from '../../data/products';
+import { articleCta } from '../../data/homepage';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -28,11 +29,11 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
 const siteUrl = 'https://luneastertravel.com';
 const articleUrl = `${siteUrl}/blog/${post.slug}`;
 
-// Get the featured sidebar product (lowest price item for impulse purchase)
-const sidebarProduct = products.find(p => p.slug === 'kyoto-takao-three-temples') || products[0];
-
-// Get a seasonal recommendation (prefer Bestseller, fallback to first)
-const endRecommendation = products.find(p => p.badge === 'Bestseller') || products[0];
+// Get the sidebar & end-CTA products from CMS-editable config (not hardcoded)
+const sidebarProduct = products.find(p => p.slug === articleCta.sidebar.product_slug) || products[0];
+const endRecommendation = products.find(p => p.slug === articleCta.end_cta.product_slug) || products[0];
+const sidebarCfg = articleCta.sidebar;
+const endCtaCfg = articleCta.end_cta;
 
 // JSON-LD structured data for SEO
 const jsonLd = {
@@ -104,7 +105,7 @@ const jsonLd = {
 
         <!-- End-of-article conversion block with direct Gumroad link -->
         <div class="article-end-cta">
-          <div class="end-cta-label">Recommended PDF Guide</div>
+          <div class="end-cta-label">{endCtaCfg.label}</div>
           <div class="end-cta-product">
             <div class="end-cta-info">
               <h3>{endRecommendation.title}</h3>
@@ -116,10 +117,10 @@ const jsonLd = {
               </div>
             </div>
             <a href={endRecommendation.gumroadUrl} class="end-cta-btn" target="_blank" rel="noopener">
-              Get the PDF &rarr;
+              {endCtaCfg.cta_text}
             </a>
           </div>
-          <a href="/#premium" class="end-cta-secondary">Browse all guides &rarr;</a>
+          <a href={endCtaCfg.secondary_url} class="end-cta-secondary">{endCtaCfg.secondary_text}</a>
         </div>
 
         <div class="article-disclosure">
@@ -131,7 +132,7 @@ const jsonLd = {
       <aside class="article-sidebar">
         <div class="sidebar-sticky">
           <div class="sidebar-product-card">
-            <div class="sidebar-card-label">Reader's Pick</div>
+            <div class="sidebar-card-label">{sidebarCfg.label}</div>
             <h4>{sidebarProduct.title}</h4>
             <p class="sidebar-card-sub">{sidebarProduct.subtitle}</p>
             <div class="sidebar-card-price">
@@ -142,16 +143,16 @@ const jsonLd = {
               {sidebarProduct.features.slice(0, 3).map(f => <li>{f}</li>)}
             </ul>
             <a href={sidebarProduct.gumroadUrl} class="sidebar-cta" target="_blank" rel="noopener">
-              Get This Guide &rarr;
+              {sidebarCfg.cta_text}
             </a>
-            <div class="sidebar-trust">Instant download &middot; PDF &middot; No ads</div>
+            <div class="sidebar-trust">{sidebarCfg.trust_text}</div>
           </div>
 
           <div class="sidebar-newsletter">
-            <h4>Free Japan Travel Tips</h4>
-            <p>Follow on TikTok for daily Japan travel inspiration.</p>
-            <a href="https://www.tiktok.com/@lune.aster" target="_blank" rel="noopener" class="sidebar-tiktok">
-              @lune.aster on TikTok &rarr;
+            <h4>{sidebarCfg.newsletter_heading}</h4>
+            <p>{sidebarCfg.newsletter_body}</p>
+            <a href={sidebarCfg.newsletter_url} target="_blank" rel="noopener" class="sidebar-tiktok">
+              {sidebarCfg.newsletter_cta}
             </a>
           </div>
         </div>

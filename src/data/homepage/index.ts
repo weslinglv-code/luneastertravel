@@ -10,6 +10,7 @@ import ctaData from './cta.json';
 import footerData from './footer.json';
 import navigationData from './navigation.json';
 import sectionsData from './sections.json';
+import articleCtaData from './article-cta.json';
 
 export const hero = heroData;
 export const advantages = advantagesData;
@@ -18,6 +19,7 @@ export const premiumSection = premiumSectionData;
 export const cta = ctaData;
 export const footer = footerData;
 export const navigation = navigationData;
+export const articleCta = articleCtaData;
 
 // Module ordering & visibility
 export interface SectionConfig {

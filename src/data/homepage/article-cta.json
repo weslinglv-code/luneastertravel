@@ -1,0 +1,20 @@
+{
+  "sidebar": {
+    "label": "Reader's Pick",
+    "product_slug": "kyoto-takao-three-temples",
+    "cta_text": "Get This Guide →",
+    "trust_text": "Instant download · PDF · No ads",
+    "newsletter_heading": "Free Japan Travel Tips",
+    "newsletter_body": "Follow on TikTok for daily Japan travel inspiration.",
+    "newsletter_cta": "@lune.aster on TikTok →",
+    "newsletter_url": "https://www.tiktok.com/@lune.aster"
+  },
+  "end_cta": {
+    "label": "Recommended PDF Guide",
+    "product_slug": "japan-blueprint-7-day",
+    "cta_text": "Get the PDF →",
+    "secondary_text": "Browse all guides →",
+    "secondary_url": "/#premium",
+    "reveal_label": "Get the full {product} →"
+  }
+}
