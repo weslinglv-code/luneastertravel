@@ -1,22 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import Advantages from '../components/Advantages.astro';
 import BlogSection from '../components/BlogSection.astro';
 import PremiumSection from '../components/PremiumSection.astro';
 import CtaSection from '../components/CtaSection.astro';
-import { sections, isSectionVisible } from '../data/homepage';
+import { sections } from '../data/homepage';
 
 // Build the render map: module id → component
+// NOTE: Header & Footer are now provided globally by Layout.astro,
+// so all pages (homepage, /blog, /blog/[slug]) get them automatically.
 const moduleMap: Record<string, any> = {
   hero: Hero,
   advantages: Advantages,
   blog: BlogSection,
   premium: PremiumSection,
   cta: CtaSection,
-  footer: Footer,
 };
 
 // Get visible modules in order
@@ -24,8 +23,6 @@ const visibleModules = sections.filter(s => s.visible && moduleMap[s.id]);
 ---
 
 <Layout>
-  <Header />
-
   {visibleModules.map(mod => {
     const Component = moduleMap[mod.id];
     return <Component />;

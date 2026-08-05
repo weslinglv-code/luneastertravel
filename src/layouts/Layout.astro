@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title?: string;
@@ -48,7 +50,9 @@ const fullTitle = title.includes('LuneAster') ? title : `${title} — LuneAster 
   <title>{fullTitle}</title>
 </head>
 <body>
+  <Header />
   <slot />
+  <Footer />
 
   <!-- Affiliate Disclosure (global) -->
   <style is:global>

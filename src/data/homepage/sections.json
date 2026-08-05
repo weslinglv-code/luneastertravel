@@ -4,7 +4,6 @@
     { "id": "advantages", "label": "Core Advantages", "visible": true, "order": 2 },
     { "id": "blog", "label": "Free Blog Section", "visible": true, "order": 3 },
     { "id": "premium", "label": "Premium PDF Section", "visible": true, "order": 4 },
-    { "id": "cta", "label": "Guide Recommendation CTA", "visible": true, "order": 5 },
-    { "id": "footer", "label": "Footer", "visible": true, "order": 6 }
+    { "id": "cta", "label": "Guide Recommendation CTA", "visible": true, "order": 5 }
   ]
 }
