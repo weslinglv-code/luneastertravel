@@ -27,19 +27,34 @@ collections:
   # ========== HOMEPAGE MODULE ORDER & VISIBILITY ==========
   - name: "homepage_sections"
     label: "🏠 Module Order & Visibility"
-    description: "Control the display order and show/hide of homepage sections. Drag to reorder by changing the order number."
+    description: "Control the display order and show/hide of homepage sections. Toggle visible to show/hide, change order number for position."
     delete: false
     files:
       - file: "src/data/homepage/sections.json"
         name: "sections"
         label: "Homepage Modules"
         fields:
-          - label: "Modules", name: "modules", widget: "list", hint: "Lower order number = appears higher on page. Toggle visible to show/hide."
+          - label: "Modules"
+            name: "modules"
+            widget: "list"
+            hint: "Lower order number = appears higher on page. Toggle visible to show/hide."
             fields:
-              - { label: "Module ID", name: "id", widget: "string", hint: "Do not change: hero, advantages, blog, premium, cta, footer" }
-              - { label: "Display Name", name: "label", widget: "string" }
-              - { label: "Visible", name: "visible", widget: "boolean", default: true }
-              - { label: "Order (1=top)", name: "order", widget: "number", value_type: "int", default: 1 }
+              - label: "Module ID"
+                name: "id"
+                widget: "string"
+                hint: "Do not change: hero, advantages, blog, premium, cta, footer"
+              - label: "Display Name"
+                name: "label"
+                widget: "string"
+              - label: "Visible"
+                name: "visible"
+                widget: "boolean"
+                default: true
+              - label: "Order (1=top)"
+                name: "order"
+                widget: "number"
+                value_type: "int"
+                default: 1
 
   # ========== HERO BANNER ==========
   - name: "homepage_hero"
@@ -51,30 +66,56 @@ collections:
         name: "hero"
         label: "Hero Section"
         fields:
-          - { label: "Background Image", name: "bgImage", widget: "image", hint: "Upload or select your real Kansai travel photo" }
-          - { label: "Tag Text", name: "tag", widget: "string", hint: "Small label above the title" }
-          - { label: "Main Title", name: "title", widget: "string" }
-          - { label: "Title Highlight Word", name: "titleHighlight", widget: "string", required: false, hint: "Word in title to highlight in accent color" }
-          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - label: "Background Image"
+            name: "bgImage"
+            widget: "image"
+            hint: "Upload or select your real Kansai travel photo"
+          - label: "Tag Text"
+            name: "tag"
+            widget: "string"
+            hint: "Small label above the title"
+          - label: "Main Title"
+            name: "title"
+            widget: "string"
+          - label: "Title Highlight Word"
+            name: "titleHighlight"
+            widget: "string"
+            required: false
+            hint: "Word in title to highlight in accent color"
+          - label: "Subtitle"
+            name: "subtitle"
+            widget: "text"
           - label: "Trust Badges"
             name: "trustBadges"
             widget: "list"
             hint: "Stats shown below the buttons"
             fields:
-              - { label: "Number", name: "num", widget: "string" }
-              - { label: "Label", name: "label", widget: "string" }
+              - label: "Number"
+                name: "num"
+                widget: "string"
+              - label: "Label"
+                name: "label"
+                widget: "string"
           - label: "Primary Button (Orange)"
             name: "primaryButton"
             widget: "object"
             fields:
-              - { label: "Button Text", name: "text", widget: "string" }
-              - { label: "Button URL", name: "url", widget: "string" }
+              - label: "Button Text"
+                name: "text"
+                widget: "string"
+              - label: "Button URL"
+                name: "url"
+                widget: "string"
           - label: "Secondary Button (Outline)"
             name: "secondaryButton"
             widget: "object"
             fields:
-              - { label: "Button Text", name: "text", widget: "string" }
-              - { label: "Button URL", name: "url", widget: "string" }
+              - label: "Button Text"
+                name: "text"
+                widget: "string"
+              - label: "Button URL"
+                name: "url"
+                widget: "string"
 
   # ========== CORE ADVANTAGES ==========
   - name: "homepage_advantages"
@@ -86,19 +127,39 @@ collections:
         name: "advantages"
         label: "Advantage Cards"
         fields:
-          - { label: "Section Title", name: "sectionTitle", widget: "string" }
-          - { label: "Section Subtitle", name: "sectionSubtitle", widget: "text" }
+          - label: "Section Title"
+            name: "sectionTitle"
+            widget: "string"
+          - label: "Section Subtitle"
+            name: "sectionSubtitle"
+            widget: "text"
           - label: "Advantage Cards"
             name: "cards"
             widget: "list"
-            max: 4
-            min: 1
-            hint: "Up to 4 cards. Toggle visible to hide individual cards."
             fields:
-              - { label: "Icon", name: "icon", widget: "select", options: ["route", "yen", "pin", "transit", "mountain", "clock", "map", "star"], hint: "Choose an icon type" }
-              - { label: "Card Title", name: "title", widget: "string" }
-              - { label: "Card Description", name: "description", widget: "text" }
-              - { label: "Show This Card", name: "visible", widget: "boolean", default: true }
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                hint: "Choose an icon type"
+                options:
+                  - "route"
+                  - "yen"
+                  - "pin"
+                  - "transit"
+                  - "mountain"
+                  - "clock"
+                  - "map"
+                  - "star"
+              - label: "Card Title"
+                name: "title"
+                widget: "string"
+              - label: "Card Description"
+                name: "description"
+                widget: "text"
+              - label: "Show This Card"
+                name: "visible"
+                widget: "boolean"
+                default: true
 
   # ========== FREE BLOG SECTION ==========
   - name: "homepage_blog"
@@ -110,12 +171,30 @@ collections:
         name: "blogSection"
         label: "Blog Section Settings"
         fields:
-          - { label: "Section Title", name: "sectionTitle", widget: "string" }
-          - { label: "Section Subtitle", name: "sectionSubtitle", widget: "text" }
-          - { label: "Max Posts to Show", name: "maxPosts", widget: "number", value_type: "int", default: 3, min: 1, max: 12 }
-          - { label: "Button Text", name: "buttonText", widget: "string" }
-          - { label: "Button URL", name: "buttonUrl", widget: "string" }
-          - { label: "English Posts Only", name: "englishOnly", widget: "boolean", default: true, hint: "Hide Chinese-titled posts from homepage" }
+          - label: "Section Title"
+            name: "sectionTitle"
+            widget: "string"
+          - label: "Section Subtitle"
+            name: "sectionSubtitle"
+            widget: "text"
+          - label: "Max Posts to Show"
+            name: "maxPosts"
+            widget: "number"
+            value_type: "int"
+            default: 3
+            min: 1
+            max: 12
+          - label: "Button Text"
+            name: "buttonText"
+            widget: "string"
+          - label: "Button URL"
+            name: "buttonUrl"
+            widget: "string"
+          - label: "English Posts Only"
+            name: "englishOnly"
+            widget: "boolean"
+            default: true
+            hint: "Hide Chinese-titled posts from homepage"
 
   # ========== PREMIUM PDF SECTION ==========
   - name: "homepage_premium"
@@ -127,11 +206,22 @@ collections:
         name: "premiumSection"
         label: "Premium Section Settings"
         fields:
-          - { label: "Section Title", name: "sectionTitle", widget: "string" }
-          - { label: "Section Subtitle", name: "sectionSubtitle", widget: "text" }
-          - { label: "Card Button Text", name: "buttonText", widget: "string", hint: "Text on each product card" }
-          - { label: "Shop All Button URL", name: "shopAllUrl", widget: "string" }
-          - { label: "Shop All Button Text", name: "shopAllText", widget: "string" }
+          - label: "Section Title"
+            name: "sectionTitle"
+            widget: "string"
+          - label: "Section Subtitle"
+            name: "sectionSubtitle"
+            widget: "text"
+          - label: "Card Button Text"
+            name: "buttonText"
+            widget: "string"
+            hint: "Text on each product card"
+          - label: "Shop All Button URL"
+            name: "shopAllUrl"
+            widget: "string"
+          - label: "Shop All Button Text"
+            name: "shopAllText"
+            widget: "string"
 
   # ========== CTA SECTION ==========
   - name: "homepage_cta"
@@ -143,17 +233,25 @@ collections:
         name: "cta"
         label: "CTA Section"
         fields:
-          - { label: "Section Title", name: "title", widget: "string" }
+          - label: "Section Title"
+            name: "title"
+            widget: "string"
           - label: "Recommendation Scenarios"
             name: "scenarios"
             widget: "list"
-            min: 1
-            max: 6
             fields:
-              - { label: "Scenario Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-          - { label: "Button Text", name: "buttonText", widget: "string" }
-          - { label: "Button URL", name: "buttonUrl", widget: "string" }
+              - label: "Scenario Title"
+                name: "title"
+                widget: "string"
+              - label: "Description"
+                name: "description"
+                widget: "text"
+          - label: "Button Text"
+            name: "buttonText"
+            widget: "string"
+          - label: "Button URL"
+            name: "buttonUrl"
+            widget: "string"
 
   # ========== FOOTER ==========
   - name: "homepage_footer"
@@ -165,22 +263,38 @@ collections:
         name: "footer"
         label: "Footer Content"
         fields:
-          - { label: "Brand Name", name: "brandName", widget: "string" }
-          - { label: "Brand Description", name: "brandDescription", widget: "text" }
+          - label: "Brand Name"
+            name: "brandName"
+            widget: "string"
+          - label: "Brand Description"
+            name: "brandDescription"
+            widget: "text"
           - label: "Quick Links"
             name: "quickLinks"
             widget: "list"
             fields:
-              - { label: "Link Text", name: "label", widget: "string" }
-              - { label: "URL", name: "url", widget: "string" }
+              - label: "Link Text"
+                name: "label"
+                widget: "string"
+              - label: "URL"
+                name: "url"
+                widget: "string"
           - label: "Social Links"
             name: "socialLinks"
             widget: "list"
             fields:
-              - { label: "Platform Name", name: "label", widget: "string" }
-              - { label: "URL", name: "url", widget: "string" }
-          - { label: "Affiliate Disclosure", name: "disclosure", widget: "text" }
-          - { label: "Copyright Text", name: "copyright", widget: "string" }
+              - label: "Platform Name"
+                name: "label"
+                widget: "string"
+              - label: "URL"
+                name: "url"
+                widget: "string"
+          - label: "Affiliate Disclosure"
+            name: "disclosure"
+            widget: "text"
+          - label: "Copyright Text"
+            name: "copyright"
+            widget: "string"
 
   # ========== NAVIGATION BAR ==========
   - name: "homepage_navigation"
@@ -192,20 +306,29 @@ collections:
         name: "navigation"
         label: "Navigation Settings"
         fields:
-          - { label: "Logo Text", name: "logoText", widget: "string" }
+          - label: "Logo Text"
+            name: "logoText"
+            widget: "string"
           - label: "Menu Items"
             name: "menu"
             widget: "list"
-            max: 6
             fields:
-              - { label: "Menu Item Text", name: "label", widget: "string" }
-              - { label: "URL", name: "url", widget: "string" }
+              - label: "Menu Item Text"
+                name: "label"
+                widget: "string"
+              - label: "URL"
+                name: "url"
+                widget: "string"
           - label: "Shop Button"
             name: "shopButton"
             widget: "object"
             fields:
-              - { label: "Button Text", name: "text", widget: "string" }
-              - { label: "Button URL", name: "url", widget: "string" }
+              - label: "Button Text"
+                name: "text"
+                widget: "string"
+              - label: "Button URL"
+                name: "url"
+                widget: "string"
 
   # ========== BLOG ARTICLES ==========
   - name: "blog"
@@ -219,19 +342,61 @@ collections:
     slug: "{{fields.slug}}"
     summary: "{{title}} — {{pubDate}}"
     fields:
-      - { label: "URL Slug (English, hyphenated)", name: "slug", widget: "string", hint: "Article URL, must be English, e.g. osaka-3-day-hidden-gems" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description (SEO)", name: "description", widget: "text" }
-      - { label: "Publish Date", name: "pubDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Updated Date (optional)", name: "updatedDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
-      - { label: "Cover Image", name: "coverImage", widget: "image", required: false }
-      - { label: "Cover Alt Text", name: "coverAlt", widget: "string", required: false }
-      - { label: "Tags", name: "tags", widget: "list", default: ["Japan"] }
-      - { label: "Author", name: "author", widget: "string", default: "LuneAster" }
-      - { label: "Reading Time", name: "readingTime", widget: "string", required: false, hint: "e.g. 8 min read" }
-      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
-      - { label: "Draft (not published)", name: "draft", widget: "boolean", default: false }
-      - { label: "Body", name: "body", widget: "markdown", hint: "Affiliate links: [text](#aff:key) — keys: klook_jrpass / klook_pocket_wifi / klook_tokyo_disney / klook_mt_fuji / booking_tokyo_shinjuku / booking_kyoto / booking_osaka / tp_flights / amazon_travel_adapter" }
+      - label: "URL Slug (English, hyphenated)"
+        name: "slug"
+        widget: "string"
+        hint: "Article URL, must be English, e.g. osaka-3-day-hidden-gems"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Description (SEO)"
+        name: "description"
+        widget: "text"
+      - label: "Publish Date"
+        name: "pubDate"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+      - label: "Updated Date (optional)"
+        name: "updatedDate"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: false
+      - label: "Cover Image"
+        name: "coverImage"
+        widget: "image"
+        required: false
+      - label: "Cover Alt Text"
+        name: "coverAlt"
+        widget: "string"
+        required: false
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        default:
+          - "Japan"
+      - label: "Author"
+        name: "author"
+        widget: "string"
+        default: "LuneAster"
+      - label: "Reading Time"
+        name: "readingTime"
+        widget: "string"
+        required: false
+        hint: "e.g. 8 min read"
+      - label: "Featured on Homepage"
+        name: "featured"
+        widget: "boolean"
+        default: false
+      - label: "Draft (not published)"
+        name: "draft"
+        widget: "boolean"
+        default: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        hint: "Affiliate links: [text](#aff:key) — keys: klook_jrpass / klook_pocket_wifi / klook_tokyo_disney / klook_mt_fuji / booking_tokyo_shinjuku / booking_kyoto / booking_osaka / tp_flights / amazon_travel_adapter"
 
   # ========== PAID PRODUCTS ==========
   - name: "products"
@@ -245,16 +410,55 @@ collections:
     slug: "{{slug}}"
     summary: "{{title}} — {{priceLabel}}"
     fields:
-      - { label: "Display Order (lower=first)", name: "order", widget: "number", default: 99, value_type: "int" }
-      - { label: "URL Slug", name: "slug", widget: "string", hint: "Must match filename (without .json), e.g. japan-blueprint-7-day" }
-      - { label: "Product Name", name: "title", widget: "string" }
-      - { label: "Subtitle", name: "subtitle", widget: "string" }
-      - { label: "Price (number)", name: "price", widget: "number", value_type: "float", default: 4.99 }
-      - { label: "Price (display)", name: "priceLabel", widget: "string", default: "$4.99" }
-      - { label: "Pages", name: "pages", widget: "number", value_type: "int", default: 10 }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Features", name: "features", widget: "list", default: [] }
-      - { label: "Gumroad URL", name: "gumroadUrl", widget: "string" }
-      - { label: "Cover Image (optional)", name: "coverImage", widget: "image", required: false }
-      - { label: "Badge (optional: New/Bestseller)", name: "badge", widget: "string", required: false }
-      - { label: "Accent Color (hex)", name: "accentColor", widget: "string", default: "#e85d4a", hint: "#e85d4a red / #5b8def blue / #f5a623 orange / #d97706 dark-orange" }
+      - label: "Display Order (lower=first)"
+        name: "order"
+        widget: "number"
+        default: 99
+        value_type: "int"
+      - label: "URL Slug"
+        name: "slug"
+        widget: "string"
+        hint: "Must match filename (without .json), e.g. japan-blueprint-7-day"
+      - label: "Product Name"
+        name: "title"
+        widget: "string"
+      - label: "Subtitle"
+        name: "subtitle"
+        widget: "string"
+      - label: "Price (number)"
+        name: "price"
+        widget: "number"
+        value_type: "float"
+        default: 4.99
+      - label: "Price (display)"
+        name: "priceLabel"
+        widget: "string"
+        default: "$4.99"
+      - label: "Pages"
+        name: "pages"
+        widget: "number"
+        value_type: "int"
+        default: 10
+      - label: "Description"
+        name: "description"
+        widget: "text"
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        default: []
+      - label: "Gumroad URL"
+        name: "gumroadUrl"
+        widget: "string"
+      - label: "Cover Image (optional)"
+        name: "coverImage"
+        widget: "image"
+        required: false
+      - label: "Badge (optional: New/Bestseller)"
+        name: "badge"
+        widget: "string"
+        required: false
+      - label: "Accent Color (hex)"
+        name: "accentColor"
+        widget: "string"
+        default: "#e85d4a"
+        hint: "#e85d4a red / #5b8def blue / #f5a623 orange / #d97706 dark-orange"
