@@ -1,0 +1,20 @@
+{
+  "bgImage": "/images/hero.jpg",
+  "tag": "Off-The-Beaten-Path Kansai Travel Guides",
+  "title": "Off-The-Beaten-Path Kansai Travel Guides",
+  "titleHighlight": "Kansai",
+  "subtitle": "No crowded tourist traps — Printable itineraries built from my 1M+ TikTok travel footage",
+  "trustBadges": [
+    { "num": "4", "label": "Detailed Guides" },
+    { "num": "52", "label": "Printable Pages" },
+    { "num": "1M+", "label": "TikTok Views" }
+  ],
+  "primaryButton": {
+    "text": "Browse Premium PDFs",
+    "url": "https://luneaster.gumroad.com"
+  },
+  "secondaryButton": {
+    "text": "Read Free Blog Articles",
+    "url": "/blog"
+  }
+}

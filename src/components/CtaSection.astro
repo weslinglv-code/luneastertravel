@@ -1,0 +1,80 @@
+---
+import { cta } from '../data/homepage';
+
+const { title, scenarios, buttonText, buttonUrl } = cta;
+---
+
+<section class="section cta-section">
+  <div class="container-narrow cta-box">
+    <h2>{title}</h2>
+    <div class="scenarios">
+      {scenarios.map((s, i) => (
+        <div class="scenario">
+          <div class="scenario-num">{i + 1}</div>
+          <div>
+            <h3>{s.title}</h3>
+            <p>{s.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    <a href={buttonUrl} class="btn btn-primary" target="_blank" rel="noopener">
+      {buttonText} →
+    </a>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    background: var(--c-surface);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .cta-box {
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .cta-box h2 {
+    margin-bottom: 2rem;
+  }
+
+  .scenarios {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    text-align: left;
+  }
+
+  .scenario {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .scenario-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--c-accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .scenario h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .scenario p {
+    font-size: 0.92rem;
+    margin: 0;
+  }
+</style>

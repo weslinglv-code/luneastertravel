@@ -1,0 +1,30 @@
+{
+  "sectionTitle": "Why these guides work",
+  "sectionSubtitle": "Because they're built from real planning — not generic top-10 lists.",
+  "cards": [
+    {
+      "icon": "route",
+      "title": "Exact Hourly Routes",
+      "description": "Not \"go to Shibuya\" — but \"Shibuya Crossing -> 10 min walk -> Harajuku via Takeshita Street.\" Minute-level planning.",
+      "visible": true
+    },
+    {
+      "icon": "yen",
+      "title": "Real Yen Budgets",
+      "description": "Every activity, meal, and transport leg priced in yen. You'll know your total cost before you book.",
+      "visible": true
+    },
+    {
+      "icon": "pin",
+      "title": "Hidden Local Spots",
+      "description": "Hotel areas that actually make sense. Restaurants where you won't need Google Translate.",
+      "visible": true
+    },
+    {
+      "icon": "transit",
+      "title": "Transit Cheat Sheets",
+      "description": "JR Pass calculator, subway navigation, Shinkansen booking — the confusing stuff, simplified.",
+      "visible": true
+    }
+  ]
+}

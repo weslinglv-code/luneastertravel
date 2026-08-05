@@ -1,0 +1,19 @@
+{
+  "title": "Not Sure Which Guide Fits Your Trip?",
+  "scenarios": [
+    {
+      "title": "First time in Japan?",
+      "description": "Start with the 7-Day Japan Blueprint — it covers Tokyo, Hakone, Kyoto, and Osaka in one document."
+    },
+    {
+      "title": "Only have a weekend?",
+      "description": "Grab the Tokyo 48hr Solo Route — a punchy two-day itinerary built for solo travelers."
+    },
+    {
+      "title": "Chasing autumn colors?",
+      "description": "The Kyoto Takao Three Temples guide takes you through the secret maple-leaf valley locals love."
+    }
+  ],
+  "buttonText": "View All Guides",
+  "buttonUrl": "https://luneaster.gumroad.com"
+}

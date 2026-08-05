@@ -1,36 +1,41 @@
 ---
 import Logo from './Logo.astro';
+import { navigation } from '../data/homepage';
 
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/#products', label: 'Guides' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/resources', label: 'Resources' },
-  { href: '/about', label: 'About' },
-];
+const { menu, shopButton } = navigation;
 ---
 
 <header class="site-header">
   <div class="header-inner">
-    <Logo size={44} />
+    <a href="/" class="header-logo" aria-label="LuneAster home">
+      <Logo size={40} />
+    </a>
 
     <nav class="nav-desktop">
-      {navLinks.map(link => (
-        <a href={link.href}>{link.label}</a>
+      {menu.map(link => (
+        <a href={link.url}>{link.label}</a>
       ))}
     </nav>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="header-actions">
+      <a href={shopButton.url} class="btn-shop" target="_blank" rel="noopener">
+        {shopButton.text}
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 
   <nav class="nav-mobile" id="navMobile">
-    {navLinks.map(link => (
-      <a href={link.href}>{link.label}</a>
+    {menu.map(link => (
+      <a href={link.url}>{link.label}</a>
     ))}
+    <a href={shopButton.url} class="btn-shop-mobile" target="_blank" rel="noopener">
+      {shopButton.text}
+    </a>
   </nav>
 </header>
 
@@ -39,7 +44,7 @@ const navLinks = [
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--c-border);
@@ -49,27 +54,59 @@ const navLinks = [
   .header-inner {
     max-width: var(--container);
     margin: 0 auto;
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .header-logo {
+    flex-shrink: 0;
   }
 
   .nav-desktop {
     display: flex;
-    gap: 2rem;
+    gap: 1.75rem;
     align-items: center;
+    flex: 1;
+    justify-content: center;
   }
 
   .nav-desktop a {
     color: var(--c-text-muted);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 500;
     transition: color var(--t-fast);
+    white-space: nowrap;
   }
 
   .nav-desktop a:hover {
     color: var(--c-accent);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  .btn-shop {
+    background: var(--c-accent);
+    color: white !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all var(--t-fast);
+    white-space: nowrap;
+  }
+
+  .btn-shop:hover {
+    background: var(--c-accent-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(217, 74, 56, 0.3);
   }
 
   .nav-toggle {
@@ -104,11 +141,21 @@ const navLinks = [
     font-weight: 500;
   }
 
+  .nav-mobile .btn-shop-mobile {
+    background: var(--c-accent);
+    color: white !important;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    border: none;
+    padding: 0.75rem;
+    font-weight: 600;
+  }
+
   .nav-mobile.open {
     display: flex;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .nav-desktop { display: none; }
     .nav-toggle { display: flex; }
   }

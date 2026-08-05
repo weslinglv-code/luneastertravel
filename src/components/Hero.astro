@@ -1,0 +1,141 @@
+---
+import { hero } from '../data/homepage';
+
+const { bgImage, tag, title, titleHighlight, subtitle, trustBadges, primaryButton, secondaryButton } = hero;
+
+// Split title to highlight the keyword
+const titleParts = titleHighlight
+  ? title.split(new RegExp(`(${titleHighlight})`, 'i'))
+  : [title];
+---
+
+<section class="hero">
+  <div class="hero-bg" style={`background-image: url('${bgImage}')`}></div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <span class="hero-tag">{tag}</span>
+    <h1>
+      {titleParts.map((part, i) => (
+        part.toLowerCase() === (titleHighlight || '').toLowerCase()
+          ? <em key={i}>{part}</em>
+          : <Fragment key={i}>{part}</Fragment>
+      ))}
+    </h1>
+    <p class="hero-desc">{subtitle}</p>
+    <div class="hero-cta">
+      <a href={primaryButton.url} class="btn btn-primary" target="_blank" rel="noopener">
+        {primaryButton.text}
+      </a>
+      <a href={secondaryButton.url} class="btn btn-secondary">
+        {secondaryButton.text}
+      </a>
+    </div>
+    <div class="hero-stats">
+      {trustBadges.map(badge => (
+        <div class="stat">
+          <span class="stat-num">{badge.num}</span>
+          <span class="stat-label">{badge.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(250, 248, 245, 0.92) 0%, rgba(250, 248, 245, 0.75) 50%, rgba(250, 248, 245, 0.5) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 6rem 1.5rem;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--c-accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .hero h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--c-accent);
+    font-weight: 500;
+  }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    max-width: 520px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-num {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--c-text);
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--c-text-muted);
+  }
+
+  @media (max-width: 640px) {
+    .hero-cta {
+      flex-direction: column;
+    }
+
+    .hero-stats {
+      gap: 2rem;
+    }
+
+    .stat-num {
+      font-size: 1.5rem;
+    }
+  }
+</style>
