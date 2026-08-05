@@ -321,7 +321,7 @@ collections:
                 options:
                   - "kyoto-takao-three-temples"
                   - "japan-blueprint-7-day"
-                  - "tokyo-48hr-solo"
+                  - "kyoto-3-day-autumn"
                   - "tokyo-5-day-route"
               - label: "CTA Button Text"
                 name: "cta_text"
@@ -356,7 +356,7 @@ collections:
                 options:
                   - "kyoto-takao-three-temples"
                   - "japan-blueprint-7-day"
-                  - "tokyo-48hr-solo"
+                  - "kyoto-3-day-autumn"
                   - "tokyo-5-day-route"
               - label: "CTA Button Text"
                 name: "cta_text"
