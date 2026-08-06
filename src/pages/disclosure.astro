@@ -1,0 +1,198 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Affiliate Disclosure"
+  description="Affiliate disclosure for LuneAster Travel — how we earn commissions and why it doesn't affect our recommendations."
+>
+  <Header />
+
+  <section class="page-hero">
+    <div class="container-narrow">
+      <span class="hero-tag">☽ Transparency</span>
+      <h1>Affiliate Disclosure</h1>
+      <p class="lead">Last updated: August 6, 2026</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-narrow">
+      <div class="disclosure-box">
+        <p class="ftc-statement">
+          <strong>As an Amazon Associate, I earn from qualifying purchases.</strong>
+          This site also participates in other affiliate programs with Klook, Travelpayouts,
+          and Booking.com (via Awin). I may earn a commission when you click links and make
+          qualifying purchases — at no additional cost to you.
+        </p>
+      </div>
+
+      <h2>What Are Affiliate Links?</h2>
+      <p>
+        Affiliate links are special URLs that track referrals. When you click an affiliate link
+        on this site and make a purchase on the partner's website (Amazon, Klook, Booking.com, etc.),
+        the partner pays us a small commission. You pay the same price whether or not you use our link.
+      </p>
+
+      <h2>Which Affiliate Programs Do We Use?</h2>
+      <ul class="program-list">
+        <li>
+          <strong>Amazon Associates</strong> — For travel gear recommendations (adapters, chargers,
+          packing accessories, guidebooks). Amazon's tracking cookie lasts 24 hours.
+        </li>
+        <li>
+          <strong>Klook Affiliate</strong> — For Japan activity tickets, JR Pass, and pocket WiFi
+          rentals. Klook's tracking cookie lasts 30 days.
+        </li>
+        <li>
+          <strong>Travelpayouts / Aviasales</strong> — For flight price comparison and booking.
+          Cookie duration varies by airline.
+        </li>
+        <li>
+          <strong>Booking.com (via Awin)</strong> — For hotel and accommodation reservations.
+          Cookie lasts for the duration of the booking session.
+        </li>
+      </ul>
+
+      <h2>How We Choose What to Recommend</h2>
+      <p>
+        Affiliate commissions never influence our recommendations. We only link to products
+        and services that:
+      </p>
+      <ul class="criteria-list">
+        <li>We have personally used during our Japan trips, or</li>
+        <li>We have thoroughly researched and believe will genuinely help travelers, or</li>
+        <li>Are the best-value option in their category</li>
+      </ul>
+      <p>
+        If a product is bad, we won't recommend it — even if the commission is high.
+        Our reputation and your trust are worth more than any single commission payment.
+      </p>
+
+      <h2>How to Identify Affiliate Links</h2>
+      <p>
+        Affiliate links on this site typically contain tracking parameters such as
+        <code>?tag=</code> (Amazon), <code>?aid=</code> (Klook), <code>?marker=</code> (Travelpayouts),
+        or <code>?aid=</code> (Booking.com/Awin). You can see these in your browser's address bar
+        after clicking.
+      </p>
+      <p>
+        Blog articles may also contain inline links within the text. Unless otherwise stated,
+        any link to a product or booking page should be considered an affiliate link.
+      </p>
+
+      <h2>Your Support Matters</h2>
+      <p>
+        When you use our affiliate links, you support LuneAster Travel at no extra cost.
+        This revenue helps us:
+      </p>
+      <ul class="criteria-list">
+        <li>Maintain this website and keep articles free to read</li>
+        <li>Create more detailed travel guides and budget breakdowns</li>
+        <li>Travel to new destinations to research future content</li>
+      </ul>
+      <p>
+        Thank you for your support. If you have any questions about our affiliate relationships,
+        feel free to reach out at <a href="mailto:weslinglv@gmail.com">weslinglv@gmail.com</a>.
+      </p>
+
+      <h2>FTC Compliance</h2>
+      <p>
+        This disclosure complies with the U.S. Federal Trade Commission (FTC) guidelines on
+        the use of endorsements and testimonials in advertising (16 CFR Part 255).
+        Our affiliate relationships are disclosed clearly and conspicuously on every page
+        containing affiliate links, and in the site footer.
+      </p>
+
+      <p>
+        See also: <a href="/privacy">Privacy Policy</a>
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 5rem 0 2rem;
+    text-align: center;
+  }
+
+  .hero-tag {
+    display: block;
+    color: var(--c-accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+    color: var(--c-text-muted);
+  }
+
+  .container-narrow {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .disclosure-box {
+    background: var(--c-surface);
+    border-left: 4px solid var(--c-accent);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .ftc-statement {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--c-text);
+    margin: 0;
+  }
+
+  h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+  }
+
+  p {
+    color: var(--c-text-muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  p a, li a {
+    color: var(--c-accent-light);
+  }
+
+  code {
+    background: var(--c-surface);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--c-accent);
+  }
+
+  .program-list,
+  .criteria-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .program-list li,
+  .criteria-list li {
+    color: var(--c-text-muted);
+    line-height: 1.75;
+    margin-bottom: 0.5rem;
+  }
+
+  .program-list li strong {
+    color: var(--c-text);
+  }
+</style>
