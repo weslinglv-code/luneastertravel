@@ -105,7 +105,7 @@ The Japan Rail Pass is the single best money-saver for long-distance travel. A 7
 - All JR local trains
 - JR buses and the Tokyo monorail
 
-For a Tokyo–Kyoto round trip alone, you break even. Add Osaka or Hakone and you're saving significantly.
+For a Tokyo–Kyoto round trip alone, you break even. Add Osaka or Hakone and you're saving significantly. See our [Japan travel budget guide](/blog/japan-travel-budget-2026) for a full JR Pass cost comparison.
 
 > **Buy before you fly:** The JR Pass must be purchased **outside Japan** (or online through authorized dealers). Get yours via [Klook](#aff:klook_jrpass) — they mail the exchange voucher to your home country.
 
@@ -116,6 +116,8 @@ For a Tokyo–Kyoto round trip alone, you break even. Add Osaka or Hakone and yo
 If this guide convinced you that Kyoto deserves more than a day, our **Kyoto 3-Day Autumn Foliage Guide** covers the best temple gardens, maple-lined paths, and hidden spots with exact timing for peak colors. It's a 14-page PDF with day-by-day routes, restaurant picks, and real-time leaf tracker links.
 
 For budget travelers, the **Kyoto Takao Three Temples** guide ($1.99) takes you to a secret maple-leaf valley that most tourists never find — perfect for a half-day escape from the city crowds.
+
+Planning a full week in Japan? Our [7-day Japan itinerary for first-timers](/blog/7-day-japan-itinerary-first-timers) covers Tokyo, Kyoto, and Osaka with day-by-day routes.
 
 ---
 
