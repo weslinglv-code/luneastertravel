@@ -19,7 +19,7 @@ Only have a weekend in Tokyo? Forty-eight hours is tight, but absolutely enough 
 | 1 | West Tokyo | Shinjuku, Shibuya, Harajuku |
 | 2 | East Tokyo | Asakusa, Akihabara, Ueno |
 
-**Budget estimate:** $150–$250 per person (excluding flights and hotel)
+**Budget estimate:** $150–$250 per person (excluding flights and hotel). For a full cost breakdown, see our [Japan travel budget guide](/blog/japan-travel-budget-2026).
 
 > **Flights:** Flying in for the weekend? Use [Aviasales](#aff:tp_flights) to compare prices across all airlines — booking 6–8 weeks ahead typically saves 25–40% on short-haul Asia routes.
 
@@ -117,6 +117,8 @@ For a weekend trip, **location is everything**. You want to minimize transit tim
 ## Want More Than 48 Hours?
 
 Two days gives you a taste of Tokyo, but the city deserves more. If you're extending your trip, our **Tokyo 5-Day Route** dives deep into every major district — from hidden ramen spots in Nakano to day trips to Kamakura and Nikko.
+
+Planning a full week? Our [7-day Japan itinerary for first-timers](/blog/7-day-japan-itinerary-first-timers) covers the classic Golden Route across Tokyo, Kyoto, and Osaka.
 
 It's a 15-page PDF with exact daily routes, restaurant picks with price ranges, and subway planning tips that save you hours of research.
 
