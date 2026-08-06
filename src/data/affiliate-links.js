@@ -78,7 +78,7 @@ export const links = {
   tp_flights: {
     key: 'tp_flights',
     label: 'Find Cheap Flights to Japan',
-    url: 'https://tp.media/r?marker=YOUR_AFFILIATE_ID&trs=200916&p=4114&u=',
+    url: 'https://tp.media/r?marker=761031&trs=200916&p=4114&u=',
     brand: 'Aviasales',
     type: 'transport',
     description: 'Compare flight prices across all airlines. Set price alerts.',
