@@ -5,12 +5,14 @@
     { "label": "Home", "url": "/" },
     { "label": "Blog", "url": "/blog" },
     { "label": "Premium", "url": "/#premium" },
-    { "label": "About", "url": "/about" }
+    { "label": "About", "url": "/about" },
+    { "label": "Privacy Policy", "url": "/privacy" },
+    { "label": "Affiliate Disclosure", "url": "/disclosure" }
   ],
   "socialLinks": [
     { "label": "TikTok", "url": "https://www.tiktok.com/@lune.aster" },
     { "label": "Gumroad", "url": "https://luneaster.gumroad.com" }
   ],
-  "disclosure": "Disclosure: This site contains affiliate links. I may earn a small commission at no extra cost to you. Recommendations are based on personal experience and research.",
-  "copyright": "© 2026 LuneAster Travel | Privacy Policy"
+  "disclosure": "Disclosure: As an Amazon Associate, I earn from qualifying purchases. This site also uses affiliate links from Klook, Travelpayouts, and Booking.com. I may earn a commission at no extra cost to you. See full Affiliate Disclosure.",
+  "copyright": "© 2026 LuneAster Travel"
 }
