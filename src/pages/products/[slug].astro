@@ -137,6 +137,46 @@ const otherProducts = products.filter(p => p.slug !== product.slug);
             </div>
           </>
         )}
+
+        {product.slug === 'okinawa-4day-slow-travel' && (
+          <>
+            <div class="affiliate-card">
+              <h4>✈️ Flights to Okinawa</h4>
+              <p>Compare fares to Naha Airport (OKA).</p>
+              <AffiliateLink linkKey="tp_flights" text="Search →" />
+            </div>
+            <div class="affiliate-card">
+              <h4>📶 Pocket WiFi</h4>
+              <p>Essential for driving routes and bus schedules.</p>
+              <AffiliateLink linkKey="klook_pocket_wifi" text="Reserve →" />
+            </div>
+            <div class="affiliate-card">
+              <h4>🔌 Travel Adapter</h4>
+              <p>Keep your camera and phone charged at scenic stops.</p>
+              <AffiliateLink linkKey="amazon_adapter" text="Get it →" />
+            </div>
+          </>
+        )}
+
+        {product.slug === 'wakayama-3day-mountain-sea' && (
+          <>
+            <div class="affiliate-card">
+              <h4>🚄 JR Pass</h4>
+              <p>Covers the train to Koyasan and Shirahama.</p>
+              <AffiliateLink linkKey="klook_jrpass" text="Check prices →" />
+            </div>
+            <div class="affiliate-card">
+              <h4>📶 Pocket WiFi</h4>
+              <p>Trail maps and bus times at your fingertips.</p>
+              <AffiliateLink linkKey="klook_pocket_wifi" text="Reserve →" />
+            </div>
+            <div class="affiliate-card">
+              <h4>📖 Japan Guidebook</h4>
+              <p>Deepen your knowledge of Kumano Kodo history.</p>
+              <AffiliateLink linkKey="amazon_guidebook" text="Get it →" />
+            </div>
+          </>
+        )}
       </div>
 
       <div class="affiliate-disclosure">

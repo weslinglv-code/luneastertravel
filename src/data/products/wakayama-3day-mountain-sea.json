@@ -1,0 +1,22 @@
+{
+  "order": 6,
+  "slug": "wakayama-3day-mountain-sea",
+  "title": "3-Day Wakayama Mountain-Sea",
+  "subtitle": "Koyasan, Kumano Kodo & Shirahama Onsen",
+  "price": 4.99,
+  "priceLabel": "$4.99",
+  "pages": 14,
+  "description": "A 3-day Wakayama itinerary exploring sacred Koyasan, the Kumano Kodo pilgrimage trails, and Shirahama seaside hot springs. Dual travel plans for drivers and transit riders, with secret viewpoints and rainy-day backups.",
+  "features": [
+    "Hour-by-hour daily sightseeing schedule with commute buffer",
+    "Dual route options: self-drive and public transport",
+    "Secret photography spots and hidden viewpoints",
+    "Temple-stay and hot-spring inn insider tips",
+    "Full indoor rainy-day backup sightseeing plans",
+    "One-page printable quick-reference cheat-sheet"
+  ],
+  "gumroadUrl": "https://luneaster.gumroad.com/l/wakayama3dayguide",
+  "coverImage": "/images/cover-wakayama.jpg",
+  "badge": "New",
+  "accentColor": "#059669"
+}

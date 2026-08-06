@@ -1,0 +1,22 @@
+{
+  "order": 5,
+  "slug": "okinawa-4day-slow-travel",
+  "title": "4-Day Okinawa Slow Travel",
+  "subtitle": "Hidden Cliffs, Aquariums & Local Food",
+  "price": 5.99,
+  "priceLabel": "$5.99",
+  "pages": 17,
+  "description": "A relaxed 4-day Okinawa itinerary for slow travelers. Covers hidden coastal capes, Churaumi Aquarium, authentic Ryukyuan street food, and exclusive airplane-sunset viewing spots. Dual travel plans for self-driving and public transit.",
+  "features": [
+    "17-page PDF with hour-by-hour daily schedule",
+    "Dual travel plans: self-drive and public-bus routes",
+    "Curated photography spots with golden-hour timing",
+    "Complete Ryukyuan food list and tourist-trap warnings",
+    "Naha accommodation zoning guide (budget & premium)",
+    "Two-tier 4-day budget breakdown + one-page cheat-sheet"
+  ],
+  "gumroadUrl": "https://luneaster.gumroad.com/l/okinawa-4day-printable-itinerary",
+  "coverImage": "/images/cover-okinawa.jpg",
+  "badge": "New",
+  "accentColor": "#0ea5e9"
+}
