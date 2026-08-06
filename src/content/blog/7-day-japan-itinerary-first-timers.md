@@ -131,6 +131,8 @@ In the afternoon, visit **Osaka Castle** — the grounds are free, and the castl
 | Activities & entrance fees | $50–$100 | $150–$250 |
 | **Total** | **$900–$1,200** | **$1,550–$2,050** |
 
+For a detailed breakdown of every cost category — flights, hotels, food, transport, and activities — check our [Japan travel budget guide](/blog/japan-travel-budget-2026).
+
 ---
 
 ## Want the Full Version?
