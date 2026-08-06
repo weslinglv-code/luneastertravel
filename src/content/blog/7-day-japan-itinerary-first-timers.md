@@ -23,6 +23,8 @@ Planning your first trip to Japan? This 7-day itinerary covers the classic "Gold
 
 **Total budget estimate:** $1,200–$1,800 per person (flights not included)
 
+> **Flights:** Round-trip tickets to Tokyo vary wildly by season. Use [Aviasales](#aff:tp_flights) to compare prices across all airlines and set up price alerts — booking 2–3 months ahead typically saves 20–40%.
+
 ---
 
 ## Day 1-3: Tokyo — The Sensory Overload
