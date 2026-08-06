@@ -10,6 +10,9 @@ const iconMap: Record<string, string> = {
   klook_jrpass: '🚄',
   klook_pocket_wifi: '📶',
   klook_tokyo_disney: '🎟️',
+  amazon_adapter: '🔌',
+  amazon_powerbank: '🔋',
+  amazon_guidebook: '📖',
 };
 
 const items = (buttons || []).map(b => ({
@@ -93,9 +96,9 @@ const items = (buttons || []).map(b => ({
 
   .essentials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
-    max-width: 900px;
+    max-width: 1080px;
     margin: 0 auto;
   }
 
@@ -173,6 +176,12 @@ const items = (buttons || []).map(b => ({
   .btn-view-all:hover {
     border-color: var(--c-accent);
     color: var(--c-accent);
+  }
+
+  @media (max-width: 900px) {
+    .essentials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (max-width: 640px) {

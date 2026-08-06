@@ -11,7 +11,7 @@ export const links = {
   klook_jrpass: {
     key: 'klook_jrpass',
     label: 'JR Pass (7-day)',
-    url: 'https://www.klook.com/activity/1706-jr-pass-japan/?aid=129901',
+    url: 'https://www.klook.com/activity/1420-7-day-whole-japan-rail-pass-jr-pass/?aid=129901',
     brand: 'Klook',
     type: 'transport',
     description: 'Unlimited Shinkansen travel for 7 days. Must buy before arriving in Japan.',
@@ -20,7 +20,7 @@ export const links = {
   klook_pocket_wifi: {
     key: 'klook_pocket_wifi',
     label: 'Pocket WiFi (Japan)',
-    url: 'https://www.klook.com/activity/2118-japan-wifi-router/?aid=129901',
+    url: 'https://www.klook.com/activity/3826-wifi-device-japan/?aid=129901',
     brand: 'Klook',
     type: 'sim',
     description: 'Unlimited 4G WiFi for your entire trip. Pick up at airport.',
@@ -28,8 +28,8 @@ export const links = {
   },
   klook_tokyo_disney: {
     key: 'klook_tokyo_disney',
-    label: 'Tokyo DisneySea Tickets',
-    url: 'https://www.klook.com/activity/1758-tokyo-disneysea/?aid=129901',
+    label: 'Tokyo Disney Resort Tickets',
+    url: 'https://www.klook.com/activity/589-tokyo-disneyland-japan/?aid=129901',
     brand: 'Klook',
     type: 'ticket',
     description: 'Skip the line — book in advance and save time.',

@@ -6,9 +6,10 @@
   "viewAllUrl": "/resources",
   "buttons": [
     { "linkKey": "tp_flights", "label": "Book Flights" },
-    { "linkKey": "booking_kyoto", "label": "Kyoto Area Hotels" },
     { "linkKey": "klook_jrpass", "label": "Buy JR Pass" },
     { "linkKey": "klook_pocket_wifi", "label": "Pocket WiFi Rental" },
-    { "linkKey": "klook_tokyo_disney", "label": "Sightseeing Tickets" }
+    { "linkKey": "amazon_adapter", "label": "Travel Adapter" },
+    { "linkKey": "amazon_powerbank", "label": "Portable Charger" },
+    { "linkKey": "amazon_guidebook", "label": "Japan Guidebook" }
   ]
 }
