@@ -1,15 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 ---
 
 <Layout
   title="Privacy Policy"
   description="Privacy Policy for LuneAster Travel — how we handle your data and protect your privacy."
 >
-  <Header />
-
   <section class="page-hero">
     <div class="container-narrow">
       <span class="hero-tag">☽ Legal</span>
@@ -20,12 +16,26 @@ import Footer from '../components/Footer.astro';
 
   <section class="section">
     <div class="container-narrow">
+      <!-- Short summary -->
+      <div class="privacy-summary">
+        <p>I only collect your email and travel information submitted from the custom-trip form.</p>
+        <p>Your personal data will never be sold or shared with third-party organisations.</p>
+        <p>All your private travel-related information is kept confidential.</p>
+      </div>
+
       <h2>1. Information We Collect</h2>
       <p>
         LuneAster Travel ("we", "us", or "our") operates luneastertravel.com (the "Site").
         We respect your privacy and are committed to protecting your personal data.
       </p>
       <p>We do not directly collect or store personal information on this Site. We do not require account registration, and we do not ask for your name, email, or payment details when browsing our content.</p>
+      <p>
+        <strong>Custom Trip Form:</strong> If you submit the custom-trip inquiry form on our
+        <a href="/custom-trip">Custom Trip</a> page, we collect your name, email address,
+        travel dates, number of travelers, budget, destination preferences, and any notes
+        you provide. This information is used solely to craft a personalised travel itinerary
+        and reply to your inquiry. It is never sold or shared with third parties.
+      </p>
       <p>
         Our digital products are sold through Gumroad, which has its own privacy policy.
         When you purchase a product, Gumroad handles your payment and personal data —
@@ -103,8 +113,6 @@ import Footer from '../components/Footer.astro';
       </p>
     </div>
   </section>
-
-  <Footer />
 </Layout>
 
 <style>
@@ -169,5 +177,21 @@ import Footer from '../components/Footer.astro';
 
   .policy-list li strong {
     color: var(--c-text);
+  }
+
+  .privacy-summary {
+    background: var(--c-surface);
+    border-left: 4px solid var(--c-accent);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .privacy-summary p {
+    font-size: 0.95rem;
+    color: var(--c-text);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
   }
 </style>

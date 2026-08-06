@@ -3,8 +3,9 @@
   "brandDescription": "Japan travel guides crafted by a travel designer who actually goes there. Off-the-beaten-path itineraries built from real 1M+ TikTok travel footage.",
   "quickLinks": [
     { "label": "Home", "url": "/" },
-    { "label": "Blog", "url": "/blog" },
-    { "label": "Premium", "url": "/#premium" },
+    { "label": "Free Guides", "url": "/blog" },
+    { "label": "PDF Itineraries", "url": "/#premium" },
+    { "label": "Custom Trip", "url": "/custom-trip" },
     { "label": "About", "url": "/about" },
     { "label": "Privacy Policy", "url": "/privacy" },
     { "label": "Affiliate Disclosure", "url": "/disclosure" }
@@ -13,6 +14,6 @@
     { "label": "TikTok", "url": "https://www.tiktok.com/@lune.aster" },
     { "label": "Gumroad", "url": "https://luneaster.gumroad.com" }
   ],
-  "disclosure": "Disclosure: As an Amazon Associate, I earn from qualifying purchases. This site also uses affiliate links from Klook, Travelpayouts, and Booking.com. I may earn a commission at no extra cost to you. See full Affiliate Disclosure.",
+  "disclosure": "Disclosure: Some links on this website are affiliate links. I may receive a small commission once you complete bookings through them. There is no additional charge for you, and all my travel recommendations remain unbiased. As an Amazon Associate, I earn from qualifying purchases. See full Affiliate Disclosure.",
   "copyright": "© 2026 LuneAster Travel"
 }

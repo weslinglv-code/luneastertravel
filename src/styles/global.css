@@ -230,6 +230,33 @@ p {
   .container {
     padding: 0 1rem;
   }
+
+  /* Ensure all form inputs have adequate touch targets */
+  input,
+  select,
+  textarea,
+  button {
+    min-height: 44px;
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+
+  /* Make tables horizontally scrollable */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  /* Ensure links in navigation have adequate spacing */
+  nav a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
 @media (max-width: 480px) {

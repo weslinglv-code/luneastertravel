@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import AffiliateLink from '../components/AffiliateLink.astro';
 import { links, linkCategories } from '../data/affiliate';
 
@@ -16,8 +14,6 @@ const groupedLinks = linkCategories.map(cat => ({
   title="Travel Resources"
   description="Recommended tools and services for your Japan trip — transport passes, hotels, WiFi, tickets, and more."
 >
-  <Header />
-
   <section class="page-hero">
     <div class="container">
       <h1>Travel Resources</h1>
@@ -65,8 +61,6 @@ const groupedLinks = linkCategories.map(cat => ({
       </div>
     </div>
   </section>
-
-  <Footer />
 </Layout>
 
 <style>

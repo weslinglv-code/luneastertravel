@@ -3,17 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Advantages from '../components/Advantages.astro';
 import BlogSection from '../components/BlogSection.astro';
+import TravelEssentials from '../components/TravelEssentials.astro';
 import PremiumSection from '../components/PremiumSection.astro';
 import CtaSection from '../components/CtaSection.astro';
 import { sections } from '../data/homepage';
 
 // Build the render map: module id → component
-// NOTE: Header & Footer are now provided globally by Layout.astro,
-// so all pages (homepage, /blog, /blog/[slug]) get them automatically.
 const moduleMap: Record<string, any> = {
   hero: Hero,
   advantages: Advantages,
   blog: BlogSection,
+  essentials: TravelEssentials,
   premium: PremiumSection,
   cta: CtaSection,
 };
