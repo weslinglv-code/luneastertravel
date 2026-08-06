@@ -17,7 +17,7 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 const { title, description, pubDate, updatedDate, coverImage, coverAlt, tags, author, readingTime } = post.data;
 
 const formattedDate = pubDate.toLocaleDateString('en-US', {
@@ -29,11 +29,16 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
 const siteUrl = 'https://luneastertravel.com';
 const articleUrl = `${siteUrl}/blog/${post.slug}`;
 
+// Extract H2 headings for Table of Contents
+const tocHeadings = headings.filter(h => h.depth === 2);
+
 // Get the sidebar & end-CTA products from CMS-editable config (not hardcoded)
 const sidebarProduct = products.find(p => p.slug === articleCta.sidebar.product_slug) || products[0];
 const endRecommendation = products.find(p => p.slug === articleCta.end_cta.product_slug) || products[0];
 const sidebarCfg = articleCta.sidebar;
 const endCtaCfg = articleCta.end_cta;
+const lightCtaCfg = articleCta.light_cta;
+const midCtaCfg = articleCta.mid_cta;
 
 // JSON-LD structured data for SEO
 const jsonLd = {
@@ -99,6 +104,24 @@ const jsonLd = {
           <strong>Quick note:</strong> This article contains hand-picked affiliate links for hotels, transport passes, and tours. If you book through them, we earn a small commission at no extra cost to you &mdash; it keeps these guides free.
         </div>
 
+        <!-- Collapsible Table of Contents (auto-generated from H2 headings) -->
+        {tocHeadings.length > 1 && (
+          <details class="article-toc" open>
+            <summary class="toc-toggle">
+              <span class="toc-icon">&#9776;</span>
+              <span class="toc-label">Table of Contents</span>
+              <span class="toc-chevron">&#9662;</span>
+            </summary>
+            <nav class="toc-nav">
+              <ul>
+                {tocHeadings.map(h => (
+                  <li><a href={`#${h.slug}`}>{h.text}</a></li>
+                ))}
+              </ul>
+            </nav>
+          </details>
+        )}
+
         <div class="article-body">
           <Content />
         </div>
@@ -159,6 +182,14 @@ const jsonLd = {
       </aside>
     </div>
   </article>
+
+  <!-- Mobile floating CTA bar (appears after scrolling) -->
+  <div class="mobile-fab-cta" id="mobileFabCta">
+    <a href={midCtaCfg.url} target="_blank" rel="noopener">
+      <span class="fab-text">Get the Budget Blueprint</span>
+      <span class="fab-arrow">&rarr;</span>
+    </a>
+  </div>
 
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </Layout>
@@ -269,9 +300,88 @@ const jsonLd = {
     font-weight: 700;
   }
 
+  /* ===== Table of Contents ===== */
+  .article-toc {
+    background: var(--c-surface-light);
+    border: 1px solid var(--c-border);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .toc-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.875rem 1.25rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--c-text);
+    list-style: none;
+    user-select: none;
+  }
+
+  .toc-toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .toc-icon {
+    font-size: 1rem;
+    color: var(--c-accent);
+  }
+
+  .toc-label {
+    flex: 1;
+  }
+
+  .toc-chevron {
+    font-size: 0.7rem;
+    color: var(--c-text-muted);
+    transition: transform var(--t-fast);
+  }
+
+  .article-toc[open] .toc-chevron {
+    transform: rotate(180deg);
+  }
+
+  .toc-nav {
+    padding: 0 1.25rem 1rem;
+  }
+
+  .toc-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem 1.25rem;
+  }
+
+  .toc-nav li {
+    margin: 0;
+  }
+
+  .toc-nav a {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.85rem;
+    color: var(--c-text-muted);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all var(--t-fast);
+    line-height: 1.4;
+  }
+
+  .toc-nav a:hover {
+    background: var(--c-accent-bg);
+    color: var(--c-accent);
+  }
+
+  /* ===== Article Body ===== */
   .article-body {
     font-size: 1.0625rem;
-    line-height: 1.75;
+    line-height: 1.8;
     color: var(--c-text);
   }
 
@@ -280,6 +390,7 @@ const jsonLd = {
     font-weight: 700;
     margin: 2.5rem 0 1rem;
     color: var(--c-text);
+    scroll-margin-top: 100px;
   }
 
   .article-body :global(h3) {
@@ -287,6 +398,7 @@ const jsonLd = {
     font-weight: 600;
     margin: 2rem 0 0.75rem;
     color: var(--c-text);
+    scroll-margin-top: 100px;
   }
 
   .article-body :global(p) {
@@ -308,6 +420,8 @@ const jsonLd = {
     margin: 1.5rem 0;
     color: var(--c-text-muted);
     font-style: italic;
+    background: var(--c-surface-light);
+    border-radius: 0 8px 8px 0;
   }
 
   .article-body :global(strong) {
@@ -333,7 +447,140 @@ const jsonLd = {
     text-decoration-color: var(--c-accent);
   }
 
-  /* End-of-article conversion block */
+  /* ===== Table styling — rounded cards ===== */
+  .article-body :global(table) {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.5rem 0;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .article-body :global(thead th) {
+    background: var(--c-primary);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.875rem 1.25rem;
+    text-align: left;
+  }
+
+  .article-body :global(thead th:first-child) {
+    border-top-left-radius: 12px;
+  }
+
+  .article-body :global(thead th:last-child) {
+    border-top-right-radius: 12px;
+  }
+
+  .article-body :global(tbody td) {
+    padding: 0.875rem 1.25rem;
+    border-top: 1px solid var(--c-border);
+    font-size: 0.925rem;
+    line-height: 1.5;
+  }
+
+  .article-body :global(tbody tr:nth-child(even)) {
+    background: var(--c-surface-light);
+  }
+
+  .article-body :global(tbody tr:hover) {
+    background: var(--c-accent-bg);
+  }
+
+  .article-body :global(tbody tr:last-child td:first-child) {
+    border-bottom-left-radius: 12px;
+  }
+
+  .article-body :global(tbody tr:last-child td:last-child) {
+    border-bottom-right-radius: 12px;
+  }
+
+  /* ===== Inline CTA blocks (injected by rehype plugin) ===== */
+  .article-body :global(.cta-light-hint) {
+    background: linear-gradient(135deg, rgba(217, 74, 56, 0.06) 0%, rgba(255, 255, 255, 0.8) 100%);
+    border: 1px solid rgba(217, 74, 56, 0.15);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .article-body :global(.cta-light-hint p) {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--c-text-muted);
+    line-height: 1.5;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .article-body :global(.cta-light-link) {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--c-accent) !important;
+    text-decoration: none !important;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--c-accent);
+    border-radius: 8px;
+    transition: all var(--t-fast);
+  }
+
+  .article-body :global(.cta-light-link:hover) {
+    background: var(--c-accent);
+    color: #fff !important;
+  }
+
+  .article-body :global(.cta-button-block) {
+    background: var(--c-primary);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .article-body :global(.cta-button-block p) {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .article-body :global(.cta-orange-btn) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--c-accent);
+    color: #fff !important;
+    padding: 0.875rem 2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none !important;
+    transition: all var(--t-fast);
+    min-height: 48px;
+  }
+
+  .article-body :global(.cta-orange-btn:hover) {
+    background: var(--c-accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217, 74, 56, 0.4);
+  }
+
+  /* ===== End-of-article conversion block ===== */
   .article-end-cta {
     margin: 3rem 0 1.5rem;
     padding: 1.75rem;
@@ -441,7 +688,7 @@ const jsonLd = {
     border-top: 1px solid var(--c-border);
   }
 
-  /* Sidebar */
+  /* ===== Sidebar ===== */
   .article-sidebar {
     display: none;
     width: 300px;
@@ -591,6 +838,11 @@ const jsonLd = {
     text-decoration: underline;
   }
 
+  /* ===== Mobile floating CTA bar ===== */
+  .mobile-fab-cta {
+    display: none;
+  }
+
   /* Desktop: show sidebar */
   @media (min-width: 1024px) {
     .article-sidebar {
@@ -608,7 +860,7 @@ const jsonLd = {
   /* Mobile optimizations */
   @media (max-width: 640px) {
     .article {
-      padding: 1rem 1rem 3rem;
+      padding: 1rem 1rem 5rem;
     }
 
     .article-end-cta {
@@ -629,5 +881,107 @@ const jsonLd = {
       font-size: 0.8rem;
       padding: 0.75rem 1rem;
     }
+
+    /* TOC: collapsed by default on mobile */
+    .article-toc:not([open]) .toc-nav {
+      display: none;
+    }
+
+    .article-toc[open] .toc-nav ul {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    /* Table: make scrollable on small screens */
+    .article-body :global(table) {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .article-body :global(thead) {
+      display: table-header-group;
+    }
+
+    .article-body :global(tbody) {
+      display: table;
+      width: 100%;
+    }
+
+    /* Inline CTA: stack vertically */
+    .article-body :global(.cta-light-hint) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .article-body :global(.cta-light-link) {
+      text-align: center;
+    }
+
+    .article-body :global(.cta-button-block) {
+      padding: 1.25rem 1rem;
+    }
+
+    /* Mobile floating CTA bar */
+    .mobile-fab-cta {
+      display: block;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--c-surface);
+      border-top: 1px solid var(--c-border);
+      box-shadow: 0 -4px 20px rgba(26, 26, 46, 0.1);
+      padding: 0.625rem 1rem;
+      transform: translateY(100%);
+      transition: transform var(--t-normal);
+    }
+
+    .mobile-fab-cta.visible {
+      transform: translateY(0);
+    }
+
+    .mobile-fab-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--c-accent);
+      color: #fff !important;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none !important;
+      min-height: 48px;
+    }
+
+    .mobile-fab-cta a:active {
+      background: var(--c-accent-light);
+    }
+
+    .fab-arrow {
+      font-size: 1.1rem;
+    }
   }
 </style>
+
+<script>
+  // Show mobile floating CTA after scrolling past the first screen
+  const fab = document.getElementById('mobileFabCta');
+  if (fab) {
+    let lastScrollY = 0;
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      // Show after scrolling 600px (roughly past the intro + first table)
+      if (scrollY > 600) {
+        fab.classList.add('visible');
+      } else {
+        fab.classList.remove('visible');
+      }
+      lastScrollY = scrollY;
+    }, { passive: true });
+  }
+</script>
