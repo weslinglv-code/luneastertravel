@@ -93,6 +93,8 @@ Tokyo Metro offers a **24-hour pass** for ¥800 ($5.50) — unlimited rides on a
 
 Don't rely on your home carrier's roaming. Get a [Pocket WiFi](#aff:klook_pocket_wifi) from Klook — unlimited 4G for your entire trip, pick up at Narita or Haneda airport.
 
+> **Battery tip:** 48 hours of nonstop Google Maps, photos, and translations will kill your phone by lunch. Bring a [compact power bank](#aff:amazon_powerbank) — the Anker PowerCore 10000 fits in your pocket and delivers 3 full charges. Under $26 on Amazon.
+
 ### Airport Access
 
 - **Narita:** Take the Narita Express to Shinjuku (90 min, ¥3,300)

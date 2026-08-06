@@ -7,7 +7,7 @@ export interface AffiliateLink {
   label: string;
   url: string;
   brand: string;
-  type: 'ticket' | 'hotel' | 'transport' | 'tour' | 'sim' | 'insurance';
+  type: 'ticket' | 'hotel' | 'transport' | 'tour' | 'sim' | 'gear';
   description: string;
   icon: string;
 }

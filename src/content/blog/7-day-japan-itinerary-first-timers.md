@@ -67,6 +67,8 @@ The [7-Day JR Pass](#aff:klook_jrpass) costs about $270 (as of 2026). A one-way 
 
 Google Maps is essential in Japan — train stations are massive and signage can be confusing. Rent a [Pocket WiFi device](#aff:klook_pocket_wifi) and pick it up at the airport. It's cheaper than roaming and keeps your whole group connected.
 
+> **Don't forget:** A [compact power bank](#aff:amazon_powerbank) is essential — you'll be using Google Maps, translating menus, and taking photos all day. The Anker PowerCore 10000 is small enough to fit in any pocket and gives you 3 full phone charges. Pair it with a [universal travel adapter](#aff:amazon_adapter) and you're fully set.
+
 ---
 
 ## Day 4: Mount Fuji & Hakone
@@ -132,6 +134,8 @@ In the afternoon, visit **Osaka Castle** — the grounds are free, and the castl
 | **Total** | **$900–$1,200** | **$1,550–$2,050** |
 
 For a detailed breakdown of every cost category — flights, hotels, food, transport, and activities — check our [Japan travel budget guide](/blog/japan-travel-budget-2026).
+
+> **Pre-trip reading:** If you like having a physical guidebook on hand, the [Lonely Planet Japan (19th Edition)](#aff:amazon_guidebook) is the most trusted print companion. Detailed maps, neighborhood walks, and local tips that supplement this itinerary perfectly.
 
 ---
 

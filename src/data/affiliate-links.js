@@ -86,14 +86,32 @@ export const links = {
   },
 
   // --- Amazon Associates (gear) ---
-  amazon_travel_adapter: {
-    key: 'amazon_travel_adapter',
-    label: 'Japan Travel Adapter (Type A/B)',
-    url: 'https://www.amazon.com/dp/B0XXXXXX?tag=YOUR_AFFILIATE_ID',
+  amazon_adapter: {
+    key: 'amazon_adapter',
+    label: 'TESSAN Universal Travel Adapter',
+    url: 'https://www.amazon.com/dp/B0B1LJ3N9G?tag=luneastertrav-20',
     brand: 'Amazon',
-    type: 'insurance',
-    description: 'Japan uses Type A plugs. Make sure your devices work.',
+    type: 'gear',
+    description: 'Works in Japan, US, EU, UK, AU. 2 USB ports + AC sockets. A must-have for Japan trips.',
     icon: 'plug',
+  },
+  amazon_powerbank: {
+    key: 'amazon_powerbank',
+    label: 'Anker PowerCore 10000',
+    url: 'https://www.amazon.com/dp/B019GJLER8?tag=luneastertrav-20',
+    brand: 'Amazon',
+    type: 'gear',
+    description: 'Compact 10000mAh charger. 3 full phone charges per trip. Fits in any pocket.',
+    icon: 'battery',
+  },
+  amazon_guidebook: {
+    key: 'amazon_guidebook',
+    label: 'Lonely Planet Japan (19th Edition)',
+    url: 'https://www.amazon.com/dp/1838698140?tag=luneastertrav-20',
+    brand: 'Amazon',
+    type: 'gear',
+    description: 'The most trusted Japan guidebook. Detailed maps, itineraries, and local tips.',
+    icon: 'book',
   },
 };
 
@@ -103,5 +121,5 @@ export const linkCategories = [
   { key: 'ticket', label: 'Tickets & Activities', icon: 'ticket' },
   { key: 'tour', label: 'Tours', icon: 'mountain' },
   { key: 'sim', label: 'WiFi & SIM', icon: 'wifi' },
-  { key: 'insurance', label: 'Travel Essentials', icon: 'plug' },
+  { key: 'gear', label: 'Travel Essentials', icon: 'plug' },
 ];

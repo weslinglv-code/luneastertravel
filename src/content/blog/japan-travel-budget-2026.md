@@ -129,6 +129,8 @@ Japan is a food paradise at every price point. You can eat incredibly well on $1
 
 Don't rely on roaming. A [Pocket WiFi](#aff:klook_pocket_wifi) costs ¥300–¥500/day ($2–$3.50) and gives you unlimited 4G for your whole trip. Pick up at the airport.
 
+> **Gear tip:** Two things every Japan traveler needs — a [universal travel adapter](#aff:amazon_adapter) (Japan uses Type A plugs, and this one works in 150+ countries) and a [compact power bank](#aff:amazon_powerbank) (Google Maps and photo-taking drain your phone fast, especially on long sightseeing days). Both under $25 each on Amazon.
+
 ---
 
 ## 5. Activities & Attractions: ¥500–¥3,000 each

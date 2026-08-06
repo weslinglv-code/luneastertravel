@@ -131,4 +131,6 @@ Planning a full week in Japan? Our [7-day Japan itinerary for first-timers](/blo
 | Light jacket | Kyoto mornings can be chilly, even in summer |
 | Cash | Many small temples and shops don't take cards |
 
+> **Pre-trip prep:** If you want a deeper dive into Kyoto's temples, gardens, and hidden gems beyond what a day trip allows, the [Lonely Planet Japan guidebook](#aff:amazon_guidebook) has an excellent Kyoto chapter with detailed neighborhood maps and local recommendations.
+
 That's it. Kyoto in a day is intense but absolutely doable — just pick your priorities, start early, and let the Shinkansen do the heavy lifting.
