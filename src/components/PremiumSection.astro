@@ -11,6 +11,7 @@ const coverArt: Record<string, { icon: string; pattern: string }> = {
   'tokyo-5-day-route': { icon: 'city', pattern: 'grid' },
   'tokyo-48hr-solo': { icon: 'clock', pattern: 'lines' },
   'kyoto-takao-three-temples': { icon: 'temple', pattern: 'leaves' },
+  'kyoto-3-day-autumn': { icon: 'temple', pattern: 'leaves' },
 };
 
 function getArt(slug: string) {
@@ -28,7 +29,7 @@ function getArt(slug: string) {
     <div class="product-grid">
       {products.map((product: Product) => {
         const art = getArt(product.slug);
-        const hasImage = product.coverImage && !product.coverImage.endsWith('-cover.jpg');
+        const hasImage = !!product.coverImage;
         return (
           <a href={product.gumroadUrl} class="product-card" style={`--accent: ${product.accentColor}`} target="_blank" rel="noopener">
             <div class="card-cover" data-pattern={art.pattern}>
