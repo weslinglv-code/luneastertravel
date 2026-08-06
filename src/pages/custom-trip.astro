@@ -14,6 +14,8 @@ const affiliateLinksText = [
   `Japan Guidebook: ${links.amazon_guidebook.url}`,
 ].join('\n');
 
+const autoResponseSubject = 'Your Custom Japan-Trip Request Has Been Received | LuneAster';
+
 const autoResponseText = `Thank you for your inquiry!
 
 I will reply to your email within 24 hours with custom-made travel suggestions.
@@ -58,25 +60,19 @@ LuneAster Travel`;
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_autoresponse" value={autoResponseText} />
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="e.g. John Smith" />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address <span class="required">*</span></label>
-              <input type="email" id="email" name="email" required placeholder="you@example.com" />
-            </div>
+          <div class="form-group full">
+            <label for="email">Your Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="dates">Travel Dates</label>
-              <input type="text" id="dates" name="travel_dates" placeholder="e.g. Oct 15 - Oct 22, 2026" />
+              <label for="dates">Planned Travel Date</label>
+              <input type="text" id="dates" name="planned_travel_date" placeholder="e.g. Oct 15 - Oct 22, 2026" />
             </div>
             <div class="form-group">
-              <label for="travelers">Number of Travelers</label>
-              <select id="travelers" name="travelers">
+              <label for="travelers">Number Of Travellers</label>
+              <select id="travelers" name="number_of_travellers">
                 <option value="">Select...</option>
                 <option value="1">1 person</option>
                 <option value="2">2 people</option>
@@ -87,31 +83,19 @@ LuneAster Travel`;
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="budget">Budget Range (per person)</label>
-              <select id="budget" name="budget">
-                <option value="">Select...</option>
-                <option value="budget">$500 - $1,000</option>
-                <option value="mid">$1,000 - $2,000</option>
-                <option value="premium">$2,000 - $3,500</option>
-                <option value="luxury">$3,500+</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="destinations">Destinations Interested In</label>
-              <input type="text" id="destinations" name="destinations" placeholder="e.g. Tokyo, Kyoto, Osaka, Hakone..." />
-            </div>
+          <div class="form-group full">
+            <label for="destinations">Target Japanese Cities</label>
+            <input type="text" id="destinations" name="target_cities" placeholder="e.g. Tokyo, Kyoto, Osaka, Hakone..." />
           </div>
 
           <div class="form-group full">
-            <label for="interests">Travel Style & Interests</label>
-            <input type="text" id="interests" name="interests" placeholder="e.g. Food, temples, anime, shopping, nature, nightlife..." />
+            <label for="interests">Trip Style</label>
+            <input type="text" id="interests" name="trip_style" placeholder="e.g. Food, temples, anime, shopping, nature, nightlife..." />
           </div>
 
           <div class="form-group full">
-            <label for="notes">Additional Notes</label>
-            <textarea id="notes" name="notes" rows="5" placeholder="Tell me anything else about your trip — dietary restrictions, accessibility needs, must-see places, etc."></textarea>
+            <label for="notes">Additional Requirements</label>
+            <textarea id="notes" name="additional_requirements" rows="5" placeholder="Tell me anything else about your trip — dietary restrictions, accessibility needs, must-see places, etc."></textarea>
           </div>
 
           <button type="submit" class="btn-submit">
@@ -128,10 +112,7 @@ LuneAster Travel`;
       <!-- Success message (hidden by default) -->
       <div class="success-message" id="successMessage" style="display: none;">
         <div class="success-icon">✓</div>
-        <h2>Thank you for your inquiry.</h2>
-        <p>
-          I will reply to your email within 24 hours with custom-made travel suggestions.
-        </p>
+        <h2>Thank you, I will email you shortly</h2>
         <p>
           I can also share budget-friendly hotel, transport and portable-wifi booking resources for your trip.
         </p>

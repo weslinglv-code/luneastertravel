@@ -1,0 +1,14 @@
+{
+  "sectionTitle": "Recommended Japan Travel Essentials",
+  "introText": "Save your time on travel bookings. I have gathered reliable booking resources for your Japanese trip.",
+  "disclosureText": "I will earn a tiny commission at zero-extra cost for you when you book via my links.",
+  "viewAllText": "View All Resources",
+  "viewAllUrl": "/resources",
+  "buttons": [
+    { "linkKey": "tp_flights", "label": "Book Flights" },
+    { "linkKey": "booking_kyoto", "label": "Kyoto Area Hotels" },
+    { "linkKey": "klook_jrpass", "label": "Buy JR Pass" },
+    { "linkKey": "klook_pocket_wifi", "label": "Pocket WiFi Rental" },
+    { "linkKey": "klook_tokyo_disney", "label": "Sightseeing Tickets" }
+  ]
+}

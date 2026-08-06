@@ -1,51 +1,52 @@
 ---
 import { links } from '../data/affiliate-links.js';
+import { essentials as essentialsData } from '../data/homepage';
 
-const essentials = [
-  { linkKey: 'tp_flights', label: 'Book Flights', icon: '✈️' },
-  { linkKey: 'booking_kyoto', label: 'Resort Kyoto-Area Hotels', icon: '🏨' },
-  { linkKey: 'klook_jrpass', label: 'Purchase your JR-Pass', icon: '🚄' },
-  { linkKey: 'klook_pocket_wifi', label: 'Pocket-WiFi Rental', icon: '📶' },
-  { linkKey: 'klook_tokyo_disney', label: 'Local Attraction Tickets', icon: '🎟️' },
-];
+const { sectionTitle, introText, disclosureText, viewAllText, viewAllUrl, buttons } = essentialsData;
 
-const title = 'Recommended Japan Travel Essentials';
-const intro = 'Save your time on travel bookings. I have gathered reliable booking resources for your Japanese trip.';
-const disclosure = 'I will earn a tiny commission at zero-extra cost for you when you book via my links.';
+const iconMap: Record<string, string> = {
+  tp_flights: '✈️',
+  booking_kyoto: '🏨',
+  klook_jrpass: '🚄',
+  klook_pocket_wifi: '📶',
+  klook_tokyo_disney: '🎟️',
+};
+
+const items = (buttons || []).map(b => ({
+  ...b,
+  icon: iconMap[b.linkKey] || '🔗',
+  link: links[b.linkKey],
+})).filter(item => item.link);
 ---
 
 <section class="essentials-section">
   <div class="container">
     <div class="essentials-header">
-      <h2>{title}</h2>
-      <p class="essentials-intro">{intro}</p>
-      <p class="essentials-disclosure">{disclosure}</p>
+      <h2>{sectionTitle}</h2>
+      <p class="essentials-intro">{introText}</p>
+      <p class="essentials-disclosure">{disclosureText}</p>
     </div>
 
     <div class="essentials-grid">
-      {essentials.map(item => {
-        const link = links[item.linkKey];
-        if (!link) return null;
-        return (
-          <a
-            href={link.url}
-            class="essential-card"
-            target="_blank"
-            rel="sponsored nofollow noopener"
-          >
-            <div class="essential-icon">{item.icon}</div>
-            <div class="essential-body">
-              <span class="essential-label">{item.label}</span>
-              <span class="essential-brand">{link.brand}</span>
-            </div>
-            <span class="essential-arrow">→</span>
-          </a>
-        );
-      })}
+      {items.map(item => (
+        <a
+          href={item.link.url}
+          class="essential-card"
+          target="_blank"
+          rel="sponsored nofollow noopener"
+        >
+          <div class="essential-icon">{item.icon}</div>
+          <div class="essential-body">
+            <span class="essential-label">{item.label}</span>
+            <span class="essential-brand">{item.link.brand}</span>
+          </div>
+          <span class="essential-arrow">→</span>
+        </a>
+      ))}
     </div>
 
     <div class="essentials-footer">
-      <a href="/resources" class="btn-view-all">View All Resources →</a>
+      <a href={viewAllUrl} class="btn-view-all">{viewAllText} →</a>
     </div>
   </div>
 </section>

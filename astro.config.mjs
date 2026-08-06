@@ -108,12 +108,38 @@ function rehypeArticleCTAs(options) {
   };
 }
 
+/**
+ * Rehype plugin: adds loading="lazy" to all <img> tags in markdown content
+ * for better performance on mobile devices.
+ */
+function rehypeLazyImages() {
+  function walk(node) {
+    if (node.type === 'element' && node.tagName === 'img') {
+      if (node.properties) {
+        if (!node.properties.loading) {
+          node.properties.loading = 'lazy';
+        }
+        if (!node.properties.decoding) {
+          node.properties.decoding = 'async';
+        }
+      }
+    }
+    if (node.children) {
+      for (const child of node.children) walk(child);
+    }
+  }
+  return (tree) => {
+    walk(tree);
+  };
+}
+
 export default defineConfig({
   site: 'https://luneastertravel.com',
   output: 'static',
   integrations: [mdx()],
   markdown: {
     rehypePlugins: [
+      rehypeLazyImages,
       [rehypeAffiliateLinks, { affiliates: affiliateLinks }],
       [rehypeArticleCTAs, { lightCta: articleCtaData.light_cta, midCta: articleCtaData.mid_cta }],
     ],

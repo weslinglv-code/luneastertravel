@@ -11,6 +11,7 @@ import footerData from './footer.json';
 import navigationData from './navigation.json';
 import sectionsData from './sections.json';
 import articleCtaData from './article-cta.json';
+import essentialsData from './essentials.json';
 
 export const hero = heroData;
 export const advantages = advantagesData;
@@ -20,6 +21,7 @@ export const cta = ctaData;
 export const footer = footerData;
 export const navigation = navigationData;
 export const articleCta = articleCtaData;
+export const essentials = essentialsData;
 
 // Module ordering & visibility
 export interface SectionConfig {
