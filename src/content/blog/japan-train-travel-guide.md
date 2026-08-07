@@ -16,7 +16,7 @@ This guide covers everything: the JR Pass (is it worth it?), Shinkansen (bullet 
 
 For the full cost breakdown of train travel within a Japan trip budget, see our [Japan travel budget guide](/blog/japan-travel-budget-2026).
 
-## The 30-Second Summary
+## ⏱️ The 30-Second Summary
 
 | What | One-Line Answer |
 |------|----------------|
@@ -31,7 +31,7 @@ For the full cost breakdown of train travel within a Japan trip budget, see our 
 
 ---
 
-## The JR Pass: Is It Worth It in 2026?
+## 🚄 The JR Pass: Is It Worth It in 2026?
 
 The Japan Rail Pass (JR Pass) is the most common question travelers ask. The short answer: **it depends on your itinerary.**
 
@@ -79,7 +79,7 @@ If you're only visiting one region, a regional pass is much cheaper:
 
 ---
 
-## The Shinkansen: Everything You Need to Know
+## 🔅 The Shinkansen: Everything You Need to Know
 
 The Shinkansen (bullet train) is Japan's high-speed rail network. It connects major cities at speeds up to 320 km/h (200 mph).
 
@@ -140,7 +140,7 @@ Line up behind the markings on the platform. Trains stop exactly at the marked p
 
 ---
 
-## IC Cards: Tap-and-Pay for Local Transit
+## 💳 IC Cards: Tap-and-Pay for Local Transit
 
 An IC card is a rechargeable smart card for local trains, subways, buses, and convenience stores. You tap it on the reader at the gate when entering and exiting.
 
@@ -175,7 +175,7 @@ You'll likely need both: the JR Pass for intercity travel and an IC card for get
 
 ---
 
-## Navigating Japanese Train Stations
+## 🧭 Navigating Japanese Train Stations
 
 Japanese train stations — especially in Tokyo — can be enormous. Shinjuku Station handles 3.5 million passengers per day and has 200+ exits. Here's how to not get lost:
 
@@ -202,7 +202,7 @@ Major stations have English signage everywhere. Look for:
 
 ---
 
-## Day Trips by Train
+## 🗺️ Day Trips by Train
 
 Some of Japan's best destinations are easy day trips from Tokyo or Osaka:
 
@@ -233,7 +233,7 @@ For a full Kyoto day trip plan, see our [Kyoto day trip from Tokyo guide](/blog/
 
 ---
 
-## Common Mistakes to Avoid
+## ⚠️ Common Mistakes to Avoid
 
 ### 1. Buying a JR Pass when you don't need one
 
@@ -257,7 +257,7 @@ Japanese trains are punctual. The doors close 30–60 seconds before departure t
 
 ---
 
-## FAQ
+## ❓ FAQ
 
 ### Can I use the JR Pass on the subway?
 

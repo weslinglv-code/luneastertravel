@@ -16,7 +16,7 @@ This packing list is built from real experience. No fluff, no "nice-to-haves." J
 
 If you're still planning your route, start with our [7-day Japan itinerary for first-timers](/blog/7-day-japan-itinerary-first-timers) — it covers the classic Golden Route and will help you decide how much to pack.
 
-## The 10-Second Summary
+## ⏱️ The 10-Second Summary
 
 | Category | Must-Have | Nice-to-Have | Skip It |
 |----------|-----------|--------------|---------|
@@ -30,7 +30,7 @@ If you're still planning your route, start with our [7-day Japan itinerary for f
 
 ---
 
-## Electronics: The Non-Negotiables
+## 🔌 Electronics: The Non-Negotiables
 
 ### Travel Adapter
 
@@ -52,7 +52,7 @@ Don't rely on roaming. International data plans are expensive and often throttle
 
 ---
 
-## Clothing: Pack for Walking, Not for Photos
+## 👕 Clothing: Pack for Walking, Not for Photos
 
 ### Shoes: The #1 Priority
 
@@ -81,7 +81,7 @@ Pack a second pair (sandals or slip-ons) for evenings and restaurant visits wher
 
 ---
 
-## Documents & Money
+## 📑 Documents & Money
 
 ### Documents
 
@@ -109,7 +109,7 @@ For a full breakdown of trip costs, see our [Japan travel budget guide](/blog/ja
 
 ---
 
-## Toiletries: What to Bring vs. What to Buy
+## 🧴 Toiletries: What to Bring vs. What to Buy
 
 ### Bring These
 
@@ -138,7 +138,7 @@ Japan's drugstores (Matsumoto Kiyoshi, Welcia, Don Quijote) are famous for quali
 
 ---
 
-## The Daypack: What to Carry Daily
+## 🎒 The Daypack: What to Carry Daily
 
 You won't carry your full suitcase around. Here's what to keep in your daypack:
 
@@ -157,7 +157,7 @@ You won't carry your full suitcase around. Here's what to keep in your daypack:
 
 ---
 
-## Packing Checklist (Printable)
+## 📋 Packing Checklist (Printable)
 
 ### Documents
 - [ ] Passport (valid 6+ months)
@@ -200,7 +200,7 @@ You won't carry your full suitcase around. Here's what to keep in your daypack:
 
 ---
 
-## What Not to Bring
+## ❌ What Not to Bring
 
 - **Hair dryer:** Every hotel and hostel has one
 - **Towels:** Provided everywhere
@@ -211,7 +211,7 @@ You won't carry your full suitcase around. Here's what to keep in your daypack:
 
 ---
 
-## FAQ
+## ❓ FAQ
 
 ### Can I buy everything I need in Japan?
 

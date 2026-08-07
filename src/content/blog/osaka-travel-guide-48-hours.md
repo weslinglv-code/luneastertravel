@@ -18,7 +18,7 @@ This 48-hour guide maximizes your time with geographic efficiency. Each day cove
 
 > **Getting there:** Osaka is 2.5 hours from Tokyo by Shinkansen. If you're doing the Golden Route, a [7-day JR Pass](#aff:klook_jrpass) pays for itself — the Tokyo–Osaka round trip alone costs ~$97 each way. For budget details, see our [Japan travel budget guide](/blog/japan-travel-budget-2026).
 
-## Quick Overview
+## 📍 Quick Overview
 
 | Day | Area | Highlights |
 |-----|------|-----------|
@@ -31,7 +31,7 @@ This 48-hour guide maximizes your time with geographic efficiency. Each day cove
 
 ---
 
-## Day 1: South Osaka — Street Food Paradise
+## 🍜 Day 1: South Osaka — Street Food Paradise
 
 ### Morning: Kuromon Market
 
@@ -78,7 +78,7 @@ Return to Dotonbori after sunset — the neon signs are spectacular at night. Wa
 
 ---
 
-## Day 2: North Osaka — Castles & Skylines
+## 🏯 Day 2: North Osaka — Castles & Skylines
 
 ### Morning: Osaka Castle
 
@@ -110,7 +110,7 @@ End your 48 hours in **Kitashinchi** — Osaka's upscale dining and entertainmen
 
 ---
 
-## Osaka Food: The Must-Eat List
+## 🍱 Osaka Food: The Must-Eat List
 
 Osaka's food culture is legendary. Here's your checklist:
 
@@ -128,7 +128,7 @@ Osaka's food culture is legendary. Here's your checklist:
 
 ---
 
-## Getting Around Osaka
+## 🚃 Getting Around Osaka
 
 ### Subway
 
@@ -149,7 +149,7 @@ If you have an extra half-day, Nara is 40 minutes by train from Osaka. It's home
 
 ---
 
-## Where to Stay in Osaka
+## 🏨 Where to Stay in Osaka
 
 | Area | Best For | Price Range | Notes |
 |------|----------|-------------|-------|
@@ -162,7 +162,7 @@ If you have an extra half-day, Nara is 40 minutes by train from Osaka. It's home
 
 ---
 
-## Osaka vs. Tokyo vs. Kyoto
+## ⚖️ Osaka vs. Tokyo vs. Kyoto
 
 If you're deciding how to split your time:
 
@@ -176,7 +176,7 @@ For a 7-day trip, the classic split is 3 days Tokyo + 2 days Kyoto + 1–2 days 
 
 ---
 
-## FAQ
+## ❓ FAQ
 
 ### Is 1 day in Osaka enough?
 

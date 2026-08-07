@@ -18,7 +18,7 @@ This guide breaks down every cost category with 2026 prices. Whether you're a ba
 
 New to Japan? Start with our [7-day Japan itinerary for first-timers](/blog/7-day-japan-itinerary-first-timers) — it covers the classic Golden Route day by day.
 
-## The Quick Answer: Three Budget Tiers
+## 💰 The Quick Answer: Three Budget Tiers
 
 | Tier | Daily Cost | 7-Day Total | Style |
 |------|-----------|-------------|-------|
@@ -34,7 +34,7 @@ New to Japan? Start with our [7-day Japan itinerary for first-timers](/blog/7-da
 
 ---
 
-## 1. Flights: $400–$1,200 Round Trip
+## ✈️ 1. Flights: $400–$1,200 Round Trip
 
 Your biggest variable cost. Prices depend on three things: departure city, season, and how far ahead you book.
 
@@ -51,7 +51,7 @@ Your biggest variable cost. Prices depend on three things: departure city, seaso
 
 ---
 
-## 2. Accommodation: ¥3,000–¥25,000/night
+## 🏨 2. Accommodation: ¥3,000–¥25,000/night
 
 Japan has the widest range of accommodation options of any country we've visited.
 
@@ -76,7 +76,7 @@ Japan has the widest range of accommodation options of any country we've visited
 
 ---
 
-## 3. Food: ¥1,000–¥8,000/day
+## 🍜 3. Food: ¥1,000–¥8,000/day
 
 Japan is a food paradise at every price point. You can eat incredibly well on $10/day or blow $200 on one meal.
 
@@ -105,7 +105,7 @@ Japan is a food paradise at every price point. You can eat incredibly well on $1
 
 ---
 
-## 4. Transportation: ¥1,000–¥5,000/day
+## 🚃 4. Transportation: ¥1,000–¥5,000/day
 
 ### Within Cities
 
@@ -133,7 +133,7 @@ Don't rely on roaming. A [Pocket WiFi](#aff:klook_pocket_wifi) costs ¥300–¥5
 
 ---
 
-## 5. Activities & Attractions: ¥500–¥3,000 each
+## 🎫 5. Activities & Attractions: ¥500–¥3,000 each
 
 Japan's attractions are surprisingly affordable compared to Europe or the US.
 
@@ -153,7 +153,7 @@ Planning a quick visit? Check our [Tokyo 48-hour weekend guide](/blog/tokyo-48-h
 
 ---
 
-## Sample 7-Day Budget Breakdown
+## 📊 Sample 7-Day Budget Breakdown
 
 ### Mid-Range Trip (Tokyo + Kyoto + Osaka)
 
@@ -185,7 +185,7 @@ Planning a quick visit? Check our [Tokyo 48-hour weekend guide](/blog/tokyo-48-h
 
 ---
 
-## 5 Ways to Save Money in Japan
+## 💡 5 Ways to Save Money in Japan
 
 ### 1. Eat at Konbini for Breakfast
 
@@ -211,7 +211,7 @@ For more tips on maximizing a short trip, see our [Kyoto day trip from Tokyo gui
 
 ---
 
-## Get the Full Budget Planner
+## 📋 Get the Full Budget Planner
 
 This guide breaks down core prices, but calculating a custom daily budget, comparing JR Pass value, and sorting hotel zones takes hours.
 
@@ -227,7 +227,7 @@ It includes:
 
 ---
 
-## FAQ
+## ❓ FAQ
 
 ### Is Japan expensive to visit in 2026?
 

@@ -12,7 +12,7 @@ featured: true
 
 Planning your first trip to Japan? This 7-day itinerary covers the classic "Golden Route" — Tokyo, Kyoto, and Osaka — with everything you need: where to stay, what to eat, and how to get around without wasting time.
 
-## Quick Overview: The Golden Route
+## 📍 Quick Overview: The Golden Route
 
 | Day | City | Highlights |
 |-----|------|-----------|
@@ -27,7 +27,7 @@ Planning your first trip to Japan? This 7-day itinerary covers the classic "Gold
 
 ---
 
-## Day 1-3: Tokyo — The Sensory Overload
+## 🗼 Day 1-3: Tokyo — The Sensory Overload
 
 ### Where to Stay in Tokyo
 
@@ -53,7 +53,7 @@ Skip the crowds at Takeshita Street and head straight to **Cat Street** — the 
 
 ---
 
-## Transport: The JR Pass Question
+## 🚄 Transport: The JR Pass Question
 
 The biggest question first-timers ask: **Is the Japan Rail Pass worth it?**
 
@@ -71,7 +71,7 @@ Google Maps is essential in Japan — train stations are massive and signage can
 
 ---
 
-## Day 4: Mount Fuji & Hakone
+## 🗻 Day 4: Mount Fuji & Hakone
 
 Take a day trip from Tokyo to see **Mount Fuji**. The easiest option is a [guided day tour](#aff:klook_mt_fuji) — it handles all the logistics (bus, lunch, Lake Ashi cruise) for about $100–$130.
 
@@ -81,7 +81,7 @@ If you prefer DIY: take the JR Chuo Line to **Otsuki**, then the Fuji Excursion 
 
 ---
 
-## Day 5-6: Kyoto — The Spiritual Heart
+## ⛩️ Day 5-6: Kyoto — The Spiritual Heart
 
 Take the morning Shinkansen from Tokyo to Kyoto (2 hours 15 minutes with your JR Pass).
 
@@ -105,7 +105,7 @@ In Gion at dusk, you might spot a **geisha** (called *geiko* in Kyoto) rushing t
 
 ---
 
-## Day 7: Osaka — Eat Your Way Out
+## 🍜 Day 7: Osaka — Eat Your Way Out
 
 Take the JR Special Rapid from Kyoto to Osaka (30 minutes). Drop your bags and head straight to **Dotonbori** — the neon-lit food street that's Osaka's soul.
 
@@ -123,7 +123,7 @@ In the afternoon, visit **Osaka Castle** — the grounds are free, and the castl
 
 ---
 
-## Budget Breakdown
+## 💰 Budget Breakdown
 
 | Category | Budget Option | Mid-Range |
 |----------|--------------|-----------|
@@ -139,7 +139,7 @@ For a detailed breakdown of every cost category — flights, hotels, food, trans
 
 ---
 
-## Want the Full Version?
+## 📋 Want the Full Version?
 
 This article covers the highlights — but our **[7-Day Japan Blueprint](/products/japan-blueprint-7-day)** includes:
 

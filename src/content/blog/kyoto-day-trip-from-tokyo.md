@@ -14,7 +14,7 @@ The question every Tokyo-based traveler asks: **"Can I squeeze Kyoto into a day 
 
 This guide breaks down the logistics, the best one-day Kyoto itinerary, and honest advice on when you should just stay overnight instead.
 
-## The Math: Tokyo to Kyoto Day Trip
+## 🧮 The Math: Tokyo to Kyoto Day Trip
 
 | Factor | Details |
 |--------|---------|
@@ -28,7 +28,7 @@ This guide breaks down the logistics, the best one-day Kyoto itinerary, and hone
 
 ---
 
-## The One-Day Kyoto Itinerary
+## 🗺️ The One-Day Kyoto Itinerary
 
 ### 6:30 AM — Depart Tokyo Station
 
@@ -79,7 +79,7 @@ Take the JR line back to Kyoto Station and catch a Hikari Shinkansen back to Tok
 
 ---
 
-## When a Day Trip Makes Sense (and When It Doesn't)
+## 🤔 When a Day Trip Makes Sense (and When It Doesn't)
 
 ### A day trip is worth it if:
 
@@ -97,7 +97,7 @@ Take the JR line back to Kyoto Station and catch a Hikari Shinkansen back to Tok
 
 ---
 
-## Getting a JR Pass
+## 🚄 Getting a JR Pass
 
 The Japan Rail Pass is the single best money-saver for long-distance travel. A 7-day pass costs around ¥50,000 ($330) and covers:
 
@@ -111,7 +111,7 @@ For a Tokyo–Kyoto round trip alone, you break even. Add Osaka or Hakone and yo
 
 ---
 
-## Kyoto Beyond a Day Trip
+## ⛩️ Kyoto Beyond a Day Trip
 
 If this guide convinced you that Kyoto deserves more than a day, our **Kyoto 3-Day Autumn Foliage Guide** covers the best temple gardens, maple-lined paths, and hidden spots with exact timing for peak colors. It's a 14-page PDF with day-by-day routes, restaurant picks, and real-time leaf tracker links.
 
@@ -121,7 +121,7 @@ Planning a full week in Japan? Our [7-day Japan itinerary for first-timers](/blo
 
 ---
 
-## Day Trip Packing List
+## 🎒 Day Trip Packing List
 
 | Item | Why |
 |------|-----|

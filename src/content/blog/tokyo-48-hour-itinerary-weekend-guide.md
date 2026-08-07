@@ -12,7 +12,7 @@ featured: false
 
 Only have a weekend in Tokyo? Forty-eight hours is tight, but absolutely enough to hit the city's greatest hits — if you plan your routes right. This itinerary is built around geographic efficiency: each day covers one cluster of neighborhoods so you're not wasting time on trains.
 
-## Quick Overview
+## 📍 Quick Overview
 
 | Day | Area | Highlights |
 |-----|------|-----------|
@@ -25,7 +25,7 @@ Only have a weekend in Tokyo? Forty-eight hours is tight, but absolutely enough 
 
 ---
 
-## Day 1: West Tokyo — Shinjuku, Shibuya & Harajuku
+## 🗼 Day 1: West Tokyo — Shinjuku, Shibuya & Harajuku
 
 ### Morning: Shinjuku Gyoen & Government Building
 
@@ -53,7 +53,7 @@ End the day at **Shibuya Crossing**. Snap the classic photo from the Starbucks w
 
 ---
 
-## Day 2: East Tokyo — Asakusa, Akihabara & Ueno
+## 🏯 Day 2: East Tokyo — Asakusa, Akihabara & Ueno
 
 ### Morning: Senso-ji Temple
 
@@ -81,7 +81,7 @@ End your 48 hours at **Ueno Park** — especially beautiful during cherry blosso
 
 ---
 
-## Getting Around Tokyo in 48 Hours
+## 🚃 Getting Around Tokyo in 48 Hours
 
 ### Metro Pass
 
@@ -102,7 +102,7 @@ Don't rely on your home carrier's roaming. Get a [Pocket WiFi](#aff:klook_pocket
 
 ---
 
-## Where to Stay for a 48-Hour Tokyo Trip
+## 🏨 Where to Stay for a 48-Hour Tokyo Trip
 
 For a weekend trip, **location is everything**. You want to minimize transit time to maximize sightseeing.
 
@@ -116,7 +116,7 @@ For a weekend trip, **location is everything**. You want to minimize transit tim
 
 ---
 
-## Want More Than 48 Hours?
+## 💡 Want More Than 48 Hours?
 
 Two days gives you a taste of Tokyo, but the city deserves more. If you're extending your trip, our **Tokyo 5-Day Route** dives deep into every major district — from hidden ramen spots in Nakano to day trips to Kamakura and Nikko.
 
@@ -126,7 +126,7 @@ It's a 15-page PDF with exact daily routes, restaurant picks with price ranges, 
 
 ---
 
-## 48-Hour Tokyo Itinerary Summary
+## ✅ 48-Hour Tokyo Itinerary Summary
 
 | Time | Day 1 | Day 2 |
 |------|-------|-------|
