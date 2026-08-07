@@ -1,5 +1,5 @@
 ---
-slug: https://luneastertravel.com/blog/best-time-to-visit-japan/
+slug: best-time-to-visit-japan
 title: 'Best Time to Visit Japan: Month-by-Month Guide (2026)'
 description: When should you visit Japan? This complete 2026 guide breaks down weather, crowds, prices, and festivals month by month so you can pick the perfect time for your trip.
 pubDate: 2026-08-06
