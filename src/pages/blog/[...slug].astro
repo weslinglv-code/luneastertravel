@@ -78,9 +78,11 @@ const jsonLd = {
 
 <Layout title={title} description={description} ogImage={coverImage}>
   <article class="article">
-    <div class="article-layout">
-      <!-- Main article column -->
-      <div class="article-main">
+    <div class="blog-container">
+      <div class="blog-grid">
+        <FloatingToc headings={headings} mode="desktop" />
+        <!-- Main article column -->
+        <div class="article-main">
         <a href="/blog" class="back-link">&larr; All Articles</a>
 
         <header class="article-header">
@@ -115,7 +117,7 @@ const jsonLd = {
         </div>
 
         <!-- Floating Table of Contents (desktop: fixed sidebar, mobile: drawer) -->
-        <FloatingToc headings={headings} />
+        <FloatingToc headings={headings} mode="mobile" />
 
         <div class="article-body">
           <Content />
@@ -205,6 +207,7 @@ const jsonLd = {
           </div>
         </div>
       </aside>
+      </div>
     </div>
   </article>
 
@@ -224,12 +227,14 @@ const jsonLd = {
     padding: 1.5rem 1.5rem 4rem;
   }
 
-  .article-layout {
-    max-width: 1100px;
+  .blog-container {
+    max-width: 1600px;
     margin: 0 auto;
+  }
+
+  .blog-grid {
     display: flex;
-    gap: 3rem;
-    align-items: flex-start;
+    flex-direction: column;
   }
 
   .article-main {
@@ -325,17 +330,23 @@ const jsonLd = {
     font-weight: 700;
   }
 
-  /* ===== Desktop: offset article for floating TOC =====
-     margin-left pushes the entire article block right by 260px,
-     creating clear space for the fixed TOC (left:18px, width:220px).
-     Unlike padding-left, margin is OUTSIDE the box, so the article
-     truly shifts right and doesn't squeeze against the TOC.
-     Base max-width:1100px is kept; on screens <1360px the article
-     simply narrows (margin-right:auto absorbs the difference).
+  /* ===== Desktop: three-column centered layout =====
+     TOC (210px) + 70px gap + content (max 760px) + 48px gap + sidebar (300px)
+     All centered within max-width:1600px container via margin:0 auto.
+     gap:3rem (48px) applies between visible flex items.
+     TOC has margin-right:22px → total TOC→content gap = 48+22 = 70px.
   */
+  @media (min-width: 1024px) {
+    .blog-grid {
+      flex-direction: row;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+  }
+
   @media (min-width: 1280px) {
-    .article-layout {
-      margin-left: 260px;
+    .blog-grid {
+      justify-content: center;
     }
   }
 

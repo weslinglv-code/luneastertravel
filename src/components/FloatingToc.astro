@@ -2,8 +2,13 @@
 /**
  * FloatingToc.astro — 日系简约悬浮式博客目录
  *
- * 桌面端（≥1280px）：固定悬浮在正文左侧，浅米白半透明背景
+ * 桌面端（≥1280px）：sticky 悬浮在正文左侧，浅米白半透明背景
  * 移动端（<1280px）：顶部按钮触发，左侧抽屉滑出
+ *
+ * mode prop:
+ *   'desktop' — 只渲染桌面 TOC（用于 grid 布局的左列）
+ *   'mobile'  — 只渲染移动端触发按钮 + 抽屉（放在 article-main 内部）
+ *   'all'     — 渲染全部（默认，向后兼容）
  *
  * Emoji 自动从 H2 标题文本开头提取（用 \p{Extended_Pictographic}）
  * 在 CMS 编辑 H2 标题时加 emoji 前缀即可自动显示在目录中
@@ -18,10 +23,14 @@ interface Heading {
 
 interface Props {
   headings: Heading[];
+  mode?: 'desktop' | 'mobile' | 'all';
 }
 
-const { headings } = Astro.props;
+const { headings, mode = 'all' } = Astro.props;
 const tocHeadings = headings.filter((h) => h.depth === 2);
+
+const showDesktop = mode === 'desktop' || mode === 'all';
+const showMobile = mode === 'mobile' || mode === 'all';
 
 // Parse emoji prefix from heading text
 function parseEmojiHeading(text: string): { emoji: string; text: string } {
@@ -39,14 +48,8 @@ const parsedHeadings = tocHeadings.map((h) => ({
 }));
 ---
 
-{tocHeadings.length > 1 && (
-  <>
-  <!-- ===== Desktop: fixed floating TOC ===== -->
-  <div
-    class="floating-toc"
-    id="floatingToc"
-    style="position: fixed !important; left: 18px !important; top: 110px !important; width: 220px !important; z-index: 50 !important;"
-  >
+{tocHeadings.length > 1 && showDesktop && (
+  <div class="floating-toc" id="floatingToc">
       <div class="toc-header">
         <div class="toc-title-group">
           <span class="toc-bar"></span>
@@ -70,8 +73,11 @@ const parsedHeadings = tocHeadings.map((h) => ({
           ))}
         </ul>
       </nav>
-    </div>
+  </div>
+)}
 
+{tocHeadings.length > 1 && showMobile && (
+  <>
     <!-- ===== Mobile: trigger button + slide-out drawer ===== -->
     <button class="toc-mobile-trigger" id="tocMobileTrigger" type="button">
       <span class="toc-mobile-icon">📖</span>
@@ -178,13 +184,13 @@ const parsedHeadings = tocHeadings.map((h) => ({
     margin: 0;
   }
 
-  /* ===== Desktop floating TOC ===== */
+  /* ===== Desktop floating TOC (sticky inside grid column) ===== */
   .floating-toc {
     display: none;
-    position: fixed;
-    left: 18px;
+    position: sticky;
     top: 110px;
-    width: 220px;
+    width: 210px;
+    flex-shrink: 0;
     max-height: calc(100vh - 140px);
     overflow-y: auto;
     background: rgba(255, 252, 245, 0.8);
@@ -370,6 +376,7 @@ const parsedHeadings = tocHeadings.map((h) => ({
   @media (min-width: 1280px) {
     .floating-toc {
       display: block;
+      margin-right: 22px;
     }
 
     .toc-mobile-trigger {
