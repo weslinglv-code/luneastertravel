@@ -4,7 +4,7 @@ title: dd
 description: dd
 pubDate: 2026-08-07
 updatedDate: ''
-coverImage: ''
+coverImage: /images/_cand-skytree.jpg
 coverAlt: ''
 destination: ''
 tags:
