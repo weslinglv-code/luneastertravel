@@ -14,6 +14,11 @@ const blog = defineCollection({
     readingTime: z.string().optional(),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
+    // New CMS-managed fields (all optional for backward compatibility)
+    destination: z.string().optional(),
+    metaTitle: z.string().optional(),
+    metaDescription: z.string().optional(),
+    metaKeywords: z.string().optional(),
   }),
 });
 

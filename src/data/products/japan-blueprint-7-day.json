@@ -18,5 +18,7 @@
   "gumroadUrl": "https://luneaster.gumroad.com/l/japan-blueprint-7-day",
   "coverImage": "/images/05.png",
   "badge": "Bestseller",
-  "accentColor": "#e85d4a"
+  "accentColor": "#e85d4a",
+  "destination": "",
+  "status": "published"
 }

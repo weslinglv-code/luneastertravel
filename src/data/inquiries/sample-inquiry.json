@@ -1,0 +1,11 @@
+{
+  "date": "2026-08-07",
+  "email": "sample@example.com",
+  "destination": "okinawa",
+  "travelDate": "2026-10-01",
+  "numTravellers": 2,
+  "tripStyle": "Leisure",
+  "message": "This is a sample inquiry. Real inquiries from the Custom Trip form will appear here once the form-to-CMS pipeline is connected.",
+  "status": "pending",
+  "notes": "Internal notes for tracking communication progress."
+}

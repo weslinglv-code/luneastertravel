@@ -12,6 +12,18 @@ export interface Product {
   coverImage: string;
   badge?: string;
   accentColor: string;
+  // New CMS-managed fields (all optional for backward compatibility)
+  destination?: string;
+  tripDays?: number;
+  transportType?: string;
+  photographySpots?: string;
+  foodGuideNotes?: string;
+  longDescription?: string;
+  galleryImages?: string[];
+  status?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  metaKeywords?: string;
 }
 
 // Products are stored as individual JSON files in src/data/products/.
@@ -24,4 +36,5 @@ const modules = import.meta.glob('./products/*.json', { eager: true }) as Record
 
 export const products: Product[] = Object.values(modules)
   .map((mod) => mod.default)
+  .filter((p) => p.status !== 'draft')
   .sort((a, b) => a.order - b.order);

@@ -17,5 +17,7 @@
   "gumroadUrl": "https://luneaster.gumroad.com/l/kyoto-takao-autumn",
   "coverImage": "/images/gallery-kyoto.jpg",
   "badge": "New",
-  "accentColor": "#d97706"
+  "accentColor": "#d97706",
+  "destination": "kyoto",
+  "status": "published"
 }

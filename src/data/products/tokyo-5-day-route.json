@@ -16,5 +16,7 @@
   ],
   "gumroadUrl": "https://luneaster.gumroad.com/l/ttyviq",
   "coverImage": "/images/gallery-tokyo.jpg",
-  "accentColor": "#5b8def"
+  "accentColor": "#5b8def",
+  "destination": "tokyo",
+  "status": "published"
 }

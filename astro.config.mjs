@@ -23,6 +23,14 @@ function rehypeAffiliateLinks(options) {
           node.properties.href = aff.url;
           node.properties.target = '_blank';
           node.properties.rel = 'sponsored nofollow noopener';
+        } else {
+          // Link is disabled or missing — render as plain text, remove <a> wrapper
+          node.type = 'text';
+          node.value = node.children && node.children.length > 0
+            ? node.children.map(c => c.value || '').join('')
+            : key;
+          delete node.properties;
+          delete node.tagName;
         }
       }
     }

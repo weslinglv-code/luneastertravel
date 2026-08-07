@@ -2,17 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import { links } from '../data/affiliate-links.js';
 
-// Build affiliate links for auto-reply email
+// Build affiliate links for auto-reply email (only enabled links)
 const affiliateLinksText = [
-  `Book Flights: ${links.tp_flights.url}`,
-  `Book Hotels (Kyoto Area): ${links.booking_kyoto.url}`,
-  `Purchase JR Pass: ${links.klook_jrpass.url}`,
-  `Pocket WiFi Rental: ${links.klook_pocket_wifi.url}`,
-  `Tokyo Attraction Tickets: ${links.klook_tokyo_disney.url}`,
-  `Travel Adapter: ${links.amazon_adapter.url}`,
-  `Portable Charger: ${links.amazon_powerbank.url}`,
-  `Japan Guidebook: ${links.amazon_guidebook.url}`,
-].join('\n');
+  links.tp_flights && `Book Flights: ${links.tp_flights.url}`,
+  links.klook_jrpass && `Purchase JR Pass: ${links.klook_jrpass.url}`,
+  links.klook_pocket_wifi && `Pocket WiFi Rental: ${links.klook_pocket_wifi.url}`,
+  links.klook_tokyo_disney && `Tokyo Attraction Tickets: ${links.klook_tokyo_disney.url}`,
+  links.klook_mt_fuji && `Mt. Fuji Day Trip: ${links.klook_mt_fuji.url}`,
+  links.amazon_adapter && `Travel Adapter: ${links.amazon_adapter.url}`,
+  links.amazon_powerbank && `Portable Charger: ${links.amazon_powerbank.url}`,
+  links.amazon_guidebook && `Japan Guidebook: ${links.amazon_guidebook.url}`,
+].filter(Boolean).join('\n');
 
 const autoResponseSubject = 'Your Custom Japan-Trip Request Has Been Received | LuneAster';
 

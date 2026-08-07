@@ -18,5 +18,7 @@
   "gumroadUrl": "https://luneaster.gumroad.com/l/kyoto-autumn-guide",
   "coverImage": "/images/thumbnail_kiyomizu.png",
   "badge": "New",
-  "accentColor": "#c0392b"
+  "accentColor": "#c0392b",
+  "destination": "kyoto",
+  "status": "published"
 }

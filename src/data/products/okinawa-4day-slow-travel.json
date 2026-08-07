@@ -18,5 +18,7 @@
   "gumroadUrl": "https://luneaster.gumroad.com/l/okinawa-4day-printable-itinerary",
   "coverImage": "/images/cover-okinawa.jpg",
   "badge": "New",
-  "accentColor": "#0ea5e9"
+  "accentColor": "#0ea5e9",
+  "destination": "okinawa",
+  "status": "published"
 }

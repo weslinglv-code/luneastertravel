@@ -1,0 +1,46 @@
+{
+  "destinations": [
+    {
+      "slug": "okinawa",
+      "name": "Okinawa",
+      "nameCn": "冲绳",
+      "emoji": "🏖️"
+    },
+    {
+      "slug": "kyoto",
+      "name": "Kyoto",
+      "nameCn": "京都",
+      "emoji": "⛩️"
+    },
+    {
+      "slug": "tokyo",
+      "name": "Tokyo",
+      "nameCn": "东京",
+      "emoji": "🗼"
+    },
+    {
+      "slug": "osaka",
+      "name": "Osaka",
+      "nameCn": "关西",
+      "emoji": "🍜"
+    },
+    {
+      "slug": "mt-fuji",
+      "name": "Mt. Fuji",
+      "nameCn": "富士山",
+      "emoji": "🗻"
+    },
+    {
+      "slug": "wakayama",
+      "name": "Wakayama",
+      "nameCn": "和歌山",
+      "emoji": "🌿"
+    },
+    {
+      "slug": "hokkaido",
+      "name": "Hokkaido",
+      "nameCn": "北海道",
+      "emoji": "❄️"
+    }
+  ]
+}

@@ -18,5 +18,7 @@
   "gumroadUrl": "https://luneaster.gumroad.com/l/wakayama3dayguide",
   "coverImage": "/images/cover-wakayama.jpg",
   "badge": "New",
-  "accentColor": "#059669"
+  "accentColor": "#059669",
+  "destination": "wakayama",
+  "status": "published"
 }
