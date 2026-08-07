@@ -326,15 +326,16 @@ const jsonLd = {
   }
 
   /* ===== Desktop: offset article for floating TOC =====
-     Use padding-left (inside max-width due to box-sizing:border-box)
-     instead of margin-left to prevent horizontal overflow on screens
-     between 1280px-1400px where 240+1100=1340 > viewport width.
-     max-width increased to 1320px so content area stays ~1100px.
+     margin-left pushes the entire article block right by 260px,
+     creating clear space for the fixed TOC (left:18px, width:220px).
+     Unlike padding-left, margin is OUTSIDE the box, so the article
+     truly shifts right and doesn't squeeze against the TOC.
+     Base max-width:1100px is kept; on screens <1360px the article
+     simply narrows (margin-right:auto absorbs the difference).
   */
   @media (min-width: 1280px) {
     .article-layout {
-      max-width: 1320px;
-      padding-left: 220px;
+      margin-left: 260px;
     }
   }
 
