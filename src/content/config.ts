@@ -1,12 +1,20 @@
 import { defineCollection, z } from 'astro:content';
 
+// Sveltia CMS writes empty strings for unset fields instead of omitting them.
+// This preprocessor converts empty strings/null to undefined so Zod .optional() works.
 const blog = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    pubDate: z.coerce.date(),
-    updatedDate: z.coerce.date().optional(),
+    pubDate: z.preprocess(
+      (val) => (val === '' || val === null) ? undefined : val,
+      z.coerce.date()
+    ),
+    updatedDate: z.preprocess(
+      (val) => (val === '' || val === null) ? undefined : val,
+      z.coerce.date().optional()
+    ),
     coverImage: z.string().optional(),
     coverAlt: z.string().optional(),
     tags: z.array(z.string()).default([]),
