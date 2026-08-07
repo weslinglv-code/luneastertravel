@@ -374,6 +374,8 @@ collections:
                   - "japan-blueprint-7-day"
                   - "kyoto-3-day-autumn"
                   - "tokyo-5-day-route"
+                  - "okinawa-4day-slow-travel"
+                  - "wakayama-3day-mountain-sea"
               - label: "CTA Button Text"
                 name: "cta_text"
                 widget: "string"
@@ -441,6 +443,8 @@ collections:
                   - "japan-blueprint-7-day"
                   - "kyoto-3-day-autumn"
                   - "tokyo-5-day-route"
+                  - "okinawa-4day-slow-travel"
+                  - "wakayama-3day-mountain-sea"
               - label: "CTA Button Text"
                 name: "cta_text"
                 widget: "string"
@@ -551,7 +555,7 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
-        hint: "Affiliate links: [text](#aff:key) — keys: klook_jrpass / klook_pocket_wifi / klook_tokyo_disney / klook_mt_fuji / booking_tokyo_shinjuku / booking_kyoto / booking_osaka / tp_flights / amazon_travel_adapter. Insert CTAs: <div data-cta=\"light\"></div> (soft hint) or <div data-cta=\"button\"></div> (orange button). Internal links: [text](/blog/article-slug)."
+        hint: "Affiliate links: [text](#aff:key) — keys: klook_jrpass / klook_pocket_wifi / klook_tokyo_disney / klook_mt_fuji / tp_flights / amazon_adapter / amazon_powerbank / amazon_guidebook. Insert CTAs: <div data-cta=\"light\"></div> (soft hint) or <div data-cta=\"button\"></div> (orange button). Internal links: [text](/blog/article-slug)."
 
   # ========== PAID PRODUCTS ==========
   - name: "products"
