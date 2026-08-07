@@ -41,8 +41,12 @@ const parsedHeadings = tocHeadings.map((h) => ({
 
 {tocHeadings.length > 1 && (
   <>
-    <!-- ===== Desktop: fixed floating TOC ===== -->
-    <div class="floating-toc" id="floatingToc">
+  <!-- ===== Desktop: fixed floating TOC ===== -->
+  <div
+    class="floating-toc"
+    id="floatingToc"
+    style="position: fixed !important; left: 18px !important; top: 110px !important; width: auto !important; max-width: 175px !important; min-width: 130px !important; z-index: 50 !important;"
+  >
       <div class="toc-header">
         <div class="toc-title-group">
           <span class="toc-bar"></span>
