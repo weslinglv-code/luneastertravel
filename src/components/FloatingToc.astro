@@ -125,7 +125,7 @@ const parsedHeadings = tocHeadings.map((h) => ({
 
   .toc-title {
     font-family: Georgia, 'Times New Roman', 'Noto Serif JP', serif;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 400;
     letter-spacing: 0.04em;
     color: #3a3a3a;
@@ -134,13 +134,13 @@ const parsedHeadings = tocHeadings.map((h) => ({
   .toc-link {
     display: flex;
     align-items: flex-start;
-    gap: 0.4rem;
-    padding: 0.35rem 0.5rem;
-    font-size: 0.8rem;
-    line-height: 1.45;
+    gap: 0.35rem;
+    padding: 0.25rem 0.35rem;
+    font-size: 0.76rem;
+    line-height: 1.4;
     color: var(--c-text-muted, #5f5f6e);
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 5px;
     transition: color 0.2s ease, background 0.2s ease;
   }
 
@@ -150,10 +150,10 @@ const parsedHeadings = tocHeadings.map((h) => ({
   }
 
   .toc-emoji {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
+    line-height: 1.4;
     flex-shrink: 0;
-    width: 1.3rem;
+    width: 1.1rem;
     text-align: center;
   }
 
@@ -180,17 +180,19 @@ const parsedHeadings = tocHeadings.map((h) => ({
     position: fixed;
     left: 18px;
     top: 110px;
-    width: 200px;
+    width: auto;
+    max-width: 175px;
+    min-width: 130px;
     max-height: calc(100vh - 140px);
     overflow-y: auto;
-    background: rgba(243, 239, 232, 0.8);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(232, 226, 214, 0.4);
-    border-radius: 10px;
-    padding: 0.75rem 0.625rem;
+    background: rgba(255, 252, 245, 0.55);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(232, 226, 214, 0.3);
+    border-radius: 8px;
+    padding: 0.5rem 0.45rem;
     z-index: 50;
-    box-shadow: 0 2px 10px rgba(26, 26, 46, 0.05);
+    box-shadow: 0 1px 8px rgba(26, 26, 46, 0.04);
   }
 
   /* Custom scrollbar — subtle */
@@ -209,8 +211,8 @@ const parsedHeadings = tocHeadings.map((h) => ({
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.625rem;
-    padding: 0 0.375rem;
+    margin-bottom: 0.5rem;
+    padding: 0 0.2rem;
   }
 
   .toc-collapse-btn {

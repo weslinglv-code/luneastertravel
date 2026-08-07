@@ -325,10 +325,16 @@ const jsonLd = {
     font-weight: 700;
   }
 
-  /* ===== Desktop: offset article for floating TOC ===== */
+  /* ===== Desktop: offset article for floating TOC =====
+     Use padding-left (inside max-width due to box-sizing:border-box)
+     instead of margin-left to prevent horizontal overflow on screens
+     between 1280px-1400px where 240+1100=1340 > viewport width.
+     max-width increased to 1320px so content area stays ~1100px.
+  */
   @media (min-width: 1280px) {
     .article-layout {
-      margin-left: 240px;
+      max-width: 1320px;
+      padding-left: 220px;
     }
   }
 
