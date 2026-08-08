@@ -37,7 +37,10 @@ This guide breaks it down month by month so you can make an informed decision. F
 
 **Our pick:** Late October to November for the best balance of weather, scenery, and reasonable crowds.
 
-<div data-cta="light"></div>
+<div data-cta="light">
+Skip hours‑worth of exhausting online research. Grab my printable, well‑organised 7‑Day Japan Blueprint PDF for your Japan journey, packed with seasonal itineraries and crowd‑avoidance tips.
+[Grab The Full PDF Guide ($8.99)](https://luneaster.gumroad.com/l/japan-blueprint-7-day?layout=profile)
+</div>
 
 ***
 
