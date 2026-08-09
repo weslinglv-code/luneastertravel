@@ -1,6 +1,6 @@
 ---
 slug: best-time-to-visit-japan
-title: 'Best Time to Visit Japan: Month-by-Month Guide (2026)'
+title: 'Best Time to Visit Japan 2026: Complete Month‑by‑Month Travel Guide'
 description: When should you visit Japan? This complete 2026 guide breaks down weather, crowds, prices, and festivals month by month so you can pick the perfect time for your trip.
 pubDate: 2026-08-06
 updatedDate: ''
