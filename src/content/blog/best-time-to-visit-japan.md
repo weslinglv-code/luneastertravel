@@ -44,7 +44,9 @@ Skip hours‑worth of exhausting online research. Grab my printable, well‑orga
 
 ***
 
-## 🌸 Spring (March–May): Cherry Blossom Season
+![](/images/_cand-cherry.jpg)
+
+🌸 Spring (March–May): Cherry Blossom Season
 
 ### March
 
