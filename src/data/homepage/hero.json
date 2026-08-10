@@ -1,5 +1,5 @@
 {
-  "bgImage": "/images/hero.jpg",
+  "bgImage": "/images/hero.webp",
   "tag": "Off-The-Beaten-Path Kansai Travel Guides",
   "title": "Off-The-Beaten-Path Kansai Travel Guides",
   "titleHighlight": "Kansai",
@@ -15,6 +15,6 @@
   },
   "secondaryButton": {
     "text": "Read Free Blog Articles",
-    "url": "/blog"
+    "url": "/blog.html"
   }
 }

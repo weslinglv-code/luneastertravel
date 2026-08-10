@@ -192,7 +192,7 @@ const otherProducts = products.filter(p => p.slug !== product.slug);
       <h2>You might also like</h2>
       <div class="other-guides">
         {otherProducts.map(p => (
-          <a href={`/products/${p.slug}`} class="other-card">
+          <a href={`/products/${p.slug}.html`} class="other-card">
             <span class="other-badge" style={`color: ${p.accentColor}`}>{p.priceLabel}</span>
             <h4>{p.title}</h4>
             <p>{p.subtitle}</p>

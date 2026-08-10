@@ -109,6 +109,36 @@
       "description": "The most trusted Japan guidebook. Detailed maps, itineraries, and local tips.",
       "icon": "book",
       "enabled": true
+    },
+    {
+      "key": "klook_ryokan",
+      "label": "Traditional Ryokan Stays",
+      "url": "https://www.klook.com/hotels/?aid=129901",
+      "brand": "Klook",
+      "type": "hotel",
+      "description": "Hand-picked traditional Japanese inns across Tokyo, Kyoto and Osaka with authentic tatami rooms and kaiseki dining.",
+      "icon": "bed",
+      "enabled": true
+    },
+    {
+      "key": "klook_subway",
+      "label": "Tokyo/Osaka Subway Passes",
+      "url": "https://www.klook.com/activity/1572-tokyo-subway-ticket/?aid=129901",
+      "brand": "Klook",
+      "type": "transport",
+      "description": "Unlimited subway rides in Tokyo or Osaka. Pre-book and skip the ticket machine queues.",
+      "icon": "train",
+      "enabled": true
+    },
+    {
+      "key": "klook_tattoo_onsen",
+      "label": "Tattoo-Friendly & Private Onsen",
+      "url": "https://www.klook.com/activity/1457-onsen-experience-japan/?aid=129901",
+      "brand": "Klook",
+      "type": "ticket",
+      "description": "Curated list of private onsen rooms and tattoo-friendly hot springs across Japan.",
+      "icon": "ticket",
+      "enabled": true
     }
   ]
 }

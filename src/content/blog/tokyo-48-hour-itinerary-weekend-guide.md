@@ -2,7 +2,7 @@
 title: "Tokyo 48-Hour Itinerary: The Perfect Weekend Guide (2026)"
 description: "Only have 48 hours in Tokyo? This step-by-step weekend itinerary covers Shinjuku, Shibuya, Asakusa, and Akihabara with exact timing, food picks, and transit tips."
 pubDate: 2026-08-06
-coverImage: "/images/hero.jpg"
+coverImage: "/images/hero.webp"
 coverAlt: "Tokyo skyline at sunset with Tokyo Tower in the background"
 tags: ["Tokyo", "Itinerary", "Weekend", "48-Hour", "First-Timers"]
 author: "LuneAster"

@@ -2,7 +2,7 @@
 title: "Japan Travel Budget: How Much Does a Trip to Japan Cost in 2026?"
 description: "A complete breakdown of Japan travel costs in 2026 — flights, hotels, food, transport, and activities. Learn how to do Japan on $100/day or splurge on luxury."
 pubDate: 2026-08-06
-coverImage: "/images/hero.jpg"
+coverImage: "/images/hero.webp"
 coverAlt: "Japanese yen bills and coins with a Tokyo street food stall in the background"
 tags: ["Japan", "Budget", "Cost", "Travel Tips", "Planning"]
 author: "LuneAster"

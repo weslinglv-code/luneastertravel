@@ -3,7 +3,7 @@
   "introText": "Save your time on travel bookings. I have gathered reliable booking resources for your Japanese trip.",
   "disclosureText": "I will earn a tiny commission at zero-extra cost for you when you book via my links.",
   "viewAllText": "View All Resources",
-  "viewAllUrl": "/resources",
+  "viewAllUrl": "/resources.html",
   "buttons": [
     { "linkKey": "tp_flights", "label": "Book Flights" },
     { "linkKey": "klook_jrpass", "label": "Buy JR Pass" },

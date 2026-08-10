@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { getImgInfo, getImgInfoBatch } from '../../utils/images';
 
 // Filter to English-only articles (hide Chinese content from international visitors)
 const isEnglish = (s: string) => /^[\x00-\x7F]*$/.test(s);
@@ -11,6 +12,10 @@ const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
 
 const featured = allPosts.find(p => p.data.featured) || allPosts[0];
 const rest = allPosts.filter(p => p !== featured);
+
+// Pre-compute image info for WebP + dimensions
+const featuredImgInfo = await getImgInfo(featured?.data.coverImage);
+const restImgInfo = await getImgInfoBatch(rest.map(p => p.data.coverImage));
 ---
 
 <Layout
@@ -33,10 +38,17 @@ const rest = allPosts.filter(p => p !== featured);
       ) : (
         <>
           {featured && (
-            <a href={`/blog/${featured.slug}`} class="featured-card">
+            <a href={`/blog/${featured.slug}.html`} class="featured-card">
               {featured.data.coverImage && (
                 <div class="featured-cover">
-                  <img src={featured.data.coverImage} alt={featured.data.coverAlt || featured.data.title} loading="eager" />
+                  {featuredImgInfo.webp ? (
+                    <picture>
+                      <source srcset={featuredImgInfo.webp} type="image/webp" />
+                      <img src={featured.data.coverImage} alt={featured.data.coverAlt || featured.data.title} loading="eager" width={featuredImgInfo.width} height={featuredImgInfo.height} />
+                    </picture>
+                  ) : (
+                    <img src={featured.data.coverImage} alt={featured.data.coverAlt || featured.data.title} loading="eager" width={featuredImgInfo.width} height={featuredImgInfo.height} />
+                  )}
                 </div>
               )}
               <div class="featured-body">
@@ -55,11 +67,18 @@ const rest = allPosts.filter(p => p !== featured);
 
           {rest.length > 0 && (
             <div class="post-grid">
-              {rest.map(post => (
-                <a href={`/blog/${post.slug}`} class="post-card">
+              {rest.map((post, idx) => (
+                <a href={`/blog/${post.slug}.html`} class="post-card">
                   {post.data.coverImage && (
                     <div class="post-cover">
-                      <img src={post.data.coverImage} alt={post.data.coverAlt || post.data.title} loading="lazy" />
+                      {restImgInfo[idx]?.webp ? (
+                        <picture>
+                          <source srcset={restImgInfo[idx].webp} type="image/webp" />
+                          <img src={post.data.coverImage} alt={post.data.coverAlt || post.data.title} loading="lazy" width={restImgInfo[idx]?.width} height={restImgInfo[idx]?.height} />
+                        </picture>
+                      ) : (
+                        <img src={post.data.coverImage} alt={post.data.coverAlt || post.data.title} loading="lazy" width={restImgInfo[idx]?.width} height={restImgInfo[idx]?.height} />
+                      )}
                     </div>
                   )}
                   <div class="post-body">
@@ -138,6 +157,12 @@ const rest = allPosts.filter(p => p !== featured);
     overflow: hidden;
   }
 
+  .featured-cover picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
   .featured-cover img {
     width: 100%;
     height: 100%;
@@ -199,6 +224,12 @@ const rest = allPosts.filter(p => p !== featured);
     width: 100%;
     aspect-ratio: 16/9;
     overflow: hidden;
+  }
+
+  .post-cover picture {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 
   .post-cover img {

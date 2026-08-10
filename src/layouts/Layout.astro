@@ -8,12 +8,14 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  preloadImage?: string;
 }
 
 const {
   title = 'LuneAster Travel — Japan Travel Guides & Itineraries',
   description = 'Downloadable Japan travel guides, itineraries, and budget breakdowns. Plan your perfect Japan trip with LuneAster.',
   ogImage = '/images/og-default.jpg',
+  preloadImage,
 } = Astro.props;
 
 const siteUrl = 'https://luneastertravel.com';
@@ -42,6 +44,9 @@ const fullTitle = title.includes('LuneAster') ? title : `${title} — LuneAster 
 
   <!-- Favicon (用真实 logo 图) -->
   <link rel="icon" type="image/png" href="/logo.png" />
+
+  <!-- Preload hero image for LCP optimization (homepage only) -->
+  {preloadImage && <link rel="preload" as="image" href={preloadImage} type="image/webp" />}
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

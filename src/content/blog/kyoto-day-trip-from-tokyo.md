@@ -2,7 +2,7 @@
 title: "Kyoto Day Trip from Tokyo: Is It Worth It? (2026 Guide)"
 description: "Can you do Kyoto as a day trip from Tokyo? Yes — if you plan right. This guide covers the Shinkansen route, what to see in one day, and when it's better to stay overnight."
 pubDate: 2026-08-06
-coverImage: "/images/hero.jpg"
+coverImage: "/images/hero.webp"
 coverAlt: "Fushimi Inari torii gates in Kyoto at sunrise"
 tags: ["Kyoto", "Day Trip", "Tokyo", "Shinkansen", "Itinerary"]
 author: "LuneAster"

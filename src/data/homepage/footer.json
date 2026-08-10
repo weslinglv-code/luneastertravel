@@ -3,12 +3,12 @@
   "brandDescription": "Japan travel guides crafted by a travel designer who actually goes there. Off-the-beaten-path itineraries built from real 1M+ TikTok travel footage.",
   "quickLinks": [
     { "label": "Home", "url": "/" },
-    { "label": "Free Guides", "url": "/blog" },
+    { "label": "Free Guides", "url": "/blog.html" },
     { "label": "PDF Itineraries", "url": "/#premium" },
-    { "label": "Custom Trip", "url": "/custom-trip" },
-    { "label": "About", "url": "/about" },
-    { "label": "Privacy Policy", "url": "/privacy" },
-    { "label": "Affiliate Disclosure", "url": "/disclosure" }
+    { "label": "Custom Trip", "url": "/custom-trip.html" },
+    { "label": "About", "url": "/about.html" },
+    { "label": "Privacy Policy", "url": "/privacy.html" },
+    { "label": "Affiliate Disclosure", "url": "/disclosure.html" }
   ],
   "socialLinks": [
     { "label": "TikTok", "url": "https://www.tiktok.com/@lune.aster" },

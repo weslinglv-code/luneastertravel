@@ -2,6 +2,7 @@
 import { premiumSection } from '../data/homepage';
 import { products } from '../data/products';
 import type { Product } from '../data/products';
+import { getImgInfoBatch } from '../utils/images';
 
 const { sectionTitle, sectionSubtitle, buttonText, shopAllUrl, shopAllText } = premiumSection;
 
@@ -19,6 +20,9 @@ const coverArt: Record<string, { icon: string; pattern: string }> = {
 function getArt(slug: string) {
   return coverArt[slug] || coverArt['tokyo-48hr-solo'];
 }
+
+// Pre-compute image info for WebP + dimensions
+const productImgInfo = await getImgInfoBatch(products.map(p => p.coverImage));
 ---
 
 <section class="section" id="premium">
@@ -29,14 +33,22 @@ function getArt(slug: string) {
     </div>
 
     <div class="product-grid">
-      {products.map((product: Product) => {
+      {products.map((product: Product, idx: number) => {
         const art = getArt(product.slug);
         const hasImage = !!product.coverImage;
+        const imgInfo = productImgInfo[idx];
         return (
           <a href={product.gumroadUrl} class="product-card" style={`--accent: ${product.accentColor}`} target="_blank" rel="noopener">
             <div class="card-cover" data-pattern={art.pattern}>
               {hasImage ? (
-                <img src={product.coverImage} alt={product.title} class="cover-img" loading="lazy" />
+                imgInfo?.webp ? (
+                  <picture>
+                    <source srcset={imgInfo.webp} type="image/webp" />
+                    <img src={product.coverImage} alt={product.title} class="cover-img" loading="lazy" width={imgInfo?.width} height={imgInfo?.height} />
+                  </picture>
+                ) : (
+                  <img src={product.coverImage} alt={product.title} class="cover-img" loading="lazy" width={imgInfo?.width} height={imgInfo?.height} />
+                )
               ) : (
                 <div class="cover-art">
                   {art.icon === 'mountain' && (
@@ -158,6 +170,14 @@ function getArt(slug: string) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    inset: 0;
+  }
+
+  .card-cover picture {
+    display: block;
+    width: 100%;
+    height: 100%;
     position: absolute;
     inset: 0;
   }

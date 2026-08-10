@@ -22,7 +22,7 @@ const moduleMap: Record<string, any> = {
 const visibleModules = sections.filter(s => s.visible && moduleMap[s.id]);
 ---
 
-<Layout>
+<Layout preloadImage="/images/hero.webp">
   {visibleModules.map(mod => {
     const Component = moduleMap[mod.id];
     return <Component />;

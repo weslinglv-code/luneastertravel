@@ -3,6 +3,6 @@
   "sectionSubtitle": "In-depth guides and tips — no paywall, no fluff.",
   "maxPosts": 3,
   "buttonText": "Read All Articles",
-  "buttonUrl": "/blog",
+  "buttonUrl": "/blog.html",
   "englishOnly": true
 }

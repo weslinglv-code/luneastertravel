@@ -2,7 +2,7 @@
 title: "7-Day Japan Itinerary for First-Timers: The Complete 2026 Guide"
 description: "A day-by-day 7-day Japan itinerary covering Tokyo, Kyoto, and Osaka. Includes transport tips, hotel recommendations, and budget breakdowns for first-time visitors."
 pubDate: 2026-08-05
-coverImage: "/images/hero.jpg"
+coverImage: "/images/hero.webp"
 coverAlt: "Kiyomizu-dera temple surrounded by autumn maple leaves in Kyoto"
 tags: ["Japan", "Itinerary", "Tokyo", "Kyoto", "First-Timers"]
 author: "LuneAster"

@@ -1,10 +1,10 @@
 ---
 slug: best-time-to-visit-japan
-title: 'Best Time to Visit Japan: Month-by-Month Guide (2026)'
+title: 'Best Time to Visit Japan 2026: Complete Month-by-Month Travel Guide'
 description: When should you visit Japan? This complete 2026 guide breaks down weather, crowds, prices, and festivals month by month so you can pick the perfect time for your trip.
 pubDate: 2026-08-06
 updatedDate: ''
-coverImage: /images/_cand-cherry.jpg
+coverImage: /images/511.png
 coverAlt: Cherry blossoms in full bloom along a river in Kyoto, Japan
 tags:
   - Japan
@@ -37,11 +37,16 @@ This guide breaks it down month by month so you can make an informed decision. F
 
 **Our pick:** Late October to November for the best balance of weather, scenery, and reasonable crowds.
 
-<div data-cta="light"></div>
+<div data-cta="light">
+Skip hours‑worth of exhausting online research. Grab my printable, well‑organised PDF travel blueprint for your Japan journey.
+[Get the PDF Guide →](https://luneaster.gumroad.com/l/japan-blueprint-7-day?layout=profile)
+</div>
 
 ***
 
-## 🌸 Spring (March–May): Cherry Blossom Season
+![](/images/_cand-cherry.jpg)
+
+🌸 Spring (March–May): Cherry Blossom Season
 
 ### March
 

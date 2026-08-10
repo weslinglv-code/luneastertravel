@@ -33,6 +33,11 @@ const relatedPosts = allPosts
   .slice(0, 3)
   .map(item => item.post);
 
+// Pre-compute WebP paths for related post cover images
+const relatedImgInfo = await Promise.all(
+  relatedPosts.map(rp => getImgInfo(rp.data.coverImage))
+);
+
 const formattedDate = pubDate.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
@@ -40,7 +45,34 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
 });
 
 const siteUrl = 'https://luneastertravel.com';
-const articleUrl = `${siteUrl}/blog/${post.slug}`;
+const articleUrl = `${siteUrl}/blog/${post.slug}.html`;
+
+// Helper: get image dimensions + WebP path for template <picture> tags
+async function getImgInfo(src) {
+  if (!src) return { width: null, height: null, webp: null };
+  const { existsSync } = await import('fs');
+  const { join } = await import('path');
+  const sharp = (await import('sharp')).default;
+  const filePath = join(process.cwd(), 'public', src.replace(/^\//, ''));
+  let width = null, height = null;
+  try {
+    if (existsSync(filePath)) {
+      const meta = await sharp(filePath).metadata();
+      width = meta.width || null;
+      height = meta.height || null;
+    }
+  } catch (e) { /* ignore */ }
+  // Check for WebP version
+  let webp = null;
+  if (/\.(jpg|jpeg|png)$/i.test(src)) {
+    const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+    const webpPath = join(process.cwd(), 'public', webpSrc.replace(/^\//, ''));
+    if (existsSync(webpPath)) webp = webpSrc;
+  }
+  return { width, height, webp };
+}
+
+const coverImgInfo = await getImgInfo(coverImage);
 
 // Get the sidebar & end-CTA products from CMS-editable config (not hardcoded)
 const sidebarProduct = products.find(p => p.slug === articleCta.sidebar.product_slug) || products[0];
@@ -83,7 +115,7 @@ const jsonLd = {
         <FloatingToc headings={headings} mode="desktop" />
         <!-- Main article column -->
         <div class="article-main">
-        <a href="/blog" class="back-link">&larr; All Articles</a>
+        <a href="/blog.html" class="back-link">&larr; All Articles</a>
 
         <header class="article-header">
           {tags && tags.length > 0 && (
@@ -107,16 +139,17 @@ const jsonLd = {
 
         {coverImage && (
           <div class="article-cover">
-            <img src={coverImage} alt={coverAlt || title} loading="eager" />
+            {coverImgInfo.webp ? (
+              <picture>
+                <source srcset={coverImgInfo.webp} type="image/webp" />
+                <img src={coverImage} alt={coverAlt || title} loading="eager" width={coverImgInfo.width} height={coverImgInfo.height} />
+              </picture>
+            ) : (
+              <img src={coverImage} alt={coverAlt || title} loading="eager" width={coverImgInfo.width} height={coverImgInfo.height} />
+            )}
           </div>
         )}
 
-        <!-- Affiliate disclosure banner (right after cover, before article body) -->
-        <div class="affiliate-banner">
-          <strong>Quick note:</strong> This article contains hand-picked affiliate links for hotels, transport passes, and tours. If you book through them, we earn a small commission at no extra cost to you &mdash; it keeps these guides free.
-        </div>
-
-        <!-- Floating Table of Contents (desktop: fixed sidebar, mobile: drawer) -->
         <FloatingToc headings={headings} mode="mobile" />
 
         <div class="article-body">
@@ -143,24 +176,34 @@ const jsonLd = {
           <a href={endCtaCfg.secondary_url} class="end-cta-secondary">{endCtaCfg.secondary_text}</a>
         </div>
 
-        <div class="article-disclosure">
-          Some links in this article are affiliate links. If you book through them, we earn a small commission at no extra cost to you. This helps us keep creating free travel content.
-        </div>
-
-        <!-- Related articles -->
         {relatedPosts.length > 0 && (
           <div class="related-articles">
             <h3 class="related-title">Related Japan Travel Guides</h3>
             <div class="related-grid">
-              {relatedPosts.map(rp => (
-                <a href={`/blog/${rp.slug}`} class="related-card">
+              {relatedPosts.map((rp, idx) => (
+                <a href={`/blog/${rp.slug}.html`} class="related-card">
                   {rp.data.coverImage && (
                     <div class="related-cover">
-                      <img
-                        src={rp.data.coverImage}
-                        alt={rp.data.coverAlt || rp.data.title}
-                        loading="lazy"
-                      />
+                      {relatedImgInfo[idx]?.webp ? (
+                        <picture>
+                          <source srcset={relatedImgInfo[idx].webp} type="image/webp" />
+                          <img
+                            src={rp.data.coverImage}
+                            alt={rp.data.coverAlt || rp.data.title}
+                            loading="lazy"
+                            width={relatedImgInfo[idx]?.width}
+                            height={relatedImgInfo[idx]?.height}
+                          />
+                        </picture>
+                      ) : (
+                        <img
+                          src={rp.data.coverImage}
+                          alt={rp.data.coverAlt || rp.data.title}
+                          loading="lazy"
+                          width={relatedImgInfo[idx]?.width}
+                          height={relatedImgInfo[idx]?.height}
+                        />
+                      )}
                     </div>
                   )}
                   <div class="related-body">
@@ -214,7 +257,7 @@ const jsonLd = {
   <!-- Mobile floating CTA bar (appears after scrolling) -->
   <div class="mobile-fab-cta" id="mobileFabCta">
     <a href={midCtaCfg.url} target="_blank" rel="noopener">
-      <span class="fab-text">Get the Budget Blueprint</span>
+      <span class="fab-text">{midCtaCfg.button_text}</span>
       <span class="fab-arrow">&rarr;</span>
     </a>
   </div>
@@ -224,12 +267,13 @@ const jsonLd = {
 
 <style>
   .article {
-    padding: 1.5rem 1.5rem 4rem;
+    padding: 1.5rem 0 4rem;
   }
 
   .blog-container {
-    max-width: 1600px;
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
   .blog-grid {
@@ -240,7 +284,7 @@ const jsonLd = {
   .article-main {
     flex: 1;
     min-width: 0;
-    max-width: 760px;
+    max-width: 720px;
   }
 
   .back-link {
@@ -300,9 +344,13 @@ const jsonLd = {
   }
 
   .article-cover {
-    margin: 0 -1rem 1.5rem;
+    margin: 0 0 1.5rem;
     border-radius: 12px;
     overflow: hidden;
+  }
+
+  .article-cover picture {
+    display: block;
   }
 
   .article-cover img {
@@ -313,33 +361,14 @@ const jsonLd = {
     object-fit: cover;
   }
 
-  /* Affiliate disclosure banner */
-  .affiliate-banner {
-    background: var(--c-accent-bg);
-    border-left: 3px solid var(--c-accent);
-    padding: 0.875rem 1.25rem;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    color: var(--c-text-muted);
-    line-height: 1.5;
-    margin-bottom: 2rem;
-  }
-
-  .affiliate-banner strong {
-    color: var(--c-accent);
-    font-weight: 700;
-  }
-
-  /* ===== Desktop: three-column centered layout =====
-     TOC (210px) + 70px gap + content (max 760px) + 48px gap + sidebar (300px)
-     All centered within max-width:1600px container via margin:0 auto.
-     gap:3rem (48px) applies between visible flex items.
-     TOC has margin-right:22px → total TOC→content gap = 48+22 = 70px.
+  /* ===== Desktop: three-column layout =====
+     TOC (210px) + 2rem gap + content (max 720px) + 2rem gap + sidebar (280px)
+     Centered within 1280px container, TOC stays close to content not far left.
   */
   @media (min-width: 1024px) {
     .blog-grid {
       flex-direction: row;
-      gap: 3rem;
+      gap: 2rem;
       align-items: flex-start;
     }
   }
@@ -360,21 +389,26 @@ const jsonLd = {
   .article-body :global(h2) {
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 2.5rem 0 1rem;
+    margin: 2.75rem 0 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--c-accent);
     color: var(--c-text);
     scroll-margin-top: 100px;
+    line-height: 1.3;
   }
 
   .article-body :global(h3) {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 600;
     margin: 2rem 0 0.75rem;
-    color: var(--c-text);
+    color: var(--c-primary);
     scroll-margin-top: 100px;
+    line-height: 1.35;
   }
 
   .article-body :global(p) {
     margin-bottom: 1.25rem;
+    max-width: 68ch;
   }
 
   .article-body :global(ul),
@@ -399,6 +433,18 @@ const jsonLd = {
   .article-body :global(strong) {
     font-weight: 700;
     color: var(--c-text);
+  }
+
+  .article-body :global(picture) {
+    display: block;
+    margin: 1.5rem 0;
+  }
+
+  .article-body :global(picture img) {
+    border-radius: 8px;
+    margin: 0;
+    max-width: 100%;
+    height: auto;
   }
 
   .article-body :global(img) {
@@ -473,12 +519,14 @@ const jsonLd = {
   }
 
   /* ===== Inline CTA blocks (injected by rehype plugin) ===== */
+  /* Lightweight mid-article CTA hint */
   .article-body :global(.cta-light-hint) {
-    background: linear-gradient(135deg, rgba(217, 74, 56, 0.06) 0%, rgba(255, 255, 255, 0.8) 100%);
-    border: 1px solid rgba(217, 74, 56, 0.15);
-    border-radius: 12px;
-    padding: 1.25rem 1.5rem;
-    margin: 1.75rem 0;
+    background: linear-gradient(135deg, rgba(217, 74, 56, 0.05) 0%, var(--c-surface) 60%);
+    border: 1px solid rgba(217, 74, 56, 0.12);
+    border-left: 3px solid var(--c-accent);
+    border-radius: 10px;
+    padding: 1.125rem 1.5rem;
+    margin: 2rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -488,22 +536,24 @@ const jsonLd = {
 
   .article-body :global(.cta-light-hint p) {
     margin: 0;
-    font-size: 0.9rem;
-    color: var(--c-text-muted);
+    font-size: 0.925rem;
+    color: var(--c-text);
     line-height: 1.5;
     flex: 1;
     min-width: 200px;
+    font-weight: 450;
   }
 
   .article-body :global(.cta-light-link) {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     white-space: nowrap;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--c-accent) !important;
     text-decoration: none !important;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--c-accent);
+    padding: 0.5rem 1.125rem;
+    border: 1.5px solid var(--c-accent);
     border-radius: 8px;
     transition: all var(--t-fast);
   }
@@ -513,20 +563,21 @@ const jsonLd = {
     color: #fff !important;
   }
 
+  /* Full button CTA block (mid-article PDF guide promotion) */
   .article-body :global(.cta-button-block) {
-    background: var(--c-primary);
-    border-radius: 16px;
+    background: linear-gradient(135deg, var(--c-primary) 0%, #2a2a4a 100%);
+    border-radius: 14px;
     padding: 1.75rem 2rem;
-    margin: 2rem 0;
+    margin: 2.25rem 0;
     text-align: center;
   }
 
   .article-body :global(.cta-button-block p) {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.88);
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1.25rem;
-    max-width: 560px;
+    max-width: 540px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -537,7 +588,7 @@ const jsonLd = {
     justify-content: center;
     background: var(--c-accent);
     color: #fff !important;
-    padding: 0.875rem 2rem;
+    padding: 0.875rem 2.25rem;
     border-radius: 10px;
     font-weight: 700;
     font-size: 1rem;
@@ -555,17 +606,18 @@ const jsonLd = {
   /* ===== End-of-article conversion block ===== */
   .article-end-cta {
     margin: 3rem 0 1.5rem;
-    padding: 1.75rem;
-    background: linear-gradient(135deg, var(--c-accent-bg) 0%, rgba(255,255,255,0.5) 100%);
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--c-accent-bg) 0%, var(--c-surface) 60%);
     border: 1px solid var(--c-border);
-    border-radius: 16px;
+    border-left: 4px solid var(--c-accent);
+    border-radius: 14px;
   }
 
   .end-cta-label {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     color: var(--c-accent);
     margin-bottom: 1rem;
   }
@@ -579,16 +631,18 @@ const jsonLd = {
   }
 
   .end-cta-info h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--c-text);
     margin-bottom: 0.25rem;
+    line-height: 1.3;
   }
 
   .end-cta-info p {
     color: var(--c-text-muted);
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     margin-bottom: 0.5rem;
+    max-width: 68ch;
   }
 
   .end-cta-meta {
@@ -652,23 +706,15 @@ const jsonLd = {
     color: var(--c-accent);
   }
 
-  .article-disclosure {
-    font-size: 0.8rem;
-    color: var(--c-text-muted);
-    line-height: 1.5;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--c-border);
-  }
-
   /* ===== Related Articles ===== */
   .related-articles {
-    margin-top: 2.5rem;
+    margin-top: 3rem;
     padding-top: 2rem;
     border-top: 2px solid var(--c-border);
   }
 
   .related-title {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--c-text);
     margin-bottom: 1.25rem;
@@ -700,6 +746,12 @@ const jsonLd = {
     width: 100%;
     aspect-ratio: 16/9;
     overflow: hidden;
+  }
+
+  .related-cover picture {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 
   .related-cover img {
@@ -936,7 +988,7 @@ const jsonLd = {
     }
   }
 
-  /* Tablet: cover without negative margin */
+  /* Tablet: cover retains its margin */
   @media (min-width: 768px) {
     .article-cover {
       margin: 0 0 2rem;
@@ -946,7 +998,7 @@ const jsonLd = {
   /* Mobile optimizations */
   @media (max-width: 640px) {
     .article {
-      padding: 1rem 1rem 5rem;
+      padding: 1rem 0 5rem;
     }
 
     .article-end-cta {
@@ -961,11 +1013,6 @@ const jsonLd = {
     .end-cta-btn {
       text-align: center;
       justify-content: center;
-    }
-
-    .affiliate-banner {
-      font-size: 0.8rem;
-      padding: 0.75rem 1rem;
     }
 
     /* Table: make scrollable on small screens */

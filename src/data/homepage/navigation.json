@@ -2,10 +2,10 @@
   "logoText": "LuneAster Travel",
   "menu": [
     { "label": "Home", "url": "/" },
-    { "label": "Free Guides", "url": "/blog" },
+    { "label": "Free Guides", "url": "/blog.html" },
     { "label": "PDF Itineraries", "url": "/#premium" },
-    { "label": "Custom Trip", "url": "/custom-trip" },
-    { "label": "About", "url": "/about" },
+    { "label": "Custom Trip", "url": "/custom-trip.html" },
+    { "label": "About", "url": "/about.html" },
     { "label": "TikTok", "url": "https://www.tiktok.com/@lune.aster" }
   ],
   "shopButton": {
