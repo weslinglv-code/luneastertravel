@@ -1,12 +1,20 @@
 ---
-title: "30 Important Japanese Taboos: Things Tourists Must Never Do in Japan (2026 Updated Guide)"
-description: "Master Japanese etiquette before your trip. 30 essential cultural taboos covering dining rules, public transport manners, social customs, and traditional superstitions — so you can travel Japan respectfully and avoid awkward moments."
+slug: 30-important-japanese-taboos-tourists-guide-2026
+title: '30 Important Japanese Taboos: Things Tourists Must Never Do in Japan (2026 Updated Guide)'
+description: Master Japanese etiquette before your trip. 30 essential cultural taboos covering dining rules, public transport manners, social customs, and traditional superstitions — so you can travel Japan respectfully and avoid awkward moments.
 pubDate: 2026-08-09
-coverImage: "/images/taboos-cover.png"
-coverAlt: "Japanese etiquette and cultural respect illustrated with a traveler bowing in a traditional Japanese setting"
-tags: ["Japan", "Culture", "Etiquette", "Travel Tips", "Taboos", "First-Timers"]
-author: "LuneAster"
-readingTime: "8 min read"
+updatedDate: ''
+coverImage: /images/555121.jpg
+coverAlt: Japanese etiquette and cultural respect illustrated with a traveler bowing in a traditional Japanese setting
+tags:
+  - Japan
+  - Culture
+  - Etiquette
+  - Travel Tips
+  - Taboos
+  - First-Timers
+author: LuneAster
+readingTime: 8 min read
 featured: false
 ---
 
@@ -16,7 +24,7 @@ I have sorted out 30 common taboos covering dining rules, public-transport manne
 
 <div data-cta="light"></div>
 
----
+***
 
 ## Part 1. Daily-Life & Social Cultural Taboos
 
@@ -40,7 +48,7 @@ Special-purpose toilet slippers belong only inside lavatories. Taking them out s
 
 ### 5. Do Not Call Out "Waiter" Loudly Inside Restaurants
 
-Japanese diners say *sumimasen* (excuse me) to call for staff service. Loud shouting will create discomfort for surrounding guests. A quiet hand raise combined with *sumimasen* is the correct way.
+Japanese diners say _sumimasen_ (excuse me) to call for staff service. Loud shouting will create discomfort for surrounding guests. A quiet hand raise combined with _sumimasen_ is the correct way.
 
 ### 6. Stay Off the Central Walking Path at Shrines and Temples
 
@@ -66,7 +74,7 @@ Some senior citizens may misinterpret your seat choice and feel you avoid them o
 
 ### 11. Avoid Saying Sayonara for Everyday Goodbyes
 
-This phrase carries the heavy implication of permanent separation. For daily farewells, use *matane* (see you later) or *osakini shitsurei shimasu* (polite "I'll be leaving first"). Save *sayonara* for when you genuinely don't expect to see someone again.
+This phrase carries the heavy implication of permanent separation. For daily farewells, use _matane_ (see you later) or _osakini shitsurei shimasu_ (polite "I'll be leaving first"). Save _sayonara_ for when you genuinely don't expect to see someone again.
 
 ### 12. Visitors with Visible Tattoos Cannot Enter Public Hot Springs
 
@@ -78,7 +86,7 @@ Tattoos were historically linked to gang culture in Japan. Most standard public 
 
 ### 13. Never Borrow an Umbrella from Other Households
 
-The Japanese word for umbrella (*kasa*) sounds similar to the word for "dissolution" or "separation." Lending umbrellas symbolises broken-off relationships. Convenience stores sell cheap umbrellas for about 500 yen — just buy your own.
+The Japanese word for umbrella (_kasa_) sounds similar to the word for "dissolution" or "separation." Lending umbrellas symbolises broken-off relationships. Convenience stores sell cheap umbrellas for about 500 yen — just buy your own.
 
 ### 14. Do Not Bargain Over Prices in Regular Shops
 
@@ -92,11 +100,11 @@ Geisha regard unapproved photography as harassment, and they may ask you to dele
 
 The left ring-finger historically symbolises widowhood and divorce in local custom. If you're married and visiting Japan, switching your ring to the right hand is not necessary as a tourist — but it's an interesting cultural note.
 
----
+***
 
 <div data-cta="button"></div>
 
----
+***
 
 ## Part 2. Dining Manners & Common Tourist Mistakes
 
@@ -106,7 +114,7 @@ Loud slurping tells chefs you love the noodle dish — it's a compliment, not ru
 
 ### 18. Never Stick Chopsticks Upright Into Bowls of Rice
 
-Vertical chopsticks inside rice bowls replicate funeral offerings for the dead (*hotoke-bashi*), and it is an ominous gesture. Always rest chopsticks on the provided chopstick rest (*hashioki*) or horizontally across the bowl.
+Vertical chopsticks inside rice bowls replicate funeral offerings for the dead (_hotoke-bashi_), and it is an ominous gesture. Always rest chopsticks on the provided chopstick rest (_hashioki_) or horizontally across the bowl.
 
 ![Chopsticks resting correctly on a hashioki beside a bowl of ramen in a warm Japanese restaurant setting](/images/taboos-dining.png)
 
@@ -126,7 +134,7 @@ Dirty outdoor shoes indoors are extremely impolite. This rule strictly applies t
 
 ### 22. Phone Calls Are Banned Inside City Trains
 
-If your mobile rings on public transit, briefly explain you are aboard a train and hang up straight away. Keeping quiet on public transport is basic Japanese etiquette — most passengers switch their phones to silent mode (*manner mode*).
+If your mobile rings on public transit, briefly explain you are aboard a train and hang up straight away. Keeping quiet on public transport is basic Japanese etiquette — most passengers switch their phones to silent mode (_manner mode_).
 
 ![Clean, quiet Japanese train interior with passengers observing silent etiquette](/images/taboos-train.png)
 
@@ -146,8 +154,8 @@ Local residents attach great importance to portrait rights. Unauthorised snapsho
 
 ### 26. Stay Away from Unlucky Gift-Giving Customs
 
-- **Items in sets of four:** The number four (*shi*) sounds like the word for "death."
-- **Combs and handkerchiefs:** Combs (*kushi*) sound like "suffering" and handkerchiefs symbolise farewell tears.
+- **Items in sets of four:** The number four (_shi_) sounds like the word for "death."
+- **Combs and handkerchiefs:** Combs (_kushi_) sound like "suffering" and handkerchiefs symbolise farewell tears.
 
 When buying souvenirs or gifts, avoid these items.
 
@@ -163,7 +171,7 @@ Odd-numbered cash envelopes are prepared for weddings (indivisible, lifelong-uni
 
 Pointed sharp objects carry the hostile metaphor "I will cut you" in Japanese body language. Never play-point blades to friends, and when handing scissors to someone, offer the handle side.
 
----
+***
 
 ## Closing Words
 
@@ -171,7 +179,7 @@ These 30 etiquette rules help foreign travellers fit into Japanese local social 
 
 Whether you are planning a short city break or a long cross-country Japan trip, mastering these basic manners will help you blend in with locals and enjoy a more authentic travel journey. Print this checklist, save it to your phone, and refer to it during your trip — your effort to respect local culture will be noticed and appreciated.
 
----
+***
 
 ## Related Japan Travel Guides
 
