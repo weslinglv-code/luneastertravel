@@ -4,7 +4,7 @@ title: 'Edogawa Fireworks Festival First-Hand Guide: 3 Beginner Tips for an Unfo
 description: Every person should attend at least one Japanese summer fireworks festival. This first-hand Edogawa Hanabi guide covers how to choose your event, judge firework quality, and pick between paid seats vs free riverside spots.
 pubDate: 2026-08-10
 updatedDate: ''
-coverImage: /images/625.jpg
+coverImage: /images/6362.jpg
 coverAlt: Japanese summer fireworks festival at Edogawa river in Tokyo, colorful hanabi bursting in the night sky
 tags:
   - Tokyo
@@ -33,6 +33,8 @@ Every person should attend at least one fireworks festival during summertime in 
 
 Hundreds of fireworks festivals are hosted across Japan from July to August each year. If your whole trip centres around fireworks, head straight for Japan's top-three legendary hanabi festivals: **Nagaoka**, **Omagari**, and **Tsuchiura** Firework Festival.
 
+![](/images/5551111.jpg)
+
 Most travellers only plan to squeeze a fireworks show into their Tokyo travel schedule. You can browse the full-updated event calendar via **hanabi.walkerplus** — it's the most reliable Japanese fireworks database with dates, locations, and launch counts for every show nationwide.
 
 I compared dozens of hotel options one week ahead and booked **Fresa Inn Hamamatsuchō**. This location is extremely convenient — you can easily travel toward Sensoji Temple and the Edogawa fireworks venue, or visit Shinjuku and vintage-shopping streets at Koenji the next day. Compared with pricey accommodation in Ginza and central Shinjuku, this hotel brings great value for money.
@@ -51,6 +53,8 @@ I finally crossed the **Sumida River Fireworks Festival** off my list due to lot
 
 We ate lunch at **Hontosaya**, a charcoal-grilled-beef restaurant close to Sensoji Temple. It has now become my absolute-favourite yakiniku spot within Tokyo. All beef cuts are freshly sliced on-site — the tendon and steak melt on your tongue. Their cold noodle soup is refreshing, and warm pork-rib soup makes you feel relaxed.
 
+![](/images/551111.jpg)
+
 Later I got my kimono styled at **Senjyu-Hagoromo Kimono Rental** near Sensoji. Many staff members speak Chinese. The stylist was incredibly patient and readjusted my bangs and outfit many times. Wearing a yukata to a fireworks festival is a quintessential Japanese summer experience — highly recommended.
 
 <div data-cta="mid_cta"></div>
@@ -61,6 +65,8 @@ Later I got my kimono styled at **Senjyu-Hagoromo Kimono Rental** near Sensoji. 
 
 Fireworks-festival viewing spots fall into two categories: **reserved paid seats** and **free riverside spots**.
 
+![](/images/555101.jpg)
+
 **Premium paid seats** require ticket-booking one-to-three months in advance. You get an immersive view with fireworks bursting directly overhead. Prices typically range from ¥3,000 to ¥10,000 depending on proximity.
 
 **Unreserved free spots** only require you to arrive two-to-three hours early to claim your space — perfect for portrait-style photographs against fireworks.
@@ -69,7 +75,7 @@ My friend asked whether it was okay to skip all research and head straight for t
 
 I only recommend stocking up on snacks and drinks from convenience stores ahead of time. Fireworks taste far better paired with drinks.
 
-![Riverside park at dusk during summer fireworks festival in Tokyo](/images/55533.jpg)
+![Riverside park at dusk during summer fireworks festival in Tokyo](/images/625.jpg)
 
 We arrived at the free viewing zone at **Shinozaki Park** at 17:30. Plenty of empty spots remained on the riverbank, so there was no need to pay someone to reserve a spot for us. I spread out my large silk scarf as a picnic mat and started my pre-show drinks.
 
