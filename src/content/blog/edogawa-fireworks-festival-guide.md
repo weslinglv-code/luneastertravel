@@ -75,7 +75,7 @@ My friend asked whether it was okay to skip all research and head straight for t
 
 I only recommend stocking up on snacks and drinks from convenience stores ahead of time. Fireworks taste far better paired with drinks.
 
-![Riverside park at dusk during summer fireworks festival in Tokyo](/images/625.jpg)
+![Riverside park at dusk during summer fireworks festival in Tokyo](/images/55533.jpg)
 
 We arrived at the free viewing zone at **Shinozaki Park** at 17:30. Plenty of empty spots remained on the riverbank, so there was no need to pay someone to reserve a spot for us. I spread out my large silk scarf as a picnic mat and started my pre-show drinks.
 
