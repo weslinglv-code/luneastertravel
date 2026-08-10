@@ -1,10 +1,11 @@
 ---
 slug: edogawa-fireworks-festival-guide
 title: 'Edogawa Fireworks Festival First-Hand Guide: 3 Beginner Tips for an Unforgettable Hanabi Night'
-description: 'Every person should attend at least one Japanese summer fireworks festival. This first-hand Edogawa Hanabi guide covers how to choose your event, judge firework quality, and pick between paid seats vs free riverside spots.'
+description: Every person should attend at least one Japanese summer fireworks festival. This first-hand Edogawa Hanabi guide covers how to choose your event, judge firework quality, and pick between paid seats vs free riverside spots.
 pubDate: 2026-08-10
-coverImage: /images/hanabi-cover.webp
-coverAlt: 'Japanese summer fireworks festival at Edogawa river in Tokyo, colorful hanabi bursting in the night sky'
+updatedDate: ''
+coverImage: /images/625.jpg
+coverAlt: Japanese summer fireworks festival at Edogawa river in Tokyo, colorful hanabi bursting in the night sky
 tags:
   - Tokyo
   - Fireworks
@@ -15,6 +16,9 @@ tags:
 author: LuneAster
 readingTime: 6 min read
 featured: false
+metaTitle: ''
+metaDescription: ''
+metaKeywords: ''
 ---
 
 Every person should attend at least one fireworks festival during summertime in Japan. A fantastic hanabi-night trip relies on knowing how to pick a worthwhile fireworks event. I recently visited the well-known Edogawa Fireworks Festival in Tokyo and summed up my travel notes after plenty of pre-trip research. Here are three straightforward beginner tips.
@@ -43,7 +47,7 @@ After confirming the date and venue, check the **total number of fireworks** and
 
 I finally crossed the **Sumida River Fireworks Festival** off my list due to lots of bad traveller reviews — overcrowded viewing spots, long waits, and limited visibility from free areas. The Edogawa show, by contrast, launched over 14,000 fireworks and had plenty of comfortable riverside space.
 
-![Charcoal-grilled premium beef at a yakiniku restaurant in Tokyo](/images/hanabi-yakiniku.png)
+![Charcoal-grilled premium beef at a yakiniku restaurant in Tokyo](/images/855141.jpg)
 
 We ate lunch at **Hontosaya**, a charcoal-grilled-beef restaurant close to Sensoji Temple. It has now become my absolute-favourite yakiniku spot within Tokyo. All beef cuts are freshly sliced on-site — the tendon and steak melt on your tongue. Their cold noodle soup is refreshing, and warm pork-rib soup makes you feel relaxed.
 
@@ -65,7 +69,7 @@ My friend asked whether it was okay to skip all research and head straight for t
 
 I only recommend stocking up on snacks and drinks from convenience stores ahead of time. Fireworks taste far better paired with drinks.
 
-![Riverside park at dusk during summer fireworks festival in Tokyo](/images/hanabi-riverside.png)
+![Riverside park at dusk during summer fireworks festival in Tokyo](/images/55533.jpg)
 
 We arrived at the free viewing zone at **Shinozaki Park** at 17:30. Plenty of empty spots remained on the riverbank, so there was no need to pay someone to reserve a spot for us. I spread out my large silk scarf as a picnic mat and started my pre-show drinks.
 
@@ -88,10 +92,10 @@ That's the magic of a Japanese hanabi festival. It's not just about the firework
 ## 📋 Quick Checklist Before You Go
 
 | Item | Details |
-|------|---------|
+| --- | --- |
 | **When** | July–August, check hanabi.walkerplus for exact dates |
 | **Where** | Edogawa Fireworks Festival, Shinozaki Park |
-| **Arrive by** | 17:00–17:30 for free spots (show starts ~19:15) |
+| **Arrive by** | 17:00–17:30 for free spots (show starts \~19:15) |
 | **Bring** | Picnic mat, snacks, drinks, mosquito repellent |
 | **Wear** | Yukata (optional but recommended), comfortable shoes |
 | **Nearest station** | Shinozaki Station (JR Sobu Line), 10-min walk |
