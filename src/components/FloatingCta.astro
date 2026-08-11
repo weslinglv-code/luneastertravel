@@ -1,10 +1,13 @@
 ---
 // Global floating PDF guide CTA — appears on all pages
 // Shows on desktop (bottom-right corner) and mobile (bottom-right, above blog FAB if present)
+import { addGumroadUtm } from '../utils/tracking';
+
+const gumroadUrl = addGumroadUtm('https://luneaster.gumroad.com', 'floating_cta');
 ---
 
 <div class="floating-pdf-cta" id="floatingPdfCta">
-  <a href="https://luneaster.gumroad.com" target="_blank" rel="noopener" class="floating-cta-btn">
+  <a href={gumroadUrl} target="_blank" rel="noopener" class="floating-cta-btn">
     <span class="cta-icon">📄</span>
     <span class="cta-text">
       <span class="cta-title">PDF Travel Guides</span>

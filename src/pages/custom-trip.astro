@@ -457,6 +457,14 @@ LuneAster Travel`;
         formSection.style.display = 'none';
         successMessage.style.display = 'block';
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // GA4: track lead generation
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', {
+            'form_id': 'custom_trip',
+            'value': 79,
+            'currency': 'USD',
+          });
+        }
       } else {
         throw new Error('Submission failed');
       }
@@ -464,6 +472,13 @@ LuneAster Travel`;
       errorMessage.style.display = 'block';
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send My Request →';
+      // GA4: track form error
+      if (typeof gtag === 'function') {
+        gtag('event', 'form_error', {
+          'form_id': 'custom_trip',
+          'error_message': err.message || 'unknown',
+        });
+      }
     }
   });
 </script>

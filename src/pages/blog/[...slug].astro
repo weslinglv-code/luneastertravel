@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import FloatingToc from '../../components/FloatingToc.astro';
 import { products } from '../../data/products';
 import { articleCta } from '../../data/homepage';
+import { addGumroadUtm } from '../../utils/tracking';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -169,7 +170,7 @@ const jsonLd = {
                 {endRecommendation.badge && <span class="end-cta-badge">{endRecommendation.badge}</span>}
               </div>
             </div>
-            <a href={endRecommendation.gumroadUrl} class="end-cta-btn" target="_blank" rel="noopener">
+            <a href={addGumroadUtm(endRecommendation.gumroadUrl, `blog_end_${endRecommendation.slug}`)} class="end-cta-btn" target="_blank" rel="noopener">
               {endCtaCfg.cta_text}
             </a>
           </div>
@@ -235,7 +236,7 @@ const jsonLd = {
             <ul class="sidebar-features">
               {sidebarProduct.features.slice(0, 3).map(f => <li>{f}</li>)}
             </ul>
-            <a href={sidebarProduct.gumroadUrl} class="sidebar-cta" target="_blank" rel="noopener">
+            <a href={addGumroadUtm(sidebarProduct.gumroadUrl, `blog_sidebar_${sidebarProduct.slug}`)} class="sidebar-cta" target="_blank" rel="noopener">
               {sidebarCfg.cta_text}
             </a>
             <div class="sidebar-trust">{sidebarCfg.trust_text}</div>

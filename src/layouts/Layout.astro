@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FloatingCta from '../components/FloatingCta.astro';
+import { GA4_MEASUREMENT_ID } from '../utils/tracking';
 
 interface Props {
   title?: string;
@@ -54,12 +55,69 @@ const fullTitle = title.includes('LuneAster') ? title : `${title} — LuneAster 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
   <title>{fullTitle}</title>
+
+  <!-- GA4 (Google Analytics 4) -->
+  {GA4_MEASUREMENT_ID !== 'G-XXXXXXXXXX' && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`} />
+      <script is:inline define:vars={{ GA4_MEASUREMENT_ID }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', GA4_MEASUREMENT_ID, {
+          send_page_view: true,
+          link_attribution: true,
+        });
+      </script>
+    </>
+  )}
 </head>
 <body>
   <Header />
   <slot />
   <Footer />
   <FloatingCta />
+
+  <!-- Outbound link click tracking (GA4 custom events) -->
+  <script is:inline>
+    (function() {
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a');
+        if (!link || !link.href) return;
+
+        var href = link.href;
+        var hostname = link.hostname;
+        var currentHost = window.location.hostname;
+
+        // 只追踪外链（排除本站链接和 javascript:void(0)）
+        if (hostname === currentHost || hostname === '' ) return;
+
+        // 判断链接类型
+        var linkType = 'other';
+        if (hostname.includes('gumroad.com')) linkType = 'gumroad';
+        else if (hostname.includes('klook.com')) linkType = 'klook';
+        else if (hostname.includes('amazon.com') || hostname.includes('amazon.')) linkType = 'amazon';
+        else if (hostname.includes('aviasales.com')) linkType = 'aviasales';
+        else if (hostname.includes('booking.com')) linkType = 'booking';
+        else if (hostname.includes('instagram.com')) linkType = 'instagram';
+        else if (hostname.includes('tiktok.com')) linkType = 'tiktok';
+
+        // 提取 utm_content（如果有）
+        var urlParams = new URLSearchParams(link.search);
+        var utmContent = urlParams.get('utm_content') || '';
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'outbound_click', {
+            'link_type': linkType,
+            'link_url': href,
+            'link_domain': hostname,
+            'utm_content': utmContent,
+            'outbound': true,
+          });
+        }
+      }, true);
+    })();
+  </script>
 
   <!-- Affiliate Disclosure (global) -->
   <style is:global>

@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { addGumroadUtm } from '../utils/tracking';
+
+const gumroadStoreUrl = addGumroadUtm('https://luneaster.gumroad.com', 'about_page');
 ---
 
 <Layout
@@ -50,7 +53,7 @@ import Layout from '../layouts/Layout.astro';
       <h2>Where to find me</h2>
       <div class="links-list">
         <a href="https://www.tiktok.com/@lune.aster" target="_blank" rel="noopener">TikTok @lune.aster</a>
-        <a href="https://luneaster.gumroad.com" target="_blank" rel="noopener">Gumroad Store</a>
+        <a href={gumroadStoreUrl} target="_blank" rel="noopener">Gumroad Store</a>
         <a href="https://linktr.ee/LuneAster" target="_blank" rel="noopener">Linktree</a>
       </div>
 

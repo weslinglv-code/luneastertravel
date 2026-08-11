@@ -3,6 +3,7 @@ import { premiumSection } from '../data/homepage';
 import { products } from '../data/products';
 import type { Product } from '../data/products';
 import { getImgInfoBatch } from '../utils/images';
+import { addGumroadUtm, addShopAllUtm } from '../utils/tracking';
 
 const { sectionTitle, sectionSubtitle, buttonText, shopAllUrl, shopAllText } = premiumSection;
 
@@ -38,7 +39,7 @@ const productImgInfo = await getImgInfoBatch(products.map(p => p.coverImage));
         const hasImage = !!product.coverImage;
         const imgInfo = productImgInfo[idx];
         return (
-          <a href={product.gumroadUrl} class="product-card" style={`--accent: ${product.accentColor}`} target="_blank" rel="noopener">
+          <a href={addGumroadUtm(product.gumroadUrl, `product_card_${product.slug}`)} class="product-card" style={`--accent: ${product.accentColor}`} target="_blank" rel="noopener">
             <div class="card-cover" data-pattern={art.pattern}>
               {hasImage ? (
                 imgInfo?.webp ? (
@@ -113,7 +114,7 @@ const productImgInfo = await getImgInfoBatch(products.map(p => p.coverImage));
     </div>
 
     <div class="shop-all-wrap">
-      <a href={shopAllUrl} class="btn btn-primary" target="_blank" rel="noopener">
+      <a href={addShopAllUtm(shopAllUrl, 'shop_all_button')} class="btn btn-primary" target="_blank" rel="noopener">
         {shopAllText} →
       </a>
     </div>

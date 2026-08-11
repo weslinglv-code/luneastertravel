@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import AffiliateLink from '../../components/AffiliateLink.astro';
 import { products } from '../../data/products';
+import { addGumroadUtm } from '../../utils/tracking';
 
 export function getStaticPaths() {
   return products.map(product => ({
@@ -34,7 +35,7 @@ const otherProducts = products.filter(p => p.slug !== product.slug);
         </div>
 
         <div class="cta-row">
-          <a href={product.gumroadUrl} target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          <a href={addGumroadUtm(product.gumroadUrl, `product_page_${product.slug}`)} target="_blank" rel="noopener" class="btn btn-primary btn-lg">
             Get it now →
           </a>
           <span class="trust">Instant download · No signup needed</span>
