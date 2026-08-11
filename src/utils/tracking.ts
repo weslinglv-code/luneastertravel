@@ -3,8 +3,8 @@
  * GA4 + UTM parameter helpers
  */
 
-// GA4 Measurement ID — 替换为真实 ID 后即可上线
-export const GA4_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+// GA4 Measurement ID — LuneAster Travel (2026-08-11 创建)
+export const GA4_MEASUREMENT_ID = 'G-NKSFQ3T6QG';
 
 /**
  * 给 Gumroad 链接追加 UTM 参数
