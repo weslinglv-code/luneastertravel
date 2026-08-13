@@ -1,16 +1,16 @@
 {
   "bgImage": "/images/hero.webp",
-  "tag": "Off-The-Beaten-Path Kansai Travel Guides",
-  "title": "Off-The-Beaten-Path Kansai Travel Guides",
+  "tag": "Hidden Kansai Travel Guides",
+  "title": "Hidden Kansai Travel Guides",
   "titleHighlight": "Kansai",
-  "subtitle": "No crowded tourist traps — Printable itineraries built from my 1M+ TikTok travel footage",
+  "subtitle": "Skip crowded tourist spots. Printable itineraries made from real-world travel footage.",
   "trustBadges": [
     { "num": "4", "label": "Detailed Guides" },
     { "num": "52", "label": "Printable Pages" },
     { "num": "1M+", "label": "TikTok Views" }
   ],
   "primaryButton": {
-    "text": "Browse Premium PDFs",
+    "text": "Get Printable Itineraries",
     "url": "https://luneaster.gumroad.com"
   },
   "secondaryButton": {

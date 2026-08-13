@@ -104,6 +104,14 @@ const titleParts = titleHighlight
     flex-wrap: wrap;
   }
 
+  .hero-cta .btn-primary {
+    box-shadow: 0 4px 16px rgba(217, 74, 56, 0.35);
+  }
+
+  .hero-cta .btn-primary:hover {
+    box-shadow: 0 8px 28px rgba(217, 74, 56, 0.45);
+  }
+
   .hero-stats {
     display: flex;
     gap: 3rem;
@@ -156,6 +164,18 @@ const titleParts = titleHighlight
       min-height: 52px;
       font-size: 1rem;
       padding: 0.9rem 1.5rem;
+    }
+
+    .hero-cta .btn-secondary {
+      border: 1.5px solid rgba(217, 74, 56, 0.6);
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--c-accent);
+      font-weight: 600;
+    }
+
+    .hero-cta .btn-secondary:hover {
+      background: rgba(255, 255, 255, 1);
+      border-color: var(--c-accent);
     }
 
     .hero-stats {
