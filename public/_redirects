@@ -6,7 +6,7 @@
 # bio 主入口
 /tiktok  /?utm_source=tiktok&utm_medium=bio&utm_campaign=profile  302
 # 私信/评论区导 Gumroad 商店
-/tg      https://luneaster.gumroad.com?utm_source=tiktok&utm_medium=dm&utm_campaign=gumroad  302
+/tg      https://luneaster.gumroad.com/?utm_source=tiktok&utm_medium=dm&utm_campaign=gumroad  302
 # 导 Custom Trip 定制表单
 /trip    /custom-trip?utm_source=tiktok&utm_medium=bio&utm_campaign=custom_trip  302
 
@@ -14,7 +14,7 @@
 # IG bio 主入口
 /ig      /?utm_source=instagram&utm_medium=bio&utm_campaign=profile  302
 # IG story 导 Gumroad 商店
-/igg     https://luneaster.gumroad.com?utm_source=instagram&utm_medium=story&utm_campaign=gumroad  302
+/igg     https://luneaster.gumroad.com/?utm_source=instagram&utm_medium=story&utm_campaign=gumroad  302
 
 # === 通用兜底 ===
 # 没指定来源时的默认入口（线下/口播/不确定场景）
