@@ -1,0 +1,21 @@
+# LuneAster Travel — 营销短链重定向
+# 通过短链把外部平台流量打到带 UTM 的 URL，让 GA4 准确识别来源
+# 状态码统一用 302（临时重定向），方便随时调 UTM 参数不被浏览器缓存
+
+# === TikTok 入口 ===
+# bio 主入口
+/tiktok  /?utm_source=tiktok&utm_medium=bio&utm_campaign=profile  302
+# 私信/评论区导 Gumroad 商店
+/tg      https://luneaster.gumroad.com?utm_source=tiktok&utm_medium=dm&utm_campaign=gumroad  302
+# 导 Custom Trip 定制表单
+/trip    /custom-trip?utm_source=tiktok&utm_medium=bio&utm_campaign=custom_trip  302
+
+# === Instagram 入口 ===
+# IG bio 主入口
+/ig      /?utm_source=instagram&utm_medium=bio&utm_campaign=profile  302
+# IG story 导 Gumroad 商店
+/igg     https://luneaster.gumroad.com?utm_source=instagram&utm_medium=story&utm_campaign=gumroad  302
+
+# === 通用兜底 ===
+# 没指定来源时的默认入口（线下/口播/不确定场景）
+/go      /?utm_source=direct&utm_medium=shortlink&utm_campaign=general  302
