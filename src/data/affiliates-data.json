@@ -139,6 +139,16 @@
       "description": "Curated list of private onsen rooms and tattoo-friendly hot springs across Japan.",
       "icon": "ticket",
       "enabled": true
+    },
+    {
+      "key": "gowithguide",
+      "label": "Private Local Guides (500+ Cities)",
+      "url": "https://www.awin1.com/cread.php?awinmid=87121&awinaffid=3029837&ued=https%3A%2F%2Fwww.gowithguide.com",
+      "brand": "GoWithGuide",
+      "type": "tour",
+      "description": "Book a pre-vetted local guide for a 100% custom private tour. Available in 500+ cities worldwide. Up to $185 per booking.",
+      "icon": "mountain",
+      "enabled": true
     }
   ]
 }
