@@ -40,7 +40,7 @@ Turning down drinks from your boss is commonly viewed as disrespect in Japanese 
 
 Kimono dressing rule: right-over-left for living people. Left-over-right is only used for the deceased in funeral rituals. Wearing it wrong is considered extremely inauspicious — if you're renting a kimono, the staff will dress you correctly, but it's good to know.
 
-![Traditional Japanese kimono worn correctly with right-over-left fold in a serene temple garden](/images/taboos-kimono.png)
+![Traditional Japanese kimono worn correctly with right-over-left fold in a serene temple garden](/images/taboos-kimono.jpg)
 
 ### 4. Do Not Wear Your Bathroom Slippers Outside the Restroom
 
@@ -54,7 +54,7 @@ Japanese diners say _sumimasen_ (excuse me) to call for staff service. Loud shou
 
 The middle pathway of Shinto shrines is treated as the sacred road for deities. Tourists should walk along both-side lanes and avoid photographing the central aisle. This applies especially at major shrines like Fushimi Inari and Meiji Jingu.
 
-![Visitors walking respectfully along side paths at a Japanese shrine entrance with torii gate](/images/taboos-shrine.png)
+![Visitors walking respectfully along side paths at a Japanese shrine entrance with torii gate](/images/taboos-shrine.jpg)
 
 ### 7. Avoid Answering Phone Calls While Taking a Bath
 
@@ -80,7 +80,7 @@ This phrase carries the heavy implication of permanent separation. For daily far
 
 Tattoos were historically linked to gang culture in Japan. Most standard public onsen strictly reject guests with visible tattoos. However, the landscape is slowly changing.
 
-![Peaceful outdoor Japanese onsen with steam rising from a natural stone bath surrounded by autumn leaves](/images/taboos-onsen.png)
+![Peaceful outdoor Japanese onsen with steam rising from a natural stone bath surrounded by autumn leaves](/images/taboos-onsen.jpg)
 
 > **Travel Tip:** If you have tattoos and plan to experience Japanese hot springs, I have curated a list of tattoo-friendly onsen and private hot spring accommodations. You can easily [book private onsen rooms](#aff:klook_tattoo_onsen) without worrying about local restrictions.
 
@@ -116,7 +116,7 @@ Loud slurping tells chefs you love the noodle dish — it's a compliment, not ru
 
 Vertical chopsticks inside rice bowls replicate funeral offerings for the dead (_hotoke-bashi_), and it is an ominous gesture. Always rest chopsticks on the provided chopstick rest (_hashioki_) or horizontally across the bowl.
 
-![Chopsticks resting correctly on a hashioki beside a bowl of ramen in a warm Japanese restaurant setting](/images/taboos-dining.png)
+![Chopsticks resting correctly on a hashioki beside a bowl of ramen in a warm Japanese restaurant setting](/images/taboos-dining.jpg)
 
 ### 19. Do Not Transfer Food Directly Between Pairs of Chopsticks
 
@@ -136,7 +136,7 @@ Dirty outdoor shoes indoors are extremely impolite. This rule strictly applies t
 
 If your mobile rings on public transit, briefly explain you are aboard a train and hang up straight away. Keeping quiet on public transport is basic Japanese etiquette — most passengers switch their phones to silent mode (_manner mode_).
 
-![Clean, quiet Japanese train interior with passengers observing silent etiquette](/images/taboos-train.png)
+![Clean, quiet Japanese train interior with passengers observing silent etiquette](/images/taboos-train.jpg)
 
 > **Travel Tip:** To travel smoothly across Japan's vast public transport network, you can pre-purchase your [JR Pass](#aff:klook_jrpass) and [subway tickets](#aff:klook_subway) via my recommended booking links, saving time and avoiding on-site queue trouble.
 

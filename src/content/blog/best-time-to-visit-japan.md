@@ -4,7 +4,7 @@ title: 'Best Time to Visit Japan 2026: Complete Month-by-Month Travel Guide'
 description: When should you visit Japan? This complete 2026 guide breaks down weather, crowds, prices, and festivals month by month so you can pick the perfect time for your trip.
 pubDate: 2026-08-06
 updatedDate: ''
-coverImage: /images/511.png
+coverImage: /images/511.jpg
 coverAlt: Cherry blossoms in full bloom along a river in Kyoto, Japan
 tags:
   - Japan

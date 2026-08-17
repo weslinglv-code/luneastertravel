@@ -93,7 +93,7 @@ Best of all, there is almost no waiting time. I visited and practically had the 
 
 The restaurant is adjacent to quiet **Odahama Beach**, a local coastline free of commercial crowds. It is a favorite leisure spot for Fukuoka locals to unwind and enjoy peaceful seaside moments.
 
-![Odahama Beach with a uniquely shaped tree stretching toward the ocean, peaceful coastal scenery](/images/362.png)
+![Odahama Beach with a uniquely shaped tree stretching toward the ocean, peaceful coastal scenery](/images/362.jpg)
 
 A uniquely shaped tree stretching toward the ocean stands on the shore, creating incredibly dreamy scenery perfect for casual photos. Mostly visited by locals, this quiet beach is ideal for a slow stroll after meals.
 
