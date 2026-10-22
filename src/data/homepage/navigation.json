@@ -2,14 +2,14 @@
   "logoText": "LuneAster Travel",
   "menu": [
     { "label": "Home", "url": "/" },
-    { "label": "Free Guides", "url": "/blog.html" },
+    { "label": "Free Guides", "url": "/blog" },
     { "label": "PDF Itineraries", "url": "/#premium" },
-    { "label": "Custom Trip", "url": "/custom-trip.html" },
-    { "label": "About", "url": "/about.html" },
+    { "label": "Custom Trip", "url": "/custom-trip" },
+    { "label": "About", "url": "/about" },
     { "label": "TikTok", "url": "https://www.tiktok.com/@lune.aster" }
   ],
   "shopButton": {
     "text": "Shop All Guides",
-    "url": "https://luneaster.gumroad.com"
+    "url": "https://luneaster.gumroad.com?utm_source=luneastertravel&utm_medium=content&utm_campaign=blog&utm_content=inline_cta"
   }
 }

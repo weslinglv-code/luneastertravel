@@ -39,7 +39,7 @@ This guide breaks it down month by month so you can make an informed decision. F
 
 <div data-cta="light">
 Skip hours‑worth of exhausting online research. Grab my printable, well‑organised PDF travel blueprint for your Japan journey.
-[Get the PDF Guide →](https://luneaster.gumroad.com/l/japan-blueprint-7-day?layout=profile)
+[Get the PDF Guide →](https://luneaster.gumroad.com/l/japan-blueprint-7-day?layout=profile&utm_source=luneastertravel&utm_medium=content&utm_campaign=blog&utm_content=inline_cta)
 </div>
 
 ***

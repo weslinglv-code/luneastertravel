@@ -1,20 +1,20 @@
 {
-  "bgImage": "/images/hero.webp",
-  "tag": "Hidden Kansai Travel Guides",
-  "title": "Hidden Kansai Travel Guides",
-  "titleHighlight": "Kansai",
-  "subtitle": "Skip crowded tourist spots. Printable itineraries made from real-world travel footage.",
+  "bgImage": "/images/hero-winter.webp",
+  "tag": "Printable Japan Itineraries",
+  "title": "Printable Japan Travel Guides",
+  "titleHighlight": "Japan",
+  "subtitle": "Skip crowded tourist spots. Winter onsen escapes, autumn foliage, and hidden Kansai gems — every route mapped hour by hour.",
   "trustBadges": [
     { "num": "7", "label": "Premium Guides" },
     { "num": "11", "label": "Free Articles" },
     { "num": "10M+", "label": "TikTok Views" }
   ],
   "primaryButton": {
-    "text": "Get Printable Itineraries",
-    "url": "https://luneaster.gumroad.com"
+    "text": "Get the 7-Day Japan Blueprint",
+    "url": "https://luneaster.gumroad.com/l/japan-blueprint-7-day?utm_source=luneastertravel&utm_medium=content&utm_campaign=blog&utm_content=inline_cta"
   },
   "secondaryButton": {
-    "text": "Read Free Blog Articles",
-    "url": "/blog.html"
+    "text": "Winter Escape: 4-Day Okinawa",
+    "url": "https://luneaster.gumroad.com/l/okinawa-4day-printable-itinerary?utm_source=luneastertravel&utm_medium=content&utm_campaign=blog&utm_content=inline_cta"
   }
 }

@@ -3,9 +3,9 @@
   "slug": "takamatsu-setouchi-3day-guide",
   "description": "Complete 3‑day Takamatsu and Setouchi Islands itinerary, including Teshima Art Museum booking tips, ferry schedules, local dining and hidden photo‑spots.",
   "tags": [
-    "https://luneaster.gumroad.com/l/takamatsu-setouchi-3day-guide?layout=profile"
+    "https://luneaster.gumroad.com/l/takamatsu-setouchi-3day-guide?layout=profile&utm_source=luneastertravel&utm_medium=content&utm_campaign=blog&utm_content=inline_cta"
   ],
-  "gumroadUrl": "https://luneaster.gumroad.com/l/takamatsu-setouchi-3day-guide?layout=profile",
+  "gumroadUrl": "https://luneaster.gumroad.com/l/takamatsu-setouchi-3day-guide?layout=profile&utm_source=luneastertravel&utm_medium=content&utm_campaign=blog&utm_content=inline_cta",
   "status": "published",
   "coverImage": "/images/02.jpg",
   "galleryImages": [],
@@ -29,7 +29,7 @@
   "price": 4.99,
   "priceLabel": "7.99",
   "pages": 16,
-  "order": 3,
+  "order": 5,
   "badge": "New",
   "accentColor": "#0ea5e9",
   "metaTitle": "",

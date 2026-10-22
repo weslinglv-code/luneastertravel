@@ -1,5 +1,6 @@
 ---
 import { hero } from '../data/homepage';
+import { addGumroadUtm } from '../utils/tracking';
 
 const { bgImage, tag, title, titleHighlight, subtitle, trustBadges, primaryButton, secondaryButton } = hero;
 
@@ -7,6 +8,13 @@ const { bgImage, tag, title, titleHighlight, subtitle, trustBadges, primaryButto
 const titleParts = titleHighlight
   ? title.split(new RegExp(`(${titleHighlight})`, 'i'))
   : [title];
+
+// Append UTM params to any Gumroad CTA so GA4 can attribute each button
+const withUtm = (url: string, content: string) =>
+  url.includes('gumroad.com') ? addGumroadUtm(url, content) : url;
+
+const primaryUrl = withUtm(primaryButton.url, 'hero_primary');
+const secondaryUrl = withUtm(secondaryButton.url, 'hero_secondary');
 ---
 
 <section class="hero">
@@ -23,10 +31,10 @@ const titleParts = titleHighlight
     </h1>
     <p class="hero-desc">{subtitle}</p>
     <div class="hero-cta">
-      <a href={primaryButton.url} class="btn btn-primary" target="_blank" rel="noopener">
+      <a href={primaryUrl} class="btn btn-primary" target="_blank" rel="noopener">
         {primaryButton.text}
       </a>
-      <a href={secondaryButton.url} class="btn btn-secondary">
+      <a href={secondaryUrl} class="btn btn-secondary" target="_blank" rel="noopener">
         {secondaryButton.text}
       </a>
     </div>

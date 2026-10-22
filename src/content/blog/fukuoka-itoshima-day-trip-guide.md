@@ -117,6 +117,6 @@ Itoshima is absolutely an underrated day trip treasure in Fukuoka. You can enjoy
 
 **Related Posts**
 
-- [7-Day Japan Itinerary: The Perfect First-Timer Route (2026)](/blog/7-day-japan-itinerary-first-timers.html)
-- [Japan Travel Budget 2026: How Much Does a Trip Really Cost?](/blog/japan-travel-budget-2026.html)
-- [Tokyo 48-Hour Itinerary: The Perfect Weekend Guide (2026)](/blog/tokyo-48-hour-itinerary-weekend-guide.html)
+- [7-Day Japan Itinerary: The Perfect First-Timer Route (2026)](/blog/7-day-japan-itinerary-first-timers)
+- [Japan Travel Budget 2026: How Much Does a Trip Really Cost?](/blog/japan-travel-budget-2026)
+- [Tokyo 48-Hour Itinerary: The Perfect Weekend Guide (2026)](/blog/tokyo-48-hour-itinerary-weekend-guide)

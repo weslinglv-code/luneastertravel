@@ -247,7 +247,7 @@ Only if you're doing multiple long-distance Shinkansen trips. For Tokyo-only tri
 
 ### Can I get a pre-made printable budget template for Japan?
 
-Yes — my [7-Day Japan Blueprint](https://luneaster.gumroad.com/l/japan-blueprint-7-day) includes full editable budget breakdowns for Tokyo, Kyoto, and Osaka trips, plus a JR Pass calculator and printable packing list.
+Yes — my [7-Day Japan Blueprint](https://luneaster.gumroad.com/l/japan-blueprint-7-day?utm_source=luneastertravel&utm_medium=content&utm_campaign=blog&utm_content=inline_cta) includes full editable budget breakdowns for Tokyo, Kyoto, and Osaka trips, plus a JR Pass calculator and printable packing list.
 
 ### What's the cheapest way to travel between Tokyo and Kyoto?
 

@@ -38,7 +38,7 @@ const restImgInfo = await getImgInfoBatch(rest.map(p => p.data.coverImage));
       ) : (
         <>
           {featured && (
-            <a href={`/blog/${featured.slug}.html`} class="featured-card">
+            <a href={`/blog/${featured.slug}`} class="featured-card">
               {featured.data.coverImage && (
                 <div class="featured-cover">
                   {featuredImgInfo.webp ? (
@@ -68,7 +68,7 @@ const restImgInfo = await getImgInfoBatch(rest.map(p => p.data.coverImage));
           {rest.length > 0 && (
             <div class="post-grid">
               {rest.map((post, idx) => (
-                <a href={`/blog/${post.slug}.html`} class="post-card">
+                <a href={`/blog/${post.slug}`} class="post-card">
                   {post.data.coverImage && (
                     <div class="post-cover">
                       {restImgInfo[idx]?.webp ? (

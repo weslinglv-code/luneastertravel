@@ -1,5 +1,5 @@
 {
-  "order": 4,
+  "order": 6,
   "slug": "tokyo-5-day-route",
   "title": "Tokyo 5-Day Route",
   "subtitle": "Deep dive into the capital",
@@ -14,7 +14,7 @@
     "Subway route planning tips",
     "Day trip options (Hakone, Kamakura, Nikko)"
   ],
-  "gumroadUrl": "https://luneaster.gumroad.com/l/ttyviq",
+  "gumroadUrl": "https://luneaster.gumroad.com/l/ttyviq?utm_source=luneastertravel&utm_medium=content&utm_campaign=blog&utm_content=inline_cta",
   "coverImage": "/images/gallery-tokyo.jpg",
   "accentColor": "#5b8def",
   "destination": "tokyo",

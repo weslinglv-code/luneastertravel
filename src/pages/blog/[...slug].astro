@@ -46,7 +46,7 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
 });
 
 const siteUrl = 'https://luneastertravel.com';
-const articleUrl = `${siteUrl}/blog/${post.slug}.html`;
+const articleUrl = `${siteUrl}/blog/${post.slug}`;
 
 // Helper: get image dimensions + WebP path for template <picture> tags
 async function getImgInfo(src) {
@@ -116,7 +116,7 @@ const jsonLd = {
         <FloatingToc headings={headings} mode="desktop" />
         <!-- Main article column -->
         <div class="article-main">
-        <a href="/blog.html" class="back-link">&larr; All Articles</a>
+        <a href="/blog" class="back-link">&larr; All Articles</a>
 
         <header class="article-header">
           {tags && tags.length > 0 && (
@@ -182,7 +182,7 @@ const jsonLd = {
             <h3 class="related-title">Related Japan Travel Guides</h3>
             <div class="related-grid">
               {relatedPosts.map((rp, idx) => (
-                <a href={`/blog/${rp.slug}.html`} class="related-card">
+                <a href={`/blog/${rp.slug}`} class="related-card">
                   {rp.data.coverImage && (
                     <div class="related-cover">
                       {relatedImgInfo[idx]?.webp ? (

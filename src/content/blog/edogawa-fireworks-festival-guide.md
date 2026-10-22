@@ -108,4 +108,4 @@ That's the magic of a Japanese hanabi festival. It's not just about the firework
 
 <div data-cta="end_cta"></div>
 
-> **Note:** This post shares my personal travel experience for the Edogawa fireworks festival. For full Tokyo fireworks timetables, secret photo-friendly viewpoints, ticket-buying tutorials, and common-mistake checklists, grab the complete [Gumroad PDF guide](https://luneaster.gumroad.com).
+> **Note:** This post shares my personal travel experience for the Edogawa fireworks festival. For full Tokyo fireworks timetables, secret photo-friendly viewpoints, ticket-buying tutorials, and common-mistake checklists, grab the complete [Gumroad PDF guide](https://luneaster.gumroad.com?utm_source=luneastertravel&utm_medium=content&utm_campaign=blog&utm_content=inline_cta).

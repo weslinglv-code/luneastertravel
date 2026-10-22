@@ -6,6 +6,10 @@
       "description": "Start with the 7-Day Japan Blueprint — it covers Tokyo, Hakone, Kyoto, and Osaka in one document."
     },
     {
+      "title": "Traveling in winter?",
+      "description": "Cold and snow? The 4-Day Okinawa Slow Travel guide is your warm-island escape — 22°C in January, half the crowds, half the price."
+    },
+    {
       "title": "Want to explore Tokyo in depth?",
       "description": "The Tokyo 5-Day Route dives deep into every major district — Shibuya, Asakusa, Shinjuku, Akihabara and more."
     },
@@ -19,5 +23,5 @@
     }
   ],
   "buttonText": "View All Guides",
-  "buttonUrl": "https://luneaster.gumroad.com"
+  "buttonUrl": "https://luneaster.gumroad.com?utm_source=luneastertravel&utm_medium=website&utm_campaign=shop_all&utm_content=cta_view_all"
 }

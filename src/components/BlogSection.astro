@@ -26,7 +26,7 @@ const postImgInfo = await getImgInfoBatch(recentPosts.map(p => p.data.coverImage
       </div>
       <div class="blog-preview-grid">
         {recentPosts.map((post, idx) => (
-          <a href={`/blog/${post.slug}.html`} class="blog-preview-card">
+          <a href={`/blog/${post.slug}`} class="blog-preview-card">
             {post.data.coverImage && (
               <div class="blog-cover">
                 {postImgInfo[idx]?.webp ? (
