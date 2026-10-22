@@ -1,20 +1,20 @@
 {
   "bgImage": "/images/hero-winter.webp",
   "tag": "Printable Japan Itineraries",
-  "title": "Printable Japan Travel Guides",
-  "titleHighlight": "Japan",
-  "subtitle": "Skip crowded tourist spots. Winter onsen escapes, autumn foliage, and hidden Kansai gems — every route mapped hour by hour.",
+  "title": "Japan, the way it is meant to be walked",
+  "titleHighlight": "walked",
+  "subtitle": "Seven routes hand-checked against real footage — the temple you enter at 7am, the bus nobody queues for, and the yen you actually spend on the day.",
   "trustBadges": [
-    { "num": "7", "label": "Premium Guides" },
-    { "num": "11", "label": "Free Articles" },
-    { "num": "10M+", "label": "TikTok Views" }
+    { "num": "7", "label": "Guides" },
+    { "num": "11", "label": "Free articles" },
+    { "num": "Hour by hour", "label": "Every route" }
   ],
   "primaryButton": {
-    "text": "Get the 7-Day Japan Blueprint",
-    "url": "https://luneaster.gumroad.com/l/japan-blueprint-7-day?utm_source=luneastertravel&utm_medium=content&utm_campaign=blog&utm_content=inline_cta"
+    "text": "See the 7-Day Blueprint",
+    "url": "https://luneaster.gumroad.com/l/japan-blueprint-7-day"
   },
   "secondaryButton": {
-    "text": "Winter Escape: 4-Day Okinawa",
-    "url": "https://luneaster.gumroad.com/l/okinawa-4day-printable-itinerary?utm_source=luneastertravel&utm_medium=content&utm_campaign=blog&utm_content=inline_cta"
+    "text": "Or escape to Okinawa in winter",
+    "url": "https://luneaster.gumroad.com/l/okinawa-4day-printable-itinerary"
   }
 }

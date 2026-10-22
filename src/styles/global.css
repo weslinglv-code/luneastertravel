@@ -1,21 +1,21 @@
 :root {
-  /* Brand Colors — Light theme */
-  --c-primary: #1a1a2e;
-  --c-accent: #d94a38;        /* slightly deeper coral for white bg contrast */
-  --c-accent-light: #e85d4a;
-  --c-secondary: #16213e;
-  --c-bg: #faf8f5;            /* warm off-white */
-  --c-surface: #ffffff;      /* pure white cards */
-  --c-surface-light: #f3efe8; /* soft cream panels */
-  --c-text: #1a1a2e;         /* deep navy text */
-  --c-text-muted: #5f5f6e;   /* grey for body text */
-  --c-border: #e8e2d6;        /* warm light border */
+  /* Brand Colors — JNTO-inspired: pure white, sum ink, vermillion accent */
+  --c-primary: #1c1c1a;
+  --c-accent: #bc002d;        /* 朱 red — tori vermillion */
+  --c-accent-light: #d3163f;
+  --c-secondary: #2a2a27;
+  --c-bg: #ffffff;            /* pure white — no warm cream */
+  --c-surface: #ffffff;
+  --c-surface-light: #f7f6f3;  /* faint warm grey panel */
+  --c-text: #1c1c1a;          /* 墨 sum near-black */
+  --c-text-muted: #6e6d68;    /* grey for body text */
+  --c-border: #e3e0d8;        /* neutral hairline */
   --c-success: #2e7d4f;
-  --c-warning: #b07a1a;
+  --c-warning: #8a6d1f;
 
-  /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography — Mincho serif display (JNTO style) + clean sans body */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+  --font-display: 'Zen Old Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', 'Times New Roman', serif;
 
   /* Spacing */
   --space-xs: 0.5rem;
@@ -25,10 +25,10 @@
   --space-xl: 4rem;
   --space-2xl: 6rem;
 
-  /* Border Radius */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  /* Border Radius — near-square, editorial not bubbly */
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
 
   /* Transitions */
   --t-fast: 0.15s ease;
