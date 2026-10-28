@@ -5,6 +5,7 @@ pubDate: 2026-08-06
 coverImage: "/images/hero.webp"
 coverAlt: "Japanese yen bills and coins with a Tokyo street food stall in the background"
 tags: ["Japan", "Budget", "Cost", "Travel Tips", "Planning"]
+city: "Japan"
 author: "LuneAster"
 readingTime: "8 min read"
 featured: false

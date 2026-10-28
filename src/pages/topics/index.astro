@@ -1,0 +1,57 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { TOPICS, CITIES, slugify, topicIntro, cityIntro } from '../../data/blog-taxonomy';
+---
+
+<Layout
+  title="Japan Travel Topics & Cities | LuneAster Travel"
+  description="Browse Japan travel guides by theme — Transport, Stay, Food, Sights, Etiquette, SIM, Seasons — and by city: Tokyo, Kyoto, Osaka, Fukuoka, and Japan-wide."
+>
+  <section class="tax-index">
+    <div class="container">
+      <header class="tax-header">
+        <p class="eyebrow">Browse the guides</p>
+        <h1>Topics &amp; Cities</h1>
+        <p class="lede">Find the right Japan travel guide by what you care about — or by where you're going.</p>
+      </header>
+
+      <h2 class="group-title">By Topic</h2>
+      <div class="card-grid">
+        {TOPICS.map((t) => (
+          <a href={`/topics/${slugify(t)}`} class="tax-card">
+            <h3>{t}</h3>
+            <p>{topicIntro(slugify(t))}</p>
+          </a>
+        ))}
+      </div>
+
+      <h2 class="group-title">By City</h2>
+      <div class="card-grid">
+        {CITIES.map((c) => (
+          <a href={`/cities/${slugify(c)}`} class="tax-card">
+            <h3>{c}</h3>
+            <p>{cityIntro(slugify(c))}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .tax-index { padding: 3rem 0 4rem; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
+  .tax-header { margin-bottom: 2.5rem; }
+  .eyebrow { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--c-text-muted); margin: 0 0 0.5rem; }
+  .tax-header h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 500; color: var(--c-text); margin: 0 0 0.75rem; letter-spacing: -0.01em; }
+  .lede { color: var(--c-text-muted); font-size: 1.05rem; max-width: 60ch; line-height: 1.7; }
+
+  .group-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; color: var(--c-text); margin: 2.5rem 0 1.25rem; padding-top: 1.5rem; border-top: 1px solid var(--c-border); }
+  .group-title:first-of-type { border-top: none; padding-top: 0; }
+
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+  .tax-card { display: block; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius-md); padding: 1.5rem; text-decoration: none; color: var(--c-text); transition: transform var(--t-fast), box-shadow var(--t-fast), border-color var(--t-fast); }
+  .tax-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); border-color: var(--c-accent); }
+  .tax-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--c-text); }
+  .tax-card p { color: var(--c-text-muted); font-size: 0.85rem; line-height: 1.6; margin: 0; }
+</style>

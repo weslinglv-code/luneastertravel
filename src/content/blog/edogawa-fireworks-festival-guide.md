@@ -7,6 +7,7 @@ updatedDate: ''
 coverImage: /images/6362.jpg
 coverAlt: Japanese summer fireworks festival at Edogawa river in Tokyo, colorful hanabi bursting in the night sky
 tags:
+city: "Tokyo"
   - Tokyo
   - Fireworks
   - Hanabi

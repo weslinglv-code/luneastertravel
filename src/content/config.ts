@@ -18,6 +18,7 @@ const blog = defineCollection({
     coverImage: z.string().optional(),
     coverAlt: z.string().optional(),
     tags: z.array(z.string()).default([]),
+    city: z.string().optional(),
     author: z.string().default('LuneAster'),
     readingTime: z.string().optional(),
     featured: z.boolean().default(false),

@@ -5,6 +5,7 @@ pubDate: 2026-08-06
 coverImage: "/images/_cand-shinjuku.jpg"
 coverAlt: "Shinkansen bullet train arriving at a Japanese train station platform"
 tags: ["Japan", "Transport", "JR Pass", "Shinkansen", "Guide"]
+city: "Japan"
 author: "LuneAster"
 readingTime: "9 min read"
 featured: false

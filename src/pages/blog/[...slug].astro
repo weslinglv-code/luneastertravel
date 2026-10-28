@@ -5,6 +5,7 @@ import FloatingToc from '../../components/FloatingToc.astro';
 import { products } from '../../data/products';
 import { articleCta } from '../../data/homepage';
 import { addGumroadUtm } from '../../utils/tracking';
+import { slugify } from '../../data/blog-taxonomy';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -121,7 +122,7 @@ const jsonLd = {
         <header class="article-header">
           {tags && tags.length > 0 && (
             <div class="article-tags">
-              {tags.map(tag => <span class="tag">{tag}</span>)}
+              {tags.map(tag => <a href={`/topics/${slugify(tag)}`} class="tag">{tag}</a>)}
             </div>
           )}
           <h1>{title}</h1>
@@ -321,6 +322,8 @@ const jsonLd = {
     border-radius: 99px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
+    text-decoration: none;
+    display: inline-block;
   }
 
   .article-header h1 {

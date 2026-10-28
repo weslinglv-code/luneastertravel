@@ -1,0 +1,66 @@
+10:03:55 [types] Generated 756ms
+10:03:55 [build] output: "static"
+10:03:55 [build] directory: C:\Users\wesli\WorkBuddy\2026-07-29-13-39-31\luneastertravel-site\dist\
+10:03:55 [build] Collecting build info...
+10:03:55 [build] ✓ Completed in 771ms.
+10:04:08 [build] Building static entrypoints...
+10:04:11 [vite] [32m✓ built in 2.62s[39m
+10:04:11 [build] ✓ Completed in 2.70s.
+
+ building client (vite) 
+10:04:11 [vite] transforming...
+10:04:11 [vite] [32m✓[39m 8 modules transformed.
+10:04:11 [vite] rendering chunks...
+10:04:11 [vite] computing gzip size...
+10:04:11 [vite] [2mdist/[22m[36m_astro/hoisted.By93X8-b.js  [39m[1m[2m0.71 kB[22m[1m[22m[2m │ gzip: 0.37 kB[22m
+10:04:11 [vite] [2mdist/[22m[36m_astro/hoisted.Cpjz4xTq.js  [39m[1m[2m0.73 kB[22m[1m[22m[2m │ gzip: 0.46 kB[22m
+10:04:11 [vite] [2mdist/[22m[36m_astro/hoisted.B90jyasK.js  [39m[1m[2m1.17 kB[22m[1m[22m[2m │ gzip: 0.51 kB[22m
+10:04:11 [vite] [32m✓ built in 72ms[39m
+
+ generating static routes 
+10:04:11 ▶ src/pages/404.astro
+10:04:11   └─ /404.html (+6ms)
+10:04:11 ▶ src/pages/about.astro
+10:04:11   └─ /about.html (+3ms)
+10:04:11 ▶ src/pages/blog/[...slug].astro
+10:04:11   ├─ /blog/30-japanese-taboos-guide.html (+7ms)
+10:04:11   ├─ /blog/7-day-japan-itinerary-first-timers.html (+5ms)
+10:04:11   ├─ /blog/best-time-to-visit-japan.html (+7ms)
+10:04:11   ├─ /blog/fukuoka-itoshima-day-trip-guide.html (+6ms)
+10:04:11   ├─ /blog/japan-packing-list-2026.html (+5ms)
+10:04:11   ├─ /blog/japan-train-travel-guide.html (+6ms)
+10:04:11   ├─ /blog/japan-travel-budget-2026.html (+7ms)
+10:04:11   ├─ /blog/kyoto-day-trip-from-tokyo.html (+5ms)
+10:04:11   ├─ /blog/osaka-travel-guide-48-hours.html (+6ms)
+10:04:11   └─ /blog/tokyo-48-hour-itinerary-weekend-guide.html (+5ms)
+10:04:11 ▶ src/pages/blog/index.astro
+10:04:11   └─ /blog.html (+4ms)
+10:04:11 ▶ src/pages/custom-trip.astro
+10:04:11   └─ /custom-trip.html (+3ms)
+10:04:11 ▶ src/pages/disclosure.astro
+10:04:11   └─ /disclosure.html (+2ms)
+10:04:11 ▶ src/pages/index.astro
+10:04:11   └─ /index.html (+18ms)
+10:04:11 ▶ src/pages/privacy.astro
+10:04:11   └─ /privacy.html (+4ms)
+10:04:11 ▶ src/pages/products/[slug].astro
+10:04:11   ├─ /products/kyoto-takao-three-temples.html (+5ms)
+10:04:11   ├─ /products/japan-blueprint-7-day.html (+5ms)
+10:04:11   ├─ /products/takamatsu-setouchi-3day-guide.html (+6ms)
+10:04:11   ├─ /products/kyoto-3-day-autumn.html (+5ms)
+10:04:11   ├─ /products/tokyo-5-day-route.html (+5ms)
+10:04:11   ├─ /products/okinawa-4day-slow-travel.html (+5ms)
+10:04:11   └─ /products/wakayama-3day-mountain-sea.html (+5ms)
+10:04:11 ▶ src/pages/resources.astro
+10:04:11   └─ /resources.html (+5ms)
+10:04:11 ✓ Completed in 180ms.
+
+[safe-delete][SAFE_DELETE_BULK_CONFIRM_REQUIRED] {"count":50,"threshold":50,"scope":"turn","targets":["C:\\Users\\wesli\\WorkBuddy\\2026-07-29-13-39-31\\luneastertravel-site\\dist\\pages\\404.astro.mjs"],"targetCount":1}
+  Location:
+    C:\Users\wesli\WorkBuddy\2026-07-29-13-39-31\luneastertravel-site\node_modules\astro\dist\core\build\static-build.js:320:40
+  Stack trace:
+    at checkBulkDeleteGuard (D:\腾讯\Workbuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:222:19)
+    at tryRm (D:\腾讯\Workbuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:722:5)
+    at file:///C:/Users/wesli/WorkBuddy/2026-07-29-13-39-31/luneastertravel-site/node_modules/astro/dist/core/build/static-build.js:320:40
+    at cleanServerOutput (file:///C:/Users/wesli/WorkBuddy/2026-07-29-13-39-31/luneastertravel-site/node_modules/astro/dist/core/build/static-build.js:317:13)
+    at async AstroBuilder.build (file:///C:/Users/wesli/WorkBuddy/2026-07-29-13-39-31/luneastertravel-site/node_modules/astro/dist/core/build/index.js:149:5)

@@ -5,6 +5,7 @@ pubDate: 2026-08-06
 coverImage: "/images/hero.webp"
 coverAlt: "Fushimi Inari torii gates in Kyoto at sunrise"
 tags: ["Kyoto", "Day Trip", "Tokyo", "Shinkansen", "Itinerary"]
+city: "Kyoto"
 author: "LuneAster"
 readingTime: "6 min read"
 featured: false

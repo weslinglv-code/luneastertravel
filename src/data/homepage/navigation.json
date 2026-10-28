@@ -3,6 +3,7 @@
   "menu": [
     { "label": "Home", "url": "/" },
     { "label": "Free Guides", "url": "/blog" },
+    { "label": "Topics", "url": "/topics/" },
     { "label": "PDF Itineraries", "url": "/#premium" },
     { "label": "Custom Trip", "url": "/custom-trip" },
     { "label": "About", "url": "/about" },

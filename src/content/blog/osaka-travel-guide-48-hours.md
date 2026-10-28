@@ -5,6 +5,7 @@ pubDate: 2026-08-06
 coverImage: "/images/gallery-tokyo.jpg"
 coverAlt: "Osaka's Dotonbori district at night with neon signs reflecting on the canal"
 tags: ["Osaka", "Itinerary", "Food", "48-Hour", "Guide"]
+city: "Osaka"
 author: "LuneAster"
 readingTime: "7 min read"
 featured: false

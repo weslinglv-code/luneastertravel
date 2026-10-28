@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { getImgInfo, getImgInfoBatch } from '../../utils/images';
+import { slugify } from '../../data/blog-taxonomy';
 
 // Filter to English-only articles (hide Chinese content from international visitors)
 const isEnglish = (s: string) => /^[\x00-\x7F]*$/.test(s);
@@ -83,7 +84,7 @@ const restImgInfo = await getImgInfoBatch(rest.map(p => p.data.coverImage));
                   )}
                   <div class="post-body">
                     <div class="post-tags">
-                      {post.data.tags.slice(0, 2).map(tag => <span class="tag">{tag}</span>)}
+                      {post.data.tags.slice(0, 2).map(tag => <a href={`/topics/${slugify(tag)}`} class="tag">{tag}</a>)}
                     </div>
                     <h3>{post.data.title}</h3>
                     <p>{post.data.description}</p>
@@ -258,6 +259,8 @@ const restImgInfo = await getImgInfoBatch(rest.map(p => p.data.coverImage));
     font-weight: 600;
     padding: 0.2rem 0.5rem;
     border-radius: 99px;
+    text-decoration: none;
+    display: inline-block;
   }
 
   .post-body h3 {

@@ -7,6 +7,7 @@ updatedDate: ''
 coverImage: /images/555121.jpg
 coverAlt: Japanese etiquette and cultural respect illustrated with a traveler bowing in a traditional Japanese setting
 tags:
+city: "Japan"
   - Japan
   - Culture
   - Etiquette

@@ -5,6 +5,7 @@ pubDate: 2026-08-06
 coverImage: "/images/hero.webp"
 coverAlt: "Tokyo skyline at sunset with Tokyo Tower in the background"
 tags: ["Tokyo", "Itinerary", "Weekend", "48-Hour", "First-Timers"]
+city: "Tokyo"
 author: "LuneAster"
 readingTime: "7 min read"
 featured: false

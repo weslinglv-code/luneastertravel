@@ -5,6 +5,7 @@ pubDate: 2026-08-06
 coverImage: "/images/_cand-shibuya.jpg"
 coverAlt: "Traveler walking through Shibuya Crossing with a backpack in Tokyo, Japan"
 tags: ["Japan", "Packing", "Essentials", "Travel Tips", "Planning"]
+city: "Japan"
 author: "LuneAster"
 readingTime: "8 min read"
 featured: false

@@ -2,6 +2,7 @@
 import { blogSection } from '../data/homepage';
 import { getCollection } from 'astro:content';
 import { getImgInfoBatch } from '../utils/images';
+import { TOPICS, CITIES, slugify } from '../data/blog-taxonomy';
 
 const { sectionTitle, sectionSubtitle, maxPosts, buttonText, buttonUrl, englishOnly } = blogSection;
 
@@ -23,6 +24,16 @@ const postImgInfo = await getImgInfoBatch(recentPosts.map(p => p.data.coverImage
       <div class="section-header">
         <h2>{sectionTitle}</h2>
         <p>{sectionSubtitle}</p>
+      </div>
+      <div class="taxonomy-links">
+        <div class="tax-row">
+          <span class="tax-label">Topics</span>
+          {TOPICS.map((t) => <a href={`/topics/${slugify(t)}`} class="tax-link">{t}</a>)}
+        </div>
+        <div class="tax-row">
+          <span class="tax-label">Cities</span>
+          {CITIES.map((c) => <a href={`/cities/${slugify(c)}`} class="tax-link">{c}</a>)}
+        </div>
       </div>
       <div class="blog-preview-grid">
         {recentPosts.map((post, idx) => (
@@ -70,6 +81,44 @@ const postImgInfo = await getImgInfoBatch(recentPosts.map(p => p.data.coverImage
 
   .section-header p {
     margin-top: 0.5rem;
+  }
+
+  .taxonomy-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .tax-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .tax-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-text-muted);
+    min-width: 52px;
+  }
+
+  .tax-link {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-text-muted);
+    text-decoration: none;
+    transition: color var(--t-fast);
+  }
+
+  .tax-link:hover {
+    color: var(--c-accent);
+    text-decoration: underline;
   }
 
   .blog-preview-grid {

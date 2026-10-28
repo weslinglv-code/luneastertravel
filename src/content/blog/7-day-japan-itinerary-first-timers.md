@@ -5,6 +5,7 @@ pubDate: 2026-08-05
 coverImage: "/images/hero.webp"
 coverAlt: "Kiyomizu-dera temple surrounded by autumn maple leaves in Kyoto"
 tags: ["Japan", "Itinerary", "Tokyo", "Kyoto", "First-Timers"]
+city: "Japan"
 author: "LuneAster"
 readingTime: "8 min read"
 featured: true
