@@ -1,21 +1,24 @@
 :root {
-  /* Brand Colors — JNTO-inspired: pure white, sum ink, vermillion accent */
-  --c-primary: #1c1c1a;
-  --c-accent: #bc002d;        /* 朱 red — tori vermillion */
-  --c-accent-light: #d3163f;
-  --c-secondary: #2a2a27;
-  --c-bg: #ffffff;            /* pure white — no warm cream */
-  --c-surface: #ffffff;
-  --c-surface-light: #f7f6f3;  /* faint warm grey panel */
-  --c-text: #1c1c1a;          /* 墨 sum near-black */
-  --c-text-muted: #6e6d68;    /* grey for body text */
-  --c-border: #e3e0d8;        /* neutral hairline */
+  /* ===== Brand Colors — LuneAster VI =====
+     陶土赭橙仅作点缀（主 logo / 重点按钮），禁止大面积铺背景；
+     正文炭灰；纸白主底；近白中性辅底；浅线条分割。 */
+  --c-primary: #332F2C;        /* 炭灰 — 主文字 / 主标识 */
+  --c-accent: #BF6A45;         /* 陶土赭橙 — 唯一点缀色 */
+  --c-accent-light: #CE7E5B;   /* 陶土橙 hover / 浅态 */
+  --c-secondary: #332F2C;
+  --c-bg: #FBF8F3;             /* 纸白 — 主要页面底色 */
+  --c-surface: #FFFFFF;        /* 卡片 — 与纸白形成微妙层次 */
+  --c-surface-light: #F5F4F2;  /* 近白中性次底 — 去黄感，仅用 1px 边框分层 */
+  --c-text: #332F2C;           /* 炭灰文字 */
+  --c-text-muted: #6B665F;     /* 中灰 — 正文辅助 */
+  --c-border: #D9CFC2;         /* 浅线条 — 分割 / 边框 */
   --c-success: #2e7d4f;
-  --c-warning: #8a6d1f;
+  --c-warning: #b07a1a;
+  --c-accent-bg: rgba(191, 106, 69, 0.10); /* 陶土橙极淡底（标签/高亮区） */
 
-  /* Typography — Mincho serif display (JNTO style) + clean sans body */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
-  --font-display: 'Zen Old Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', 'Times New Roman', serif;
+  /* Typography — Jost 几何无衬线（对齐 logo 字标）；兜底 Century Gothic */
+  --font-sans: 'Jost', 'Century Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Jost', 'Century Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Spacing */
   --space-xs: 0.5rem;
@@ -25,10 +28,10 @@
   --space-xl: 4rem;
   --space-2xl: 6rem;
 
-  /* Border Radius — near-square, editorial not bubbly */
-  --radius-sm: 2px;
-  --radius-md: 3px;
-  --radius-lg: 4px;
+  /* Border Radius — 收敛，更克制 */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
 
   /* Transitions */
   --t-fast: 0.15s ease;
@@ -39,10 +42,10 @@
   --container: 1100px;
   --container-narrow: 720px;
 
-  /* Shadows — soft for light theme */
-  --shadow-sm: 0 2px 8px rgba(26, 26, 46, 0.06);
-  --shadow-md: 0 8px 24px rgba(26, 26, 46, 0.08);
-  --shadow-lg: 0 16px 40px rgba(26, 26, 46, 0.12);
+  /* Shadows — VI 禁用阴影：改为透明，组件一律用 1px 边框区分层次 */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
 }
 
 * {
@@ -106,18 +109,18 @@ img {
 h1 {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
   color: var(--c-text);
 }
 
 h2 {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
   margin-bottom: var(--space-sm);
   color: var(--c-text);
 }
@@ -125,8 +128,8 @@ h2 {
 h3 {
   font-family: var(--font-display);
   font-size: 1.3rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 500;
+  letter-spacing: -0.005em;
   margin-bottom: var(--space-xs);
   color: var(--c-text);
 }
@@ -159,7 +162,6 @@ p {
 .btn-primary:hover {
   background: var(--c-accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(217, 74, 56, 0.25);
   color: white;
 }
 
@@ -186,7 +188,7 @@ p {
 }
 
 .badge-accent {
-  background: rgba(217, 74, 56, 0.12);
+  background: var(--c-accent-bg);
   color: var(--c-accent);
 }
 

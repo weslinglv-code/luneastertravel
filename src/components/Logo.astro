@@ -1,45 +1,61 @@
 ---
+/**
+ * LuneAster 字标 (方案 A: 纯字标, 无图形)
+ * - 矢量 SVG, 通过 CSS mask 上色 => 一处资产, 任意底色自适应 (传 color 即可反白)
+ * - 不渲染 <a>, 由调用方决定链接 (Header/Footer 已自带 <a>, 避免 a 套 a 的非法嵌套)
+ */
 interface Props {
+  /** 渲染高度 (px)。字标宽高比 6.52, mark 为 1.456 */
   size?: number;
+  /** full = LuneAster 全字标; mark = LA 字母标 (头像/方图用) */
   variant?: 'full' | 'mark';
+  /** 覆盖颜色, 例如暗底传 '#FBF8F3' */
+  color?: string;
+  class?: string;
 }
-const { size = 44, variant = 'full' } = Astro.props;
+
+const { size = 26, variant = 'full', color, class: cls = '' } = Astro.props;
+const AR = variant === 'mark' ? 1.456 : 6.52;
+const style = [
+  `--logo-h:${size}px`,
+  `--logo-w:${(size * AR).toFixed(1)}px`,
+  color ? `--logo-color:${color}` : null,
+]
+  .filter(Boolean)
+  .join(';');
 ---
 
-{variant === 'full' ? (
-  <a href="/" class="logo logo-full" aria-label="LuneAster home">
-    <img src="/logo.png" alt="LuneAster" class="logo-img" />
-  </a>
-) : (
-  <a href="/" class="logo logo-mark" aria-label="LuneAster home">
-    <img src="/logo.png" alt="LuneAster" class="logo-img logo-img-mark" />
-  </a>
-)}
+<span
+  class:list={['logo-glyph', cls]}
+  style={style}
+  data-variant={variant}
+  role="img"
+  aria-label="LuneAster"
+></span>
 
 <style>
-  .logo {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    transition: opacity var(--t-fast);
-  }
-
-  .logo:hover {
-    opacity: 0.85;
-  }
-
-  .logo-img {
+  .logo-glyph {
     display: block;
-    /* 原图比例 月牙+文字 横向，full 模式显示完整 */
-    height: 44px;
-    width: auto;
+    height: var(--logo-h, 26px);
+    width: var(--logo-w, 170px);
+    flex-shrink: 0;
+    background-color: var(--logo-color, #bf6a45);
+    -webkit-mask-image: var(--logo-src);
+    mask-image: var(--logo-src);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    transition: opacity var(--t-fast, 0.2s) ease;
   }
 
-  .logo-img-mark {
-    /* mark 模式只显示月牙部分（原图左侧约 40% 宽度）*/
-    height: 44px;
-    width: 44px;
-    object-fit: cover;
-    object-position: left center;
+  .logo-glyph[data-variant='full'] {
+    --logo-src: url('/logo.svg');
+  }
+
+  .logo-glyph[data-variant='mark'] {
+    --logo-src: url('/mark.svg');
   }
 </style>

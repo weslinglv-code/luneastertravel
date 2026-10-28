@@ -20,8 +20,8 @@ const otherProducts = products.filter(p => p.slug !== product.slug);
   description={product.description}
 >
   <!-- Product Hero -->
-  <section class="product-hero" style={`--accent: ${product.accentColor}`}>
-    <div class="hero-bg" style={`background: linear-gradient(135deg, ${product.accentColor}22, transparent 60%)`}></div>
+  <section class="product-hero" style="--accent: var(--c-accent)">
+    <div class="hero-bg" style="background: linear-gradient(135deg, var(--c-accent-bg), transparent 60%)"></div>
     <div class="container product-hero-inner">
       <div class="hero-info">
         {product.badge && <span class={`badge ${product.badge === 'Bestseller' ? 'badge-accent' : 'badge-new'}`}>{product.badge}</span>}
@@ -42,7 +42,7 @@ const otherProducts = products.filter(p => p.slug !== product.slug);
         </div>
       </div>
 
-      <div class="hero-preview" style={`background: linear-gradient(160deg, ${product.accentColor}33, ${product.accentColor}08); border-color: ${product.accentColor}33`}>
+      <div class="hero-preview" style="background: linear-gradient(160deg, var(--c-accent-bg), var(--c-surface-light)); border-color: var(--c-border)">
         <div class="preview-pages">
           <span class="page-count">{product.pages}</span>
           <span class="page-label">pages</span>
@@ -194,7 +194,7 @@ const otherProducts = products.filter(p => p.slug !== product.slug);
       <div class="other-guides">
         {otherProducts.map(p => (
           <a href={`/products/${p.slug}`} class="other-card">
-            <span class="other-badge" style={`color: ${p.accentColor}`}>{p.priceLabel}</span>
+            <span class="other-badge" style="color: var(--c-accent)">{p.priceLabel}</span>
             <h4>{p.title}</h4>
             <p>{p.subtitle}</p>
           </a>

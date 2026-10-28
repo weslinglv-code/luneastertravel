@@ -44,15 +44,15 @@ const fullTitle = title.includes('LuneAster') ? title : `${title} — LuneAster 
   <meta name="twitter:description" content={description} />
 
   <!-- Favicon (用真实 logo 图) -->
-  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <!-- Preload hero image for LCP optimization (homepage only) -->
   {preloadImage && <link rel="preload" as="image" href={preloadImage} type="image/webp" />}
 
-  <!-- Fonts -->
+  <!-- Fonts — Jost (几何无衬线，对齐 logo 字标) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Zen+Old+Mincho:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <title>{fullTitle}</title>
 

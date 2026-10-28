@@ -522,8 +522,8 @@ const jsonLd = {
   /* ===== Inline CTA blocks (injected by rehype plugin) ===== */
   /* Lightweight mid-article CTA hint */
   .article-body :global(.cta-light-hint) {
-    background: linear-gradient(135deg, rgba(217, 74, 56, 0.05) 0%, var(--c-surface) 60%);
-    border: 1px solid rgba(217, 74, 56, 0.12);
+    background: linear-gradient(135deg, rgba(191, 106, 69, 0.05) 0%, var(--c-surface) 60%);
+    border: 1px solid rgba(191, 106, 69, 0.12);
     border-left: 3px solid var(--c-accent);
     border-radius: 10px;
     padding: 1.125rem 1.5rem;
@@ -566,7 +566,7 @@ const jsonLd = {
 
   /* Full button CTA block (mid-article PDF guide promotion) */
   .article-body :global(.cta-button-block) {
-    background: linear-gradient(135deg, var(--c-primary) 0%, #2a2a4a 100%);
+    background: var(--c-text);
     border-radius: 14px;
     padding: 1.75rem 2rem;
     margin: 2.25rem 0;
@@ -601,7 +601,7 @@ const jsonLd = {
   .article-body :global(.cta-orange-btn:hover) {
     background: var(--c-accent-light);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(217, 74, 56, 0.4);
+    box-shadow: 0 6px 20px rgba(191, 106, 69, 0.4);
   }
 
   /* ===== End-of-article conversion block ===== */
@@ -691,7 +691,7 @@ const jsonLd = {
   .end-cta-btn:hover {
     background: var(--c-accent-light);
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(217, 74, 56, 0.35);
+    box-shadow: 0 4px 16px rgba(191, 106, 69, 0.35);
   }
 
   .end-cta-secondary {
@@ -935,7 +935,7 @@ const jsonLd = {
   .sidebar-cta:hover {
     background: var(--c-accent-light);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(217, 74, 56, 0.3);
+    box-shadow: 0 4px 12px rgba(191, 106, 69, 0.3);
   }
 
   .sidebar-trust {
@@ -1057,7 +1057,7 @@ const jsonLd = {
       z-index: 100;
       background: var(--c-surface);
       border-top: 1px solid var(--c-border);
-      box-shadow: 0 -4px 20px rgba(26, 26, 46, 0.1);
+      box-shadow: 0 -4px 20px rgba(51, 47, 44, 0.1);
       padding: 0.625rem 1rem;
       transform: translateY(100%);
       transition: transform var(--t-normal);
