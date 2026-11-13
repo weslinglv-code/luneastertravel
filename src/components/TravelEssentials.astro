@@ -57,7 +57,8 @@ const items = (buttons || []).map(b => ({
 <style>
   .essentials-section {
     padding: 4rem 0;
-    background: var(--c-surface-light);
+    background: var(--c-bg);
+    border-top: 1px solid var(--c-border);
   }
 
   .container {
@@ -118,7 +119,6 @@ const items = (buttons || []).map(b => ({
   .essential-card:hover {
     border-color: var(--c-accent);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(191, 106, 69, 0.08);
   }
 
   .essential-icon {

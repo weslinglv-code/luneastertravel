@@ -176,30 +176,40 @@ p {
   color: var(--c-accent);
 }
 
-/* Badge */
+/* Badge — unified outline style (home version VI: no filled color chips) */
 .badge {
   display: inline-block;
-  padding: 0.25rem 0.7rem;
-  border-radius: 100px;
-  font-size: 0.75rem;
-  font-weight: 700;
+  padding: 0.22rem 0.6rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface);
+  color: var(--c-text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.14em;
 }
 
-.badge-accent {
-  background: var(--c-accent-bg);
-  color: var(--c-accent);
-}
-
+/* C1: badge-accent / badge-new merged into the single outline style */
+.badge-accent,
 .badge-new {
-  background: rgba(176, 122, 26, 0.12);
-  color: var(--c-warning);
+  background: var(--c-surface);
+  color: var(--c-text-muted);
+  border-color: var(--c-border);
 }
 
 .badge-success {
-  background: rgba(46, 125, 79, 0.12);
+  background: var(--c-surface);
   color: var(--c-success);
+  border-color: var(--c-border);
+}
+
+/* C2: editorial section titles — lighter weight, calm scale */
+.section-header h2,
+.essentials-header h2,
+.cta-box h2 {
+  font-weight: 400;
+  font-size: 1.75rem;
 }
 
 /* Affiliate disclosure */

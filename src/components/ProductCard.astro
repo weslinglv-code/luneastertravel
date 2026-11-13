@@ -78,7 +78,7 @@ const art = coverArt[product.slug] || coverArt['tokyo-48hr-solo'];
         </svg>
       )}
     </div>
-    {product.badge && <span class={`badge ${product.badge === 'Bestseller' ? 'badge-accent' : 'badge-new'}`}>{product.badge}</span>}
+    {product.badge && <span class="badge">{product.badge}</span>}
   </div>
   <div class="card-body">
     <h3>{product.title}</h3>
@@ -111,7 +111,6 @@ const art = coverArt[product.slug] || coverArt['tokyo-48hr-solo'];
   .product-card:hover {
     border-color: var(--accent);
     transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
   }
 
   .card-cover {
