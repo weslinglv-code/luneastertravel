@@ -7,12 +7,12 @@ updatedDate: ''
 coverImage: /images/511.jpg
 coverAlt: Cherry blossoms in full bloom along a river in Kyoto, Japan
 tags:
-city: "Japan"
   - Japan
   - Seasons
   - Weather
   - Planning
   - When to Go
+city: "Japan"
 author: LuneAster
 readingTime: 9 min read
 featured: false

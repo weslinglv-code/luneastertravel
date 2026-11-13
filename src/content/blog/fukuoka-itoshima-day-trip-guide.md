@@ -7,13 +7,13 @@ updatedDate: ''
 coverImage: /images/111.jpg
 coverAlt: Scenic ocean view of Itoshima floating torii gate with Meotoiwa couple rocks at sunset
 tags:
-city: "Fukuoka"
   - Fukuoka
   - Itoshima
   - Day Trip
   - Hidden Gems
   - Food Guide
   - Japan
+city: "Fukuoka"
 author: LuneAster
 readingTime: 7 min read
 featured: false
